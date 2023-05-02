@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>MEETME</title>
+
+    <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
+
+
+</head>
+<body>
+   <div class="header">
+       <nav>
+           <img class="logo" src="{% static "meetme/img/Logo.png" %}" alt="LOGO">
+           <ul class="nav-links">
+
+               <li><a href="{% url 'home' %}">Home</a></li>
+               <li><a href="{% url 'index' %}">Meetings</a></li>
+               <li><a href="#">Info</a></li>
+               {% if request.user.is_authenticated %}
+                    <li><p class="user_name">Hello, {{request.user|title}}!</p></li>
+                    <li class="btn"><a href="{% url 'logout' %}">Logout</a></li>
+               {% else %}
+                    <li class="btn"><a href="{% url 'login' %}">Sign Up</a></li>
+               {% endif %}
+
+           </ul>
+       </nav>
+       {% block content %}
+
+       {% endblock content %}
+   </div>
+
+  <div class="container">
+
+
+  </div>
+
+</body>
+</html>

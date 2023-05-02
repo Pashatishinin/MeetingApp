@@ -2,35 +2,33 @@
 
 {% block content %}
 <hr>
-<h1>My Meetings {{ count }}</h1>
-
-<div class="search-add-wrapper">
+<h1 class="meeting-counter">You have {{ count }} Meetings </h1>
+<div class="search-add">
+    <div class="search-add-wrapper">
     <form method="GET">
         <input type="text" name="search-area">
         <input type="submit" value="Search">
     </form>
 </div>
-<a href="{% url 'meeting-create' %}">Add Meeting</a>
+<a class="add-meeting" href="{% url 'meeting-create' %}">Add New Meeting</a>
+
+</div>
+
 
 
 <table>
-    <tr>
-        <th>Item</th>
-        <th></th>
-        <th></th>
-    </tr>
     {% for meeting in meetings %}
     <div class="meeting">
-        <h1>{{meeting.title}}</h1>
-        <ul class="nav-links2">
-            <li class="edit-btn"><a href="{% url 'meeting' meeting.id%}">View</a></li>
-            <li class="edit-btn"><a href="{% url 'meeting-update' meeting.id%}">Edit</a></li>
-            <li class="edit-btn"><a href="{% url 'meeting-delete' meeting.id%}">Delete</a></li>
+        <h1>{{meeting.title|title}}</h1>
+        <ul class="meeting-links">
+            <li><a href="{% url 'meeting' meeting.id%}">View</a></li>
+            <li><a href="{% url 'meeting-update' meeting.id%}">Edit</a></li>
+            <li><a href="{% url 'meeting-delete' meeting.id%}">Delete</a></li>
         </ul>
     </div>
 
     {% empty %}
-        <h3>Now items in list</h3>
+        <h1>Now items in list</h1>
     {% endfor %}
 </table>
 

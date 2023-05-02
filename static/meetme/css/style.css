@@ -1,119 +1,122 @@
 * {
-          margin: 0;
-          padding: 0;
-          font-family: "Century Gothic";
-          box-sizing: border-box;
-      }
-
-h1 {
-    color:white;
+    margin: 0;
+    padding: 0;
+    font-family: "Century Gothic";
+    box-sizing: border-box;
 }
+
 body {
     background: black;
 }
-.header {
-          height: 100vh;
-          width: 100%;
-          padding: 0 8%;
-          background: #080008;
-          position: relative;
 
-      }
+/*HEADER*/
+
+.header {
+    height: 100vh;
+    width: 100%;
+    padding: 0 8%;
+    background: #080008;
+    position: relative;
+}
 
 nav {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .logo {
     width: 140px
 }
-.nav-links{
-          padding: 28px 0;
 
-      }
+/*HEADER NAVIGATION*/
+
+.nav-links{
+    padding: 28px 0;
+}
 
 .nav-links li{
-          display: inline-block;
-          margin: 0 15px;
-      }
+    display: inline-block;
+    margin: 0 15px;
+}
 
 .nav-links li a{
-          text-decoration: none;
-          color: #fff;
-          padding: 5px 0;
-          position: relative;
-      }
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 0;
+    position: relative;
+}
 
 .nav-links li a::after{
-          content: '';
-          background: darkslategray;
-          width: 0;
-          height: 2px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          transition: width 0.5s;
-      }
+    content: '';
+    background: darkslategray;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
 
 .nav-links li a:hover::after{
-          width: 100%;
-      }
+    width: 100%;
+}
 
 .btn {
     background: darkslategray;
     color: #fff;
     padding: 10px 30px;
     border-radius: 3px;
-      }
-
-.content {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 90%;
-          max-width: 900px;
-          transform: translate(-50%, -50%);
-          text-align: center;
-          color: white;
-          padding-top: 50px;
-      }
-
-.content h1{
-          font-size: 65px;
-          font-weight: 600;
-          margin-bottom: 40px;
-      }
-
-.content form{
-          background: white;
-          padding: 10px;
-          border-radius: 8px;
-          display: flex;
-      }
-
-.content form input{
-          flex: 1;
-          border: none;
-          padding: 0 20px;
-          font-size: 18px;
-
-      }
-
-.content form button{
-          background: darkslategray;
-          color: white;
-          padding: 15px 40px;
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
-      }
+}
 
 .user_name {
     color: white;
 }
 
+/*CONTENT HOME PAGE*/
+
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    max-width: 900px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+}
+
+.content h1{
+    font-size: 65px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.content form{
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.content form input{
+    flex: 1;
+    border: none;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.content form button{
+    background: darkslategray;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MEETING INFORMATION*/
 
 .meeting {
     background: white;
@@ -126,25 +129,67 @@ nav {
     justify-content: space-between;
 }
 
-
-.search-add-wrapper {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    margin-top: 20px;
-}
-
 .meeting-links {
     color:white;
 }
 
-.edit-btn {
-
-    background: darkslategray;
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 3px;
-
+.meeting-links{
+    padding: 28px 0;
 }
 
+.meeting-links li{
+    display: inline-block;
+    margin: 0 15px 15px 15px ;
+}
+
+.meeting-links li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+    position: relative;
+}
+
+.meeting-links li a::after{
+    content: '';
+    background: darkslategray;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.meeting-links li a:hover::after{
+    width: 100%;
+}
+
+/* SEARCHING AND ADD HEADER*/
+
+.meeting-counter {
+    color:white;
+}
+
+.search-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-add-wrapper {
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.add-meeting {
+    text-decoration: none;
+    color:white;
+    margin-top: 10px;
+    background: darkslategray;
+    padding: 10px 30px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}

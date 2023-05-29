@@ -4,38 +4,41 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>MEETME</title>
-
     <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
-
-
 </head>
-<body>
-   <div class="header">
-       <nav>
-           <img class="logo" src="{% static "meetme/img/Logo.png" %}" alt="LOGO">
-           <ul class="nav-links">
+<body class="main_body">
+           <nav class="header">
+               <div>
+                   <img class="logo" src="{% static "meetme/img/Logo3.png" %}" alt="LOGO">
+               </div>
+               <div class="header-bottom">
+                   <div>
+                       <ul class="nav-links">
+                           <li><a href="{% url 'home' %}"><b>HOME</b></a></li>
+                           <li><a href="{% url 'meetings' %}"><b>MEETINGS</b></a></li>
+                           <li><a href="#"><b>INFO</b></a></li>
+                       </ul>
+                   </div>
+                   <div>
+                       <ul class="nav-links">
+                       {% if request.user.is_authenticated %}
+                            <li><p class="user_name"><b>{{request.user}}</b></p></li>
+                            <li class="btn"><a href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
+                       {% else %}
+                            <li class="btn"><a href="{% url 'login' %}"><b>SIGN UP</b></a></li>
+                       {% endif %}
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+           <hr>
 
-               <li><a href="{% url 'home' %}">Home</a></li>
-               <li><a href="{% url 'index' %}">Meetings</a></li>
-               <li><a href="#">Info</a></li>
-               {% if request.user.is_authenticated %}
-                    <li><p class="user_name">Hello, {{request.user|title}}!</p></li>
-                    <li class="btn"><a href="{% url 'logout' %}">Logout</a></li>
-               {% else %}
-                    <li class="btn"><a href="{% url 'login' %}">Sign Up</a></li>
-               {% endif %}
+       <div>
 
-           </ul>
-       </nav>
-       {% block content %}
+           {% block content %}
 
-       {% endblock content %}
-   </div>
+           {% endblock content %}
 
-  <div class="container">
-
-
-  </div>
-
+       </div>
 </body>
 </html>

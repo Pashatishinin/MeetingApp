@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/meetme/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +26,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -83,7 +100,26 @@
       <workItem from="1683047958540" duration="605000" />
       <workItem from="1683048595098" duration="365000" />
       <workItem from="1683048990779" duration="37000" />
-      <workItem from="1683049202099" duration="2627000" />
+      <workItem from="1683049202099" duration="6014000" />
+      <workItem from="1683132583074" duration="7915000" />
+      <workItem from="1683398504044" duration="3806000" />
+      <workItem from="1683647385945" duration="10576000" />
+      <workItem from="1683736322680" duration="7357000" />
+      <workItem from="1683828090687" duration="3478000" />
+      <workItem from="1684070052863" duration="2606000" />
+      <workItem from="1684076664609" duration="703000" />
+      <workItem from="1684091713721" duration="2885000" />
+      <workItem from="1684166154259" duration="11831000" />
+      <workItem from="1684257653753" duration="7058000" />
+      <workItem from="1684661478808" duration="14417000" />
+      <workItem from="1684697896235" duration="3597000" />
+      <workItem from="1684761288039" duration="6050000" />
+      <workItem from="1684787839088" duration="3977000" />
+      <workItem from="1685026110341" duration="12676000" />
+      <workItem from="1685101086673" duration="228000" />
+      <workItem from="1685269406045" duration="2995000" />
+      <workItem from="1685276323761" duration="4894000" />
+      <workItem from="1685300081913" duration="3499000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -92,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683050018566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1683052411858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052411858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

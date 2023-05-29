@@ -1,16 +1,57 @@
 {% extends 'meetme/main.html' %}
 {% block content %}
 
-<h1>Register</h1>
+<h1 class="register_login">REGISTER</h1>
+<div class="form-body-reg">
+  <form method="POST">
+    {% csrf_token %}
 
-<form method="POST">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Register">
+    <!--        REGISTER FORM      -->
+    <div class="form-reg">
+        <label class="login_info_form" for="username">USERNAME</label>
+
+        <!--        USERNAME INPUT AND INFO      -->
+        <div class="name_box">
+        <input class="login_form" type="text" name="username" id="username" placeholder="&#x270e username">
+        <p>Letters, digits and @/./+/-/_ only.</p>
+        </div>
+
+        <!--        FIRST NAME AND LAST NAME INPUTS      -->
+        <div class="name_box">
+
+          <div>
+            <label class="login_info_form" for="firstname">FIRSTNAME</label>
+            <input class="login_form_name" type="text" name="firstname" id="firstname" placeholder="&#x270e firstname">
+          </div>
+
+          <div>
+            <label class="login_info_form" for="lastname">LASTNAME</label>
+            <input class="login_form_name" type="text" name="lastname" id="lastname" placeholder="&#x270e lastname">
+          </div>
+        </div>
+
+      <!--        INPUTS      -->
+      <label class="login_info_form" for="email">EMAIL</label>
+      <input class="login_form_left" type="email" name="email" id="email" placeholder="&#x270e email">
+      <label class="login_info_form" for="password">PASSWORD</label>
+      <input class="login_form_left" type="password" name="password" id="password" placeholder="&#x270e password">
+
+      <!--        INFO ABOUT PASSWORD      -->
+      <p>Your password can't be too similar to your other personal information.</p>
+      <p>Your password must contain at least 8 characters.</p>
+      <p>Your password can't be a commonly used password.</p>
+      <p>Your password can't be entirely numeric.</p>
 
 
-</form>
 
-<p>Already have an account? <a href="">Login</a></p>
+    </div>
+    <!--        BUTTON      -->
+    <input class="btn2 register_btn" type="submit" value="REGISTER">
+
+    <!--        LINK IF YOU HAVE ACCOUNT      -->
+    <p><a class="form_login_info" href="{% url 'login' %}"><b>ALREADY HAVE AN ACCOUNT? LOGIN</b></a></p>
+
+
+</div>
 
 {% endblock content %}

@@ -1,24 +1,30 @@
+import random
+
 from django.db import models
 from django.contrib.auth.models import User
+
+from core import settings
 
 
 class Meeting(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    start_date = models.DateField(auto_now_add=True)
-    end_date = models.DateField(auto_now_add=True)
+    start_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
+    end_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
     coffee_bar = models.BooleanField(default=False)
     coffee_station = models.BooleanField(default=False)
     restaurant = models.BooleanField(default=False)
-    kst_number = models.IntegerField(max_length=30)
+    kst_number = models.IntegerField()
+    number_of_quests = models.IntegerField(null=True, default=False)
     description = models.TextField(max_length=300, null=True, blank=True)
-    random_code = models.CharField(max_length=30)
+
 
     def __str__(self):
         return self.title
 
     class Meta:
         ordering = ['start_date']
+
 
 
 

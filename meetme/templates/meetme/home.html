@@ -1,15 +1,21 @@
 {% extends 'meetme/main.html' %}
 {% block content %}
+<div class="main-content">
+    <div class="content-top">
+        <!--        TITLE CONTENT         -->
+        <h1>Hello, this is MeetMe</h1>
+        <h2>To know more about your meeting, please enter your code and press GO
+        </h2>
+        <!--        IF ID NUMBER NOT EXIST WILL WORK THIS MESSAGE      -->
+        <h3 class="home_info">{{info}}</h3>
 
-<div class="content">
-    <h1>Hello, this is MeetMe</h1>
-    <h1>To know more about your meeting, please enter your code and press GO
-    </h1>
-    <form>
-        <input type="text" placeholder="&#x270e Enter your code here">
-        <button type="submit">GO</button>
-    </form>
-
+        <!--        FORM FOR SEARCHING MEETING BY ID      -->
+        <form action="{% url 'home'%}" method="GET" autocomplete="off">
+            {% csrf_token %}
+            <label for="id_number"></label>
+            <input type="text" name="id_number" id="id_number" placeholder="&#x270e Enter your meeting number">
+            <button type="submit"><b>GO</b></button>
+        </form>
+    </div>
 </div>
-
 {% endblock content %}

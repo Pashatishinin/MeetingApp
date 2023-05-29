@@ -1,35 +1,100 @@
 {% extends 'meetme/main.html' %}
-
+{% load tz %}
 {% block content %}
-<hr>
-<h1 class="meeting-counter">You have {{ count }} Meetings </h1>
-<div class="search-add">
-    <div class="search-add-wrapper">
-    <form method="GET">
-        <input type="text" name="search-area">
-        <input type="submit" value="Search">
-    </form>
-</div>
-<a class="add-meeting" href="{% url 'meeting-create' %}">Add New Meeting</a>
+<div class="meeting-content">
 
-</div>
+    <!--        NAME AND COUNTER OF MEETINGS      -->
+    <div>
+        <h1 class="meeting-page-title">{{ request.user.first_name|upper }} {{ request.user.last_name|upper }}</h1>
+        <h2 class="meeting-counter">You have {{ count }} Meeting{{ count|pluralize }} </h2>
 
-
-
-<table>
-    {% for meeting in meetings %}
-    <div class="meeting">
-        <h1>{{meeting.title|title}}</h1>
-        <ul class="meeting-links">
-            <li><a href="{% url 'meeting' meeting.id%}">View</a></li>
-            <li><a href="{% url 'meeting-update' meeting.id%}">Edit</a></li>
-            <li><a href="{% url 'meeting-delete' meeting.id%}">Delete</a></li>
-        </ul>
     </div>
 
-    {% empty %}
-        <h1>Now items in list</h1>
-    {% endfor %}
-</table>
+    <!--        SEARCHING BLOCK FOR MEETING      -->
+    <div class="search-add">
+        <div class="search-input">
+            <form method="GET">
+                <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
+                <input class="search-button" type="submit" value="SEARCH">
+            </form>
+        </div>
+        <a class="add-meeting" href="{% url 'meeting-create' %}">Add New Meeting</a>
+    </div>
+
+    <div>
+
+        <!--        MEETING LIST      -->
+        {% for meeting in sorted_meetings  %}
+        {% if meeting.end_date|date:"Y-m-d" > timenow|date:"Y-m-d" %}
+        <div class="meeting-box">
+            <div class="meeting-box-content">
+                <h1 class="meeting-id">{{meeting.id}}</h1>
+                <h1 class="meeting-title">{{meeting.title|title}}</h1>
+
+
+                {% if meeting.end_date == meeting.start_date %}
+                    <p class="meeting-date">{{ meeting.start_date}}</p>
+                {% elif meeting.end_date %}
+                    <p class="meeting-date">{{ meeting.start_date}} - {{meeting.end_date}}</p>
+                {% else %}
+                    <p class="meeting-date">{{ meeting.start_date}}</p>
+                {% endif %}
+
+            </div>
+            <div>
+
+
+
+                <!--        MEETING LINKS FOR SETTINGS      -->
+                <ul class="meeting-links">
+                    <li><a class="meeting-btn" href="{% url 'meeting' meeting.id%}">VIEW</a></li>
+                    <li><a class="meeting-btn" href="{% url 'meeting-update' meeting.id%}">EDIT</a></li>
+                    <li><a class="meeting-btn" href="{% url 'meeting-delete' meeting.id%}">DELETE</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+        {% else %}
+        <div class="meeting-box2">
+            <div class="meeting-box-content">
+                <h1 class="meeting-id">{{meeting.id}}</h1>
+                <h1 class="meeting-title">{{meeting.title|title}}</h1>
+
+
+                {% if meeting.end_date == meeting.start_date %}
+                    <p class="meeting-date">{{ meeting.start_date}}</p>
+                {% elif meeting.end_date %}
+                    <p class="meeting-date">{{ meeting.start_date}} - {{meeting.end_date}}</p>
+                {% else %}
+                    <p class="meeting-date">{{ meeting.start_date}}</p>
+                {% endif %}
+
+            </div>
+            <div>
+
+
+
+                <!--        MEETING LINKS FOR SETTINGS      -->
+                <ul class="meeting-links2">
+                    <li><a class="meeting-btn" href="{% url 'meeting' meeting.id%}">VIEW</a></li>
+                    <li><a class="meeting-btn" href="{% url 'meeting-delete' meeting.id%}">DELETE</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        {% endif %}
+        {% empty %}
+
+            <!--        MEESAGE IF YOU HAVE NOT MEETING      -->
+            <h2 >Now items in list</h2>
+        {% endfor %}
+    </div>
+
+</div>
+
 
 {% endblock content %}

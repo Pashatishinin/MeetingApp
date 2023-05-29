@@ -1,11 +1,15 @@
 {% extends 'meetme/main.html' %}
 {% block content %}
 
-<a href="{% url 'index' %}">Go back</a>
 <form method="POST">
   {% csrf_token %}
-  <p>Are you sure you want to delete your meeting? "{{ meetings }}"</p>
-  <input type="submit" value="Delete">
+  <h1 class="meeting-counter">Are you sure you want to delete your meeting? "{{ meetings }}"</h1>
+  <div class="yes_no">
+    <input type="submit" value="YES">
+    <a class="submit2"href="{% url 'meetings' %}">NO</a>
+
+  </div>
+
 </form>
 
 {% endblock content %}

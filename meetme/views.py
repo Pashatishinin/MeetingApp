@@ -1,21 +1,56 @@
-from django.http import HttpResponse
+import datetime
+
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from django import forms
+
+from django.contrib.auth.models import User
+
 from django.shortcuts import redirect, render
-from django.template import loader
+
+from django.utils import timezone
+
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 from django.urls import reverse_lazy
-
-from django.contrib.auth.views import LoginView, LogoutView
-
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
-
-
 
 from .models import Meeting
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from .forms import NewMeetingForm, SearchForm
+
+
+"""""""""""""""""""""""""""""""""
+HOME PAGE
+"""""""""""""""""""""""""""""""""
+
+
+def home(request):
+    form = SearchForm(request.GET)
+    if form.is_valid():
+        id_number = form.cleaned_data.get('id_number')
+        is_exist = Meeting.objects.filter(id=id_number).exists()
+
+        # if ID number is exist, go to detail page
+        if is_exist:
+            return redirect(f"/meetme/meeting/{id_number}")
+
+        # if ID number is not exist, go to basic page
+        else:
+            return render(request, "meetme/home.html", {"form": form, "info": f"Meeting #{id_number} not exist"})
+    return render(request, "meetme/home.html", {"form": form})
+
+
+"""""""""""""""""""""""""""""""""
+LOGIN PAGE
+"""""""""""""""""""""""""""""""""
+
+
+class DateInput(forms.DateInput):
+    input_type = 'date'
 
 
 class CustomLoginView(LoginView):
@@ -24,26 +59,35 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('index')
+        return reverse_lazy('meetings')
 
 
-class RegisterPage(FormView):
-    template_name = 'meetme/register.html'
-    form_class = UserCreationForm
-    redirect_authenticated_user = True
-    success_url = reverse_lazy('index')
+"""""""""""""""""""""""""""""""""
+REGISTER PAGE
+"""""""""""""""""""""""""""""""""
 
-    def form_valid(self, form):
-        user = form.save()
+
+def register_page(request):
+    if request.method == 'POST':
+        user_name = request.POST.get('username')
+        first_name = request.POST.get('firstname')
+        last_name = request.POST.get('lastname')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        my_user = User.objects.create_user(user_name, email, password)
+        my_user.first_name = first_name
+        my_user.last_name = last_name
+        my_user.save()
+        user = authenticate(request, username=user_name, password=password)
         if user is not None:
-            login(self.request, user)
-        return super(RegisterPage, self).form_valid(form)
+            login(request, user)
+        return redirect('meetings')
+    return render(request, "meetme/register.html")
 
-    def get(self, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return redirect('index')
-        return super(RegisterPage, self).get(*args, **kwargs)
 
+"""""""""""""""""""""""""""""""""
+MEETINGS
+"""""""""""""""""""""""""""""""""
 
 
 class Meetings(LoginRequiredMixin, ListView):
@@ -52,44 +96,46 @@ class Meetings(LoginRequiredMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['meetings'] = context['meetings'].filter(user=self.request.user)
+        context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
+        sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
+            obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
+        context['sorted_meetings'] = sorted_dates
         context['count'] = context['meetings'].count()
-
+        context['timenow'] = timezone.now()
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
-            context['meetings'] = context['meetings'].filter(title__icontains=search_input)
+            context['sorted_meetings'] = context['meetings'].filter(title__icontains=search_input)
 
         context['search_input'] = search_input
         return context
 
 
-class MeetingDetail(LoginRequiredMixin, DetailView):
+class MeetingDetail(DetailView):
     model = Meeting
 
 
 class MeetingCreate(LoginRequiredMixin, CreateView):
     model = Meeting
-    fields = '__all__'
-    success_url = reverse_lazy('index')
+    form_class = NewMeetingForm
+    success_url = reverse_lazy('meetings')
 
-    def form_invalid(self, form):
+    def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(MeetingCreate, self.form_valid(form))
+        return super(MeetingCreate, self).form_valid(form)
+
+    def get_initial(self):
+        return {'user': self.request.user}
 
 
 class MeetingUpdate(LoginRequiredMixin, UpdateView):
     model = Meeting
     fields = '__all__'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('meetings')
 
 
 class MeetingDelete(LoginRequiredMixin, DeleteView):
     model = Meeting
     context_object_name = 'meetings'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('meetings')
 
-
-def home(request):
-
-    return render(request, "meetme/home.html")
 

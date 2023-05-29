@@ -3,16 +3,23 @@
 
 {% block content %}
 
-<h1>Login</h1>
-
-<form method="POST">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Login">
-
-
-</form>
-
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<h1 class="register_login">LOGIN</h1>
+<div class="form-body">
+  <div class="form-up">
+    <form action="" method="POST">
+    {% csrf_token %}
+      <!--        FORM FOR LOGIN      -->
+    <label class="login_info_form" for="username">USERNAME</label>
+    <input class="login_form" type="text" name="username" id="username" placeholder="&#x270e username">
+    <label class="login_info_form" for="password">PASSWORD</label>
+    <input class="login_form" type="password" name="password" id="password" placeholder="&#x270e password">
+    <input class="btn2" type="submit" value="LOGIN">
+  </form>
+  </div>
+<div>
+  <!--        LINK IF YOU DON'T HAVE ACCOUNT      -->
+   <p><a class="form_login_info" href="{% url 'register' %}"><b>DON'T HAVE AN ACCOUNT? REGISTER</b></a></p>
+</div>
+  </div>
 
 {% endblock content %}

@@ -2,7 +2,65 @@
 {% block content %}
 
 <body>
-    <h1>Meeting Info {{ object}}</h1>
+    <div class="main-body-size">
+        <h1 class="title_info_page">Meeting # {{ object.id}}</h1>
+
+    <!--        DATE AND NAME CONTENT-->
+    <div class="title_date">
+        <div class="main_title">
+            <p>NAME:</p><p class="name_main">{{ object}}</p>
+            <h1>{{object.random_code }}</h1>
+        </div>
+        <div class="main_title">
+            {% if object.end_date == object.start_date %}
+                <p>DATE:</p><p class="name_main_date">{{ object.start_date}}</p>
+            {% elif object.end_date %}
+                <p>DATE:</p><p class="name_main_date">{{ object.start_date}} - {{object.end_date}}</p>
+            {% else %}
+                <p>DATE:</p><p class="name_main_date">{{ object.start_date}}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!--        COFFEE BARS AND RESTAURANTS-->
+    <h1 class="title_info_page">Place where you can eat and drink for free</h1>
+    <div class="coffee_bars">
+        {% if object.restaurant %}
+            <p class="yes">RESTAURANT : YES</p>
+        {% else %}
+            <p class="no">RESTAURANT : NO</p>
+        {% endif %}
+
+
+        {% if object.coffee_station %}
+            <p class="yes">COFFEE STATIONS : YES</p>
+        {% else %}
+            <p class="no">COFFEE STATIONS : NO</p>
+        {% endif %}
+
+
+        {% if object.coffee_bar %}
+            <p class="yes">COFFEE BAR SOHO : YES</p>
+            <p class="yes">COFFEE BAR NOHO : YES</p>
+        {% else %}
+            <p class="no">COFFEE BAR SOHO : NO</p>
+            <p class="no">COFFEE BAR NOHO : NO</p>
+        {% endif %}
+    </div>
+
+    <!--        INFORMATION-->
+    {% if object.description %}
+        <h1 class="title_info_page">Some information about this meeting</h1>
+        <div>
+            <p class="coffee_bars">{{object.description}}</p>
+        </div>
+    {% else %}
+        <p class="coffee_bars">There no information about this meeting</p>
+    {% endif %}
+
+    </div>
+
+
 
 </body>
 

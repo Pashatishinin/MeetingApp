@@ -5,40 +5,95 @@
     <meta charset="UTF-8">
     <title>MEETME</title>
     <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/c8dc484f72.js" crossorigin="anonymous"></script>
+<!--    STYLE FOR BACKGROUND IMAGE-->
+<!--    <style>-->
+<!--        .main_body {-->
+<!--            background-image: url("{% static 'meetme/img/background.png' %}");-->
+<!--            background-size:1820px;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-position: top;-->
+
+
+<!--        }-->
+
+<!--    </style>-->
 </head>
 <body class="main_body">
-           <nav class="header">
-               <div>
-                   <img class="logo" src="{% static "meetme/img/Logo3.png" %}" alt="LOGO">
-               </div>
-               <div class="header-bottom">
-                   <div>
-                       <ul class="nav-links">
-                           <li><a href="{% url 'home' %}"><b>HOME</b></a></li>
-                           <li><a href="{% url 'meetings' %}"><b>MEETINGS</b></a></li>
-                           <li><a href="#"><b>INFO</b></a></li>
-                       </ul>
-                   </div>
-                   <div>
-                       <ul class="nav-links">
-                       {% if request.user.is_authenticated %}
-                            <li><p class="user_name"><b>{{request.user}}</b></p></li>
-                            <li class="btn"><a href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
-                       {% else %}
-                            <li class="btn"><a href="{% url 'login' %}"><b>SIGN UP</b></a></li>
-                       {% endif %}
-                       </ul>
-                   </div>
-               </div>
-           </nav>
-           <hr>
 
-       <div>
+    <!--    HEADER NAVIGATION-->
 
-           {% block content %}
+    <header>
+        <div class="header-left">
+            <img class="logo" src="{% static "meetme/img/Logo_white.png" %}" alt="LOGO">
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}"><b>HOME</b></a></li>
+                <li><a href="{% url 'meetings' %}"><b>MEETINGS</b></a></li>
+                <li><a href="#"><b>INFO</b></a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav-links">
+                {% if request.user.is_authenticated %}
+                <li><p class="user_name"><b>{{request.user}}</b></p></li>
+                <li class="btn"><a href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
+                {% else %}
+                <li class="btn"><a href="{% url 'login' %}"><b>SIGN UP</b></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
 
-           {% endblock content %}
+    <div>
 
-       </div>
+        {% block content %}
+
+        {% endblock content %}
+
+    </div>
+
+
+
+    <!--    FOOTER NAVIGATION-->
+    <hr>
+    <footer class="footer">
+        <img class="logo2" src="{% static "meetme/img/Logo_white.png" %}" alt="LOGO">
+        <div class="footer-box">
+            <h3><b>ABOUT US</b></h3>
+            <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your quests to
+                spend your time during meeting more comfortable</p>
+        </div>
+        <div class="footer-box">
+            <h3><b>CONTACT US</b></h3>
+            <div class="contacts">
+                <div class="contacts-links">
+                    <img class="contacts_logo" src="{% static "meetme/img/whatsapp.png" %}" alt="LOGO">
+                    <p><a href="https://wa.me/4915111111111">MeetMeApp</a></p>
+                </div>
+                <div class="contacts-links">
+                    <img class="contacts_logo" src="{% static "meetme/img/phone.png" %}" alt="LOGO">
+                    <p><a href="tel:+4915111111111">+49 1511 111 11 11</a></p>
+                </div>
+                <div class="contacts-links">
+                    <img class="contacts_logo" src="{% static "meetme/img/email.png" %}" alt="LOGO">
+                    <p><a href="mailto: admin@admin.com">admin@admin.com</a></p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="footer-box">
+            <h3><b>FOLLOW US</b></h3>
+
+            <div>
+                <img class="follow_links" src="{% static "meetme/img/twitter_logo.png" %}" alt="LOGO">
+                <img class="follow_links" src="{% static "meetme/img/insta_logo.png" %}" alt="LOGO">
+            </div>
+        </div>
+
+
+</footer>
 </body>
 </html>

@@ -2,63 +2,73 @@
 {% block content %}
 
 <body>
-    <div class="main-body-size">
-        <h1 class="title_info_page">Meeting # {{ object.id}}</h1>
+    <div class="meeting_detail">
+        <div class="meeting_detail_up">
+            <h1 class="meeting-id2">{{ object.id}}</h1>
+            <div>
+                {% if object.end_date == object.start_date %}
+                    <p class="name_main_date">{{ object.start_date}}</p>
+                {% elif object.end_date %}
+                    <p class="name_main_date">{{ object.start_date}} - {{object.end_date}}</p>
+                {% else %}
+                    <p class="name_main_date">{{ object.start_date}}</p>
+                {% endif %}
+            </div>
 
-    <!--        DATE AND NAME CONTENT-->
-    <div class="title_date">
-        <div class="main_title">
-            <p>NAME:</p><p class="name_main">{{ object}}</p>
-            <h1>{{object.random_code }}</h1>
         </div>
-        <div class="main_title">
-            {% if object.end_date == object.start_date %}
-                <p>DATE:</p><p class="name_main_date">{{ object.start_date}}</p>
-            {% elif object.end_date %}
-                <p>DATE:</p><p class="name_main_date">{{ object.start_date}} - {{object.end_date}}</p>
-            {% else %}
-                <p>DATE:</p><p class="name_main_date">{{ object.start_date}}</p>
-            {% endif %}
-        </div>
-    </div>
+        <div class="meeting_detail_second">
+            <p class="first_last_name"><b> {{ user.first_name|upper }} {{ user.last_name|upper }} </b></p>
+            <p class="name_main"><b>{{ object|upper}}</b></p>
+            <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
 
-    <!--        COFFEE BARS AND RESTAURANTS-->
-    <h1 class="title_info_page">Place where you can eat and drink for free</h1>
-    <div class="coffee_bars">
-        {% if object.restaurant %}
-            <p class="yes">RESTAURANT : YES</p>
+        </div>
+        <div class="meeting_detail_third">
+            <p class="name_main_date">Place where you can eat and drink for free</p>
+            <div>
+                {% if object.restaurant %}
+                    <p class="yes"><b>RESTAURANT : YES</b></p>
+                {% else %}
+                    <p class="no"><b>RESTAURANT : NO</b></p>
+                {% endif %}
+
+
+                {% if object.coffee_station %}
+                    <p class="yes"><b>COFFEE STATIONS : YES</b></p>
+                {% else %}
+                    <p class="no"><b>COFFEE STATIONS : NO</b></p>
+                {% endif %}
+
+
+                {% if object.coffee_bar %}
+                    <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
+                    <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
+                {% else %}
+                    <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
+                    <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
+                {% endif %}
+
+            </div>
+        </div>
+        <!--        DATE AND NAME CONTENT-->
+
+
+        <!--        COFFEE BARS AND RESTAURANTS-->
+
+        <!--        INFORMATION-->
+        <div class="meeting_detail_last">
+        {% if object.description %}
+            <p class="name_main_date">Some information about this meeting: </p>
+            <div>
+                <p class="description">{{object.description}}</p>
+            </div>
         {% else %}
-            <p class="no">RESTAURANT : NO</p>
+            <p class="coffee_bars">There no information about this meeting</p>
         {% endif %}
 
-
-        {% if object.coffee_station %}
-            <p class="yes">COFFEE STATIONS : YES</p>
-        {% else %}
-            <p class="no">COFFEE STATIONS : NO</p>
-        {% endif %}
-
-
-        {% if object.coffee_bar %}
-            <p class="yes">COFFEE BAR SOHO : YES</p>
-            <p class="yes">COFFEE BAR NOHO : YES</p>
-        {% else %}
-            <p class="no">COFFEE BAR SOHO : NO</p>
-            <p class="no">COFFEE BAR NOHO : NO</p>
-        {% endif %}
-    </div>
-
-    <!--        INFORMATION-->
-    {% if object.description %}
-        <h1 class="title_info_page">Some information about this meeting</h1>
-        <div>
-            <p class="coffee_bars">{{object.description}}</p>
         </div>
-    {% else %}
-        <p class="coffee_bars">There no information about this meeting</p>
-    {% endif %}
 
     </div>
+
 
 
 

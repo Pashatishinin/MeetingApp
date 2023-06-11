@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,8 +8,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django import forms
 
 from django.contrib.auth.models import User
+from django.db import IntegrityError
+from django.forms import SelectDateWidget
+from django.http import HttpResponse
 
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 
 from django.utils import timezone
 
@@ -32,15 +36,19 @@ def home(request):
     form = SearchForm(request.GET)
     if form.is_valid():
         id_number = form.cleaned_data.get('id_number')
-        is_exist = Meeting.objects.filter(id=id_number).exists()
+        if id_number.isdigit():
+            is_exist = Meeting.objects.filter(id=int(id_number)).exists()
+            if is_exist:
+                return redirect(f"/meetme/meeting/{id_number}")
 
-        # if ID number is exist, go to detail page
-        if is_exist:
-            return redirect(f"/meetme/meeting/{id_number}")
-
-        # if ID number is not exist, go to basic page
+            # if ID number is not exist, go to basic page
+            else:
+                return render(request, "meetme/home.html",
+                              {"form": form, "info": id_number})
         else:
-            return render(request, "meetme/home.html", {"form": form, "info": f"Meeting #{id_number} not exist"})
+            return render(request, "meetme/home.html",
+                          {"form": form, "not_number": id_number})
+
     return render(request, "meetme/home.html", {"form": form})
 
 
@@ -69,19 +77,26 @@ REGISTER PAGE
 
 def register_page(request):
     if request.method == 'POST':
-        user_name = request.POST.get('username')
-        first_name = request.POST.get('firstname')
-        last_name = request.POST.get('lastname')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        my_user = User.objects.create_user(user_name, email, password)
-        my_user.first_name = first_name
-        my_user.last_name = last_name
-        my_user.save()
-        user = authenticate(request, username=user_name, password=password)
-        if user is not None:
-            login(request, user)
-        return redirect('meetings')
+
+        try:
+            user_name = request.POST.get('username')
+            first_name = request.POST.get('firstname')
+            last_name = request.POST.get('lastname')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            my_user = User.objects.create_user(user_name, email, password)
+            my_user.first_name = first_name
+            my_user.last_name = last_name
+            my_user.save()
+            user = authenticate(request, username=user_name, password=password)
+            if user is not None:
+                login(request, user)
+            return redirect('meetings')
+        except IntegrityError as e:
+            return render(request, "meetme/register.html", {"info": e, "username" : user_name})
+
+
+
     return render(request, "meetme/register.html")
 
 
@@ -127,10 +142,38 @@ class MeetingCreate(LoginRequiredMixin, CreateView):
         return {'user': self.request.user}
 
 
-class MeetingUpdate(LoginRequiredMixin, UpdateView):
-    model = Meeting
-    fields = '__all__'
-    success_url = reverse_lazy('meetings')
+# class MeetingUpdate(LoginRequiredMixin, UpdateView):
+#     model = Meeting
+#     fields = ['title', 'start_date', 'end_date', 'coffee_bar', 'coffee_station', 'restaurant',
+#               'kst_number', 'number_of_quests', 'description']
+#     success_url = reverse_lazy('meetings')
+#
+#     widgets = {
+#         'start_date': SelectDateWidget(),
+#         'end_date': SelectDateWidget(),
+#     }
+
+
+
+def update_view(request, pk):
+    obj = Meeting.objects.get(id=pk)
+    if obj.user == request.user:
+        if request.method == 'POST':
+            form = NewMeetingForm(request.POST, instance=obj)
+            if form.is_valid():
+                form.save()
+                return redirect('meetings')
+
+        else:
+            form = NewMeetingForm(instance=obj)
+    else:
+        return redirect("error")
+
+
+
+
+
+    return render(request, 'meetme/meeting_form.html', {'form': form})
 
 
 class MeetingDelete(LoginRequiredMixin, DeleteView):

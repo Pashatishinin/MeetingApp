@@ -2,12 +2,14 @@
 {% block content %}
 <div class="main-content">
     <div class="content-top">
+
         <!--        TITLE CONTENT         -->
-        <h1>Hello, this is MeetMe</h1>
+        <h1>WELCOME TO MEETME!</h1>
         <h2>To know more about your meeting, please enter your code and press GO
         </h2>
+
         <!--        IF ID NUMBER NOT EXIST WILL WORK THIS MESSAGE      -->
-        <h3 class="home_info">{{info}}</h3>
+
 
         <!--        FORM FOR SEARCHING MEETING BY ID      -->
         <form action="{% url 'home'%}" method="GET" autocomplete="off">
@@ -16,6 +18,31 @@
             <input type="text" name="id_number" id="id_number" placeholder="&#x270e Enter your meeting number">
             <button type="submit"><b>GO</b></button>
         </form>
+        {% if info %}
+        <style>
+            .main-content form{
+                border: 5px solid #D96B6B;
+
+            }
+        </style>
+        <div class="error_info">
+            <p class="error_logo">X</p>
+            <h3 class="home_info">Meeting #{{info}} not exist . Please try to enter your number again</h3>
+        </div>
+
+        {% endif %}
+        {% if not_number %}
+        <style>
+            .main-content form{
+                border: 5px solid #D96B6B;
+
+            }
+        </style>
+        <div class="error_info">
+            <p class="error_logo">X</p>
+            <h3 class="home_info">"{{not_number}}" not a number. Your meeting number must contain only digits. Please try to enter your number again</h3>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

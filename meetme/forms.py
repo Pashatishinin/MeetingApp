@@ -1,6 +1,6 @@
 import datetime
 
-from django.contrib.admin.widgets import AdminDateWidget
+from django.contrib.admin.widgets import AdminDateWidget, AdminTimeWidget
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.views.generic import CreateView
@@ -9,7 +9,7 @@ import random
 
 
 from django import forms
-from django.forms import ModelForm, PasswordInput
+from django.forms import ModelForm, PasswordInput, SelectDateWidget
 from .models import Meeting
 
 
@@ -18,19 +18,18 @@ class DateInput(forms.DateInput):
 
 
 class SearchForm(forms.Form):
-    id_number = forms.IntegerField()
+    id_number = forms.CharField()
 
 
 class NewMeetingForm(forms.ModelForm):
-    start_date = forms.DateField(widget=DateInput(format='%d-%m-%Y'))
-    end_date = forms.DateField(widget=DateInput(format='%d-%m-%Y'))
     class Meta:
         model = Meeting
         fields = ['title', 'start_date', 'end_date', 'coffee_bar', 'coffee_station', 'restaurant',
                   'kst_number', 'number_of_quests', 'description']
         widgets = {
-            'start_date': DateInput,
-            'end_date': DateInput}
+            'start_date': SelectDateWidget(),
+            'end_date': SelectDateWidget(),
+        }
 
 
 class RegisterForm(forms.ModelForm):

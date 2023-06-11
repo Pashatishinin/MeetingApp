@@ -1,4 +1,7 @@
 from django.urls import path
+from django.views.generic import TemplateView
+from django.views.i18n import JavaScriptCatalog
+
 from . import views
 
 from django.contrib.auth.views import LogoutView
@@ -6,6 +9,13 @@ from django.contrib.auth.views import LogoutView
 urlpatterns = [
     # HOME PAGE
     path('', views.home, name="home"),
+
+
+    path('error/', TemplateView.as_view(template_name="meetme/error_message.html"), name='error'),
+
+
+
+
 
     # LOGIN/LOGOUT/REGISTER
     path('login/', views.CustomLoginView.as_view(), name="login"),
@@ -20,6 +30,6 @@ urlpatterns = [
 
     # MEETING CREATE/UPDATE/DELETE
     path('meeting-create/', views.MeetingCreate.as_view(), name="meeting-create"),
-    path('meeting-update/<int:pk>/', views.MeetingUpdate.as_view(), name="meeting-update"),
+    path('meeting-update/<int:pk>/', views.update_view, name="meeting-update"),
     path('meeting-delete/<int:pk>/', views.MeetingDelete.as_view(), name="meeting-delete")
     ]

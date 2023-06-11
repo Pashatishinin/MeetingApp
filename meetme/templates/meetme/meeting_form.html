@@ -1,72 +1,85 @@
 {% extends 'meetme/main.html' %}
+
 {% block content %}
+
 <div class="form-main">
-    <h1 class="register_login create_meeting" >CREATE YOUR NEW MEETING</h1>
+    <h1 class="create_meeting" >MEETING EDIT</h1>
     <div class="meeting_form_box">
 
-        <form method="POST" action="">
+        <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="meeting_edit">
+
+            <div>
                 <div class="title_form">
-                    <label class="meeting_edit_form" for="title"><p class="meeting_edit_form_up" ><b>TITLE</b></p></label>
+                    <label class="meeting_edit_form" for="title">TITLE</label>
                     {{form.title}}
                 </div>
 
             <div class="title_form">
-                <label class="meeting_info_form" for="meeting_edit_field"><b>DATE</b></label>
                 <div class="date_field">
                     <div class="meeting_edit_field_date">
+                        <label class="meeting_edit_form" for="form.start_date">START DATE</label>
+                        <div class="date-box">
+                            {{form.start_date}}
+                        </div>
 
-                        {{form.start_date}}
-                        <label class="meeting_info_form" for="form.start_date"><b>START DATE</b></label>
+
                     </div>
 
                     <div class="meeting_edit_field_date">
+                        <label class="meeting_edit_form" for="form.end_date">END DATE</label>
+                        <div class="date-box">
+                            {{form.end_date}}
+                        </div>
 
-                        {{form.end_date}}
-                        <label class="meeting_info_form" for="form.end_date"><b>END DATE</b></label>
                     </div>
 
                 </div>
 
             </div>
-            <div class="title_form">
-                <label class="meeting_info_form" for="form.kst_number"><b>KST NUMBER</b></label>
+            <div class="title_form_numbers">
+                <label class="meeting_edit_form" for="form.kst_number">KST NUMBER</label>
                 {{form.kst_number}}
             </div>
-            <div class="title_form">
-                <label class="meeting_info_form" for="form.number_of_quests"><b>NUMBER OF GUESTS</b></label>
+            <div class="title_form_numbers">
+                <label class="meeting_edit_form" for="form.number_of_quests">NUMBER OF GUESTS</label>
                 {{form.number_of_quests}}
             </div>
             <div>
-                <p class="semi_title">PLEASE MARK THE PLACE WHERE QUESTS CAN EAT AND DRINK FOR FREE</p>
-                <div class="yes_no_box">
-
+                <p class="semi_title">Please mark the place where quests can eat and drink for free</p>
+                <div class="yes-no-field">
                     <div class="meeting_edit_yes_no">
-                        <label class="meeting_info_form" for="form.coffee_bar"><b>COFFEE BAR(NOHO/SOHO)</b></label>
-                        {{form.coffee_bar}}
-                    </div>
-
-                    <div class="meeting_edit_yes_no">
-                        <label class="meeting_info_form" for="form.coffee_station"><b>COFFEE STATION</b></label>
-                        {{form.coffee_station}}
-                    </div>
-
-                    <div class="meeting_edit_yes_no">
-                        <label class="meeting_info_form" for="form.restaurant"><b>RESTAURANT</b></label>
                         {{form.restaurant}}
+                        <label class="meeting_info_form" for="form.restaurant">RESTAURANT</label>
+
                     </div>
+
+                    <div class="meeting_edit_yes_no">
+                        {{form.coffee_station}}
+                        <label class="meeting_info_form" for="form.coffee_station">COFFEE STATION</label>
+
+                    </div>
+
+                    <div class="meeting_edit_yes_no">
+                        {{form.coffee_bar}}
+                        <label class="meeting_info_form" for="form.coffee_bar">COFFEE BAR (NOHO/SOHO)</label>
+
+                    </div>
+
+
+
+
 
                 </div>
 
 
             </div>
 
-            <div class="title_form description_area">
-                <div class="">
-                    <label class="meeting_info_form" for="form.description"><b>DESCRIPTION</b></label>
-                    <p class="info_descr">LEAVE SOME INFORMATION ABOUT YOUR MEETING FOR GUESTS TO HAVE A COMFORTABLE
-                        AND COZY TIME</p>
+            <div class="description_area">
+                <div>
+                    <label class="meeting_info_form" for="form.description">DESCRIPTION</label>
+                    <p class="info_descr">Leave some information about your meeting for quests to have a comfortable
+                        and cozy time</p>
 
                 </div>
                 {{form.description}}<br>
@@ -74,7 +87,7 @@
 
 
             </div>
-            <input class="btn2" type="submit" value="SAVE">
+            <input class="meeting_form_btn" type="submit" value="SAVE">
             </div>
         </form>
 

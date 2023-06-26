@@ -23,13 +23,24 @@
 
         </div>
         <div class="meeting_detail_third">
-            <p class="name_main_date">Place where you can eat and drink for free</p>
+            <p class="name_main_date">Place where you can eat and drink for free:</p>
             <div>
-                {% if object.restaurant %}
-                    <p class="yes"><b>RESTAURANT : YES</b></p>
-                {% else %}
-                    <p class="no"><b>RESTAURANT : NO</b></p>
-                {% endif %}
+                <div class="restaurant_box">
+
+                    {% if object.restaurant %}
+
+                        <p class="yes"><b>RESTAURANT : YES</b></p>
+                    {% else %}
+                        <p class="no"><b>RESTAURANT : NO</b></p>
+                    {% endif %}
+                    <div>
+                        <p><b>Breakfast:</b> from 7-30 to 9-30</p>
+                        <p><b>Lunch:</b> from 11-30 to 14-00</p>
+                    </div>
+
+
+                </div>
+
 
 
                 {% if object.coffee_station %}

@@ -13,6 +13,7 @@
             </div>
 
 
+
         </div>
 
         <!--        SEARCHING BLOCK FOR MEETING      -->
@@ -23,13 +24,14 @@
 
 
     <div  class="meeting-content-box">
-        <div class="search-input">
+
+        <div class="meeting_page_content">
+            <div class="search-input">
             <form method="GET">
                 <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
                 <input class="btn_hover" type="submit" value="SEARCH">
             </form>
-        </div>
-        <div class="meeting_page_content">
+            </div>
             <!--        MEETING LIST      -->
             {% for meeting in sorted_meetings  %}
             {% if meeting.end_date|date:"Y-m-d" > timenow|date:"Y-m-d" %}

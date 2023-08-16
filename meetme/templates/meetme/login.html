@@ -5,8 +5,13 @@
 
 
 <div class="form-body">
-  <h1 class="login_title">LOGIN</h1>
-  <div class="form-up">
+  <div class="login-left">
+    <!--        LINK IF YOU DON'T HAVE ACCOUNT      -->
+    <h1>Hello!</h1>
+     <p><a href="{% url 'register' %}">If you don't have an account, you can create your account here</a></p>
+  </div>
+  <div class="form-up, login-right">
+    <h1 class="login_title">LOGIN</h1>
     <form action="" method="POST">
     {% csrf_token %}
       <!--        FORM FOR LOGIN      -->
@@ -17,10 +22,7 @@
     <input type="submit" value="LOGIN">
   </form>
   </div>
-<div>
-  <!--        LINK IF YOU DON'T HAVE ACCOUNT      -->
-   <p><a href="{% url 'register' %}">Don't have an account? REGISTER</a></p>
-</div>
+
   </div>
 
 {% endblock content %}

@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/590d9ea0-ab2b-4418-8edc-10991ec924a5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/590d9ea0-ab2b-4418-8edc-10991ec924a5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/css/example.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/example.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +135,14 @@
       <workItem from="1686511828261" duration="212000" />
       <workItem from="1686595525464" duration="589000" />
       <workItem from="1687703624148" duration="17497000" />
-      <workItem from="1687795129398" duration="8091000" />
+      <workItem from="1687795129398" duration="8942000" />
+      <workItem from="1687882636485" duration="3655000" />
+      <workItem from="1688902513514" duration="6639000" />
+      <workItem from="1689013168668" duration="721000" />
+      <workItem from="1690305832905" duration="1959000" />
+      <workItem from="1690390180398" duration="5493000" />
+      <workItem from="1690984012332" duration="1483000" />
+      <workItem from="1691571397897" duration="1648000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -175,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687703660064</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit">
+      <created>1687804842207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687804842207</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

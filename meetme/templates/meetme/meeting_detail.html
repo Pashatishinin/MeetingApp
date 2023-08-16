@@ -5,20 +5,22 @@
     <div class="meeting_detail">
         <div class="meeting_detail_up">
             <h1 class="meeting-id2">{{ object.id}}</h1>
-            <div>
-                {% if object.end_date == object.start_date %}
-                    <p class="name_main_date">{{ object.start_date}}</p>
-                {% elif object.end_date %}
-                    <p class="name_main_date">{{ object.start_date}} - {{object.end_date}}</p>
-                {% else %}
-                    <p class="name_main_date">{{ object.start_date}}</p>
-                {% endif %}
-            </div>
+
 
         </div>
         <div class="meeting_detail_second">
-            <p class="first_last_name"><b> {{ user.first_name|upper }} {{ user.last_name|upper }} </b></p>
-            <p class="name_main"><b>{{ object|upper}}</b></p>
+            <p class="first_last_name">{{ user.first_name|upper }} {{ user.last_name|upper }} </p>
+            <div>
+                {% if object.end_date == object.start_date %}
+                    <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+                {% elif object.end_date %}
+                    <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>
+                {% else %}
+                    <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+                {% endif %}
+            </div>
+            <p class="name_main"><b>{{ object|upper}}</b>
+
             <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
 
         </div>
@@ -35,6 +37,7 @@
                     {% endif %}
                     <div>
                         <p><b>Breakfast:</b> from 7-30 to 9-30</p>
+                        <hr>
                         <p><b>Lunch:</b> from 11-30 to 14-00</p>
                     </div>
 

@@ -22,7 +22,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from django.urls import reverse_lazy
 
-from .models import Meeting
+from .models import Meeting, MeetingHistory
 
 from .forms import NewMeetingForm, SearchForm
 
@@ -136,23 +136,25 @@ class MeetingCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
+        meeting = form.save()
+        MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
         return super(MeetingCreate, self).form_valid(form)
 
     def get_initial(self):
         return {'user': self.request.user}
 
 
-# class MeetingUpdate(LoginRequiredMixin, UpdateView):
-#     model = Meeting
-#     fields = ['title', 'start_date', 'end_date', 'coffee_bar', 'coffee_station', 'restaurant',
-#               'kst_number', 'number_of_quests', 'description']
-#     success_url = reverse_lazy('meetings')
-#
-#     widgets = {
-#         'start_date': SelectDateWidget(),
-#         'end_date': SelectDateWidget(),
-#     }
-
+def create_view(request):
+    pass
+    # if request.method == 'POST':
+    #     form = NewMeetingForm(request.POST)
+    #     if form.is_valid():
+    #         meeting = form.save()
+    #         MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
+    #         return redirect('meetings')
+    # else:
+    #     form = NewMeetingForm(user=request.user.username)
+    # return render(request, 'meetme/meeting_form.html', {"form": form})
 
 
 def update_view(request, pk):
@@ -163,7 +165,6 @@ def update_view(request, pk):
             if form.is_valid():
                 form.save()
                 return redirect('meetings')
-
         else:
             form = NewMeetingForm(instance=obj)
     else:

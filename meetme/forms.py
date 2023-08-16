@@ -31,6 +31,12 @@ class NewMeetingForm(forms.ModelForm):
             'end_date': SelectDateWidget(),
         }
 
+    # def __init__(self,*args, **kwargs):
+    #     user = kwargs.pop('user', None)
+    #     super().__init__(*args, **kwargs)
+    #     if user:
+    #         self.fields['user'].initial = user
+
 
 class RegisterForm(forms.ModelForm):
     user = forms.CharField()

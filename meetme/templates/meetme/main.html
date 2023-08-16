@@ -4,22 +4,35 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>MEETME</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
     <script src="https://kit.fontawesome.com/c8dc484f72.js" crossorigin="anonymous"></script>
 
+    <style>
+    .main_body {
+        background-image: url('{% static "meetme/img/back2.png" %}');
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: 1920px 1080px;
+    }
+
+    </style>
 </head>
 <body class="main_body">
 
     <!--    HEADER NAVIGATION-->
 
     <header>
-        <img class="logo" src="{% static "meetme/img/Logo_new-02.png" %}" alt="LOGO">
+
         <div class="header">
+            <img class="logo" src="{% static "meetme/img/Logo_new-04.png" %}" alt="LOGO">
             <div>
                 <ul class="header-left">
-                    <li><a href="{% url 'home' %}"><b>HOME</b></a></li>
-                    <li><a href="{% url 'meetings' %}"><b>MEETINGS</b></a></li>
-                    <li><a href="#"><b>INFO</b></a></li>
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
+                    <li><a href="{% url 'create' %}">INFO</a></li>
                 </ul>
             </div>
             <div>
@@ -36,7 +49,6 @@
             </div>
         </div>
     </header>
-    <hr>
     <div>
 
         {% block content %}
@@ -48,9 +60,7 @@
 
 
     <!--    FOOTER NAVIGATION-->
-    <hr>
     <footer>
-        <img class="logo2" src="{% static "meetme/img/Logo_new-02.png" %}" alt="LOGO">
         <div class="footer-box">
             <h3><b>ABOUT US</b></h3>
             <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your quests to
@@ -59,9 +69,9 @@
         <div class="footer-box">
             <h3><b>LINKS</b></h3>
             <ul class="header-left">
-                <li><a href="{% url 'home' %}"><b>HOME</b></a></li>
-                <li><a href="{% url 'meetings' %}"><b>MEETINGS</b></a></li>
-                <li><a href="#"><b>INFO</b></a></li>
+                <li><a href="{% url 'home' %}">HOME</li>
+                <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
+                <li><a href="{% url 'create' %}">INFO</a></li>
             </ul>
         </div>
         <div class="footer-box">

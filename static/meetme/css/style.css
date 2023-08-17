@@ -15,13 +15,14 @@
 
 }
 
+
 /****************************************** [ HEADER PAGE ]************************************/
 
 header {
     width: 100%;
     max-width: 1920px;
     margin: 10px auto;
-    background: rgba(57, 62, 70, 0.6);
+    background: rgba(34,40,49,0.8);
 }
 
 header div {
@@ -47,20 +48,20 @@ header div {
 }
 
 .header ion-icon {
-    color: #494949;
+    color: #f4e7d7;
     height: 30px;
     width: 50px;
 }
 ul li{
     list-style: none;
     margin: 0 20px;
-    color: #EEEEEE;
+    color: #f4e7d7;
 
 }
 
 ul li a,.form-body a,.form-body-reg a{
     text-decoration: none;
-    color: #EEEEEE;
+    color: #f4e7d7;
 
 }
 
@@ -98,19 +99,19 @@ ul li a,.form-body a,.form-body-reg a{
     font-size: 16px;
     font-weight: bold;
     cursor:pointer;
-    color: #ffffff;
+    color: #f4e7d7;
 }
 
 .btn_hover:hover{
     background: #00ADB5;
-    color: #ffffff;
+    color: #f4e7d7;
     tansition: all .3s linear;
 	-webkit-transition: all .3s linear;
 	-moz-transition: all .3s linear;
 }
 
 .header-right li a:hover{
-    color: #ffffff;
+    color: #f4e7d7;
 }
 
 
@@ -123,8 +124,8 @@ footer {
     max-width: 1920px;
     margin: 10px auto;
     padding: 25px 40px;
-    background: rgba(57, 62, 70, 0.8);
-    color: #EEEEEE;
+    color: #f4e7d7;
+    background: rgba(34,40,49,0.8);
 }
 
 
@@ -145,14 +146,14 @@ footer {
 
 .contacts a{
     text-decoration: none;
-    color: #EEEEEE;
+    color: #f4e7d7;
 }
 
 .contacts a:hover{
     color:#00ADB5;
 }
 footer ion-icon {
-    color: #EEEEEE;
+    color: #f4e7d7;
     width: 40px;
     height: 25px;
 }
@@ -171,15 +172,16 @@ footer ion-icon {
 .main-content {
     width: 100%;
     max-width: 1920px;
-    height: 800px;
-    margin: 10px auto;
-    padding: 100px 60px;
+    height: 600px;
+    margin: 30px auto;
     text-align: left;
+    padding: 100px 100px;
+    border-radius: 100px;
 }
 
 .content-top h1{
     font-size: 32px;
-    color: #EEEEEE;
+    color: #f4e7d7;
     margin-bottom: 50px;
     font-family: "Century Gothic";
 
@@ -194,7 +196,7 @@ footer ion-icon {
     width: 300px;
     font-weight: normal;
     margin-bottom: 50px;
-    color: #EEEEEE;
+    color: #f4e7d7;
 
 }
 
@@ -203,6 +205,7 @@ footer ion-icon {
     border: 3px solid #494949;
     font-size: 16px;
     width: 300px;
+    background: #f4e7d7;
 }
 /****************************************** [ ERROR_PAGE ]************************************/
 
@@ -258,12 +261,12 @@ footer ion-icon {
     width: 100%;
     max-width: 600px;
     margin: 100px auto;
-
-
-
-    border-radius: 50px;
     display: flex;
 
+}
+
+.form-body a {
+    text-decoration: none;
 }
 
 .login-left {
@@ -271,7 +274,12 @@ footer ion-icon {
     width: 300px;
     height: 400px;
     text-align: center;
-    background: rgba(73,73,73,0.8);
+    background: rgba(73,73,73,0.6);
+    border-radius: 50px 0 0 50px;
+}
+
+.login-left h1 {
+    color: #F4E7D7;
 }
 
 .login-right {
@@ -279,32 +287,32 @@ footer ion-icon {
     width: 300px;
     height: 400px;
     text-align: center;
-    background: #F4E7D7;
+    background: rgba(244,231,215,0.8);
+    border-radius: 0 50px 50px 0;
 }
 .login_title {
-    font-size: 64px;
+    font-size: 36px;
     color: #494949;
     margin-bottom: 30px;
 }
 
 .form-up {
     display: inline-block;
-    color: #F4E7D7;
+    color: #f4e7d7;
 }
 
-.form-up input[type=text],.form-up input[type=password] {
-    width: 259px;
+.login-right input[type=text],.login-right input[type=password] {
+    width: 200px;
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 10px 30px;
     font-size: 16px;
-    background: #ffffff;
     border: none;
 }
 
-.form-up input[type=submit] {
+.login-right input[type=submit] {
     text-align: center;
-    width: 259px;
+    width: 200px;
     font-size: 16px;
     background: #00ADB5;
     color: #F4E7D7;
@@ -317,13 +325,17 @@ footer ion-icon {
     transition: 0.5s;
 }
 
-.form-up input[type=submit]:hover {
+.login-right input[type=submit]:hover {
     letter-spacing: 0.5em;
 }
 
-.form-body a{
+.form-body p{
     color: #F4E7D7;
  }
+
+.login_info {
+    margin-bottom: 40px;
+}
 /************************************************************************************
 
 /****************************************** [ REGISTER ]************************************/
@@ -685,18 +697,18 @@ footer ion-icon {
     margin: 100px auto;
     padding: 50px 20px;
     text-align: center;
-    background: rgba(73,73,73,0.8);
+    background: rgba(244,231,215,0.8);
     border-radius: 50px;
 }
 
 .delete_confirm_box ion-icon {
     width: 40px;
     height: 50px;
-    color: #F4E7D7;
+    color: #222831;
 }
 .text_confirm {
     font-size: 24px;
-    color: #F4E7D7;
+    color: #222831;
 }
 .delete_confirm_box b{
     color: #00ADB5;
@@ -707,7 +719,7 @@ footer ion-icon {
     width: 100px;
     font-size: 16px;
     background: #00ADB5;
-    color: #F4E7D7;
+    color: #222831;
     font-weight: bolder;
     margin: 30px 50px;
     border: none;

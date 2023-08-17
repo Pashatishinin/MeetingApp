@@ -11,12 +11,13 @@
     <script src="https://kit.fontawesome.com/c8dc484f72.js" crossorigin="anonymous"></script>
 
     <style>
-    .main_body {
-        background-image: url('{% static "meetme/img/back2.png" %}');
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size: 1920px 1080px;
-    }
+        .main_body {
+            background-image: url('{% static "meetme/img/back6.png" %}');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 1920px 1260px;
+            background-attachment: fixed;
+        }
 
     </style>
 </head>
@@ -27,14 +28,15 @@
     <header>
 
         <div class="header">
-            <img class="logo" src="{% static "meetme/img/Logo_new-04.png" %}" alt="LOGO">
+            <img class="logo" src="{% static "meetme/img/Logotype.png" %}" alt="LOGO">
             <div>
                 <ul class="header-left">
-                    <li><a href="{% url 'home' %}">HOME</a></li>
-                    <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
-                    <li><a href="{% url 'create' %}">INFO</a></li>
+                    <li><a href="{% url 'home' %}"><B>HOME</B></a></li>
+                    <li><a href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
+                    <li><a href="{% url 'create' %}"><B>INFO</B></a></li>
                 </ul>
             </div>
+
             <div>
 
                 <ul class="header-right">
@@ -48,8 +50,11 @@
                 </ul>
             </div>
         </div>
+
     </header>
+
     <div>
+
 
         {% block content %}
 

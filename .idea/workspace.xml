@@ -3,8 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/error_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/error_message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logo_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logo_new-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logo_new-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logo_new-04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logo_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/Logotype.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/img/Logotype.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/back2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/back3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/back4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/img/back6.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,12 +36,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -37,6 +65,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Projects/MeetingApp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable&quot;
   }
 }</component>
@@ -83,7 +112,60 @@
       <workItem from="1683047958540" duration="605000" />
       <workItem from="1683048595098" duration="365000" />
       <workItem from="1683048990779" duration="37000" />
-      <workItem from="1683049202099" duration="2627000" />
+      <workItem from="1683049202099" duration="6014000" />
+      <workItem from="1683132583074" duration="7915000" />
+      <workItem from="1683398504044" duration="3806000" />
+      <workItem from="1683647385945" duration="10576000" />
+      <workItem from="1683736322680" duration="7357000" />
+      <workItem from="1683828090687" duration="3478000" />
+      <workItem from="1684070052863" duration="2606000" />
+      <workItem from="1684076664609" duration="703000" />
+      <workItem from="1684091713721" duration="2885000" />
+      <workItem from="1684166154259" duration="11831000" />
+      <workItem from="1684257653753" duration="7058000" />
+      <workItem from="1684661478808" duration="14417000" />
+      <workItem from="1684697896235" duration="3597000" />
+      <workItem from="1684761288039" duration="6050000" />
+      <workItem from="1684787839088" duration="3977000" />
+      <workItem from="1685026110341" duration="12676000" />
+      <workItem from="1685101086673" duration="228000" />
+      <workItem from="1685269406045" duration="2995000" />
+      <workItem from="1685276323761" duration="4894000" />
+      <workItem from="1685300081913" duration="3499000" />
+      <workItem from="1685333367693" duration="4939000" />
+      <workItem from="1685619321873" duration="1813000" />
+      <workItem from="1685650211867" duration="4382000" />
+      <workItem from="1685714292586" duration="7109000" />
+      <workItem from="1685731829208" duration="5215000" />
+      <workItem from="1685811886593" duration="1328000" />
+      <workItem from="1686343527884" duration="643000" />
+      <workItem from="1686385662196" duration="620000" />
+      <workItem from="1686424159522" duration="644000" />
+      <workItem from="1686464115110" duration="40491000" />
+      <workItem from="1686507162270" duration="43000" />
+      <workItem from="1686511828261" duration="212000" />
+      <workItem from="1686595525464" duration="589000" />
+      <workItem from="1687703624148" duration="17497000" />
+      <workItem from="1687795129398" duration="8942000" />
+      <workItem from="1687882636485" duration="3655000" />
+      <workItem from="1688902513514" duration="6639000" />
+      <workItem from="1689013168668" duration="721000" />
+      <workItem from="1690305832905" duration="1959000" />
+      <workItem from="1690390180398" duration="5493000" />
+      <workItem from="1690984012332" duration="1483000" />
+      <workItem from="1691571397897" duration="1648000" />
+      <workItem from="1692215212411" duration="628000" />
+      <workItem from="1692296858750" duration="4875000" />
+      <workItem from="1694706146767" duration="451000" />
+      <workItem from="1695057007427" duration="506000" />
+      <workItem from="1695057900176" duration="2582000" />
+      <workItem from="1695231611878" duration="2035000" />
+      <workItem from="1695234071148" duration="2140000" />
+      <workItem from="1695404909860" duration="5073000" />
+      <workItem from="1695561958383" duration="3186000" />
+      <workItem from="1695570572535" duration="70000" />
+      <workItem from="1695656810705" duration="7144000" />
+      <workItem from="1696438686528" duration="3598000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -92,7 +174,63 @@
       <option name="project" value="LOCAL" />
       <updated>1683050018566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1683052411858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052411858</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit">
+      <created>1685333450091</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685333450091</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit">
+      <created>1686507184688</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686507184688</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit">
+      <created>1686511845002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686511845002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="commit">
+      <created>1687703660064</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687703660064</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit">
+      <created>1687804842207</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687804842207</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit">
+      <created>1692215239328</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692215239328</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit">
+      <created>1692301830030</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692301830030</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

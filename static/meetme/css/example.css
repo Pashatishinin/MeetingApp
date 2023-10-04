@@ -1,0 +1,954 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_body {
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: #252525;
+    font-family: "Century Gothic";
+}
+
+/****************************************** [ HEADER PAGE ]************************************/
+header {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px auto;
+    padding: 15px 60px;
+}
+
+.header-left {
+    display: flex;
+}
+
+.logo {
+    text-align: center;
+    margin-left: 5px;
+    width: 200px;
+}
+
+.nav-links{
+    padding: 10px 40px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.nav-links li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #E6E6EB;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links li a::after{
+    content: '';
+    background: #409787;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.nav-links li a:hover::after{
+    width: 100%;
+}
+
+.user_name {
+    color: #E6E6EB;
+}
+
+.btn {
+    background: none;
+    border-color: #E6E6EB;
+    border-style: solid;
+    padding: 15px 30px;
+}
+
+
+/****************************************** [ FOOTER PAGE ]************************************/
+hr {
+    clear: both;
+    max-width: 1820px;
+    margin: 0 auto;
+}
+
+.logo2 {
+    text-align: center;
+    margin-left: 5px;
+    width: 100px;
+    height: 39px;
+}
+
+.footer {
+    width: 100%;
+    max-width: 1820px;
+    background: #242424;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 60px;
+    margin: 30px auto;
+}
+
+.footer h3{
+    color: #E6E6EB;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer p{
+    text-align: left;
+    width: 300px;
+    color: #E6E6EB;
+}
+
+.follow_links {
+    margin-left: 5px;
+    width: 25px;
+}
+
+.footer-box {
+    display: inline-block;
+}
+
+.contacts {
+    width: 200px;
+}
+
+
+.contacts a{
+    text-decoration: none;
+    color: #E6E6EB;
+    padding: 5px 0;
+    position: relative;
+}
+
+.contacts a::after{
+    content: '';
+    background: #409787;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.contacts a:hover::after{
+    width: 100%;
+}
+
+.contacts-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contacts_logo {
+    width: 30px;
+    margin-right: 10px;
+}
+/****************************************** [ HOME PAGE ]************************************/
+
+
+.main-content {
+
+    display: block;
+    color: #242424;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 160px 60px 160px 120px ;
+}
+.content-top {
+
+    text-align: left;
+    color: #242424;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1820px;
+}
+
+.main-content h1{
+    text-align: left;
+    font-size: 48px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    color: #409787;
+}
+
+.main-content h2{
+    text-align: left;
+    font-size:16px;
+    margin-bottom: 60px;
+    color: #E6E6EB;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.main-content form{
+    border: 5px solid #E6E6EB;
+    width: 550px;
+    background: #E6E6EB;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 100px;
+}
+
+.main-content form input{
+    flex: 1;
+    padding: 25px 20px;
+    font-size: 24px;
+    height: 35px;
+    margin-right: 40px;
+    border-radius: 100px;
+    border:0;
+    background-color : #E6E6EB;
+}
+
+.main-content form button{
+    font-size: 16px;
+    background:#409787;
+    color: #E9E8E5;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.main-content form button::after {
+  transition-duration: 1.0s;
+}
+
+.main-content form button:hover {
+    background: #2f6351;
+  }
+
+.main-content form button b{
+    font-size: 24px;
+}
+
+.error_info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.error_logo {
+    text-align: center;
+    background: #D96B6B;
+    border-radius: 100px;
+    font-size: 32px;
+    color: #E9E8E5;
+    padding: 5px;
+    border: none;
+    width: 48px;
+}
+
+.home_info {
+    font-style: inherit;
+    font-size: 16px;
+    color: #D96B6B;
+    margin-left: 10px;
+}
+
+/******************************************************************************************
+
+
+/****************************************** [ LOGIN ]************************************/
+
+.form-body {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    border: 3px solid #E6E6EB;
+    margin: 50px auto;
+    width: 438px;
+
+}
+
+.login_title {
+    font-size: 48px;
+    color: #E6E6EB;
+}
+
+.form-up {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.login_info_form {
+    color: #E6E6EB;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.login_form {
+    width: 259px;
+    height: 32px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    margin-bottom: 40px;
+    border: 0;
+}
+
+.form_login_info{
+    text-decoration: none;
+    color: #E6E6EB;
+    padding: 5px 0;
+    position: relative;
+}
+
+.form_login_info::after{
+    content: '';
+    background: #409787;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.form_login_info:hover::after {
+    width: 100%;
+}
+
+.btn_login {
+    border: 0;
+    width: 259px;
+    height: 32px;
+    background: #409787;
+    border-radius: 100px;
+    color: #E6E6EB;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn_login::after {
+  transition-duration: 1.0s;
+}
+
+.btn_login:hover {
+    background: #2f6351;
+  }
+/************************************************************************************
+
+/****************************************** [ REGISTER ]************************************/
+
+
+.form-body-reg {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    border: 3px solid #E6E6EB;
+    margin: 50px auto;
+    width: 720px;
+
+}
+
+.register_title {
+    font-size: 48px;
+    color: #E6E6EB;
+    margin-bottom: 40px;
+}
+
+
+.form-body-reg form{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-reg {
+    display: inline-block;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #E6E6EB;
+}
+
+.name_box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.register_form_username {
+    background: #E6E6EB;
+    border: 0;
+    width: 240px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+.login_form_name {
+    width: 240px;
+    background: #E6E6EB;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 100px;
+    border: 0;
+
+}
+
+.register_form_left {
+    width: 540px;
+    background: #E6E6EB;
+    padding: 10px 30px;
+    border-radius: 100px;
+    border: 0;
+    margin-bottom: 40px;
+}
+
+.register_btn {
+    border: 0;
+    width: 540px;
+    height: 32px;
+    background: #409787;
+    border-radius: 100px;
+    color: #E6E6EB;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.register_btn::after {
+  transition-duration: 1.0s;
+}
+
+.register_btn:hover {
+    background: #2f6351;
+  }
+/************************************************************************************
+
+
+/****************************************** [ MEETING DETAIL ]************************************/
+.meeting_detail {
+    display: block;
+    color: #242424;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1820px;
+    padding: 50px 120px 160px 120px ;
+}
+.meeting_detail_up {
+    text-align: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1820px;
+    color: rgba(255,255,255,0.3);
+    font-size: 100px;
+}
+
+.meeting-id2 {
+    text-align: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1820px;
+    color: rgba(255,255,255,0.3);
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.name_main_date {
+    font-size: 24px;
+    color: #E6E6EB;
+}
+
+.meeting_detail_second {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    display: block;
+    text-align: left;
+}
+
+.first_last_name {
+    font-size: 32px;
+    color: #E6E6EB;
+}
+.name_main {
+    font-size: 100px;
+    color: #409787;
+}
+
+.yes {
+    background: #E6E6EB;
+    padding: 15px 30px;
+    margin: 30px 20px;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    border-radius: 100px;
+}
+
+.no {
+    text-decoration: line-through;
+    background: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 15px 30px;
+    margin: 30px 20px;
+    width: 300px;
+    color: rgba(0,0,0,0.2);
+    height: 50px;
+    border-radius: 100px;
+}
+
+.meeting_detail_third {
+    margin-top: 60px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.meeting_detail_last {
+    text-align: left;
+}
+
+.description {
+    margin: 30px 20px;
+    color: #E6E6EB;
+    width: 400px;
+}
+
+
+/*****************************************************************************************
+
+
+ */
+/****************************************** [ MEETING PAGE ]************************************/
+
+.meeting-content {
+    width: 100%;
+    max-width: 1820px;
+    display: block;
+    margin: 30px auto;
+}
+
+.meeting-content-title {
+    text-align: left;
+    height: 470px;
+    width: 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 0 0 120px;
+}
+
+.meeting-page-title {
+    font-size: 50px;
+    color: #409787;
+    text-align: left;
+}
+
+.meeting-counter {
+    color: #E6E6EB;
+    font-size: 32px;
+    text-align: left;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.add-meeting {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #E6E6EB;
+    padding: 15px 15px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: dashed 2px #E6E6EB;
+    width: 333px;
+}
+
+.plus {
+    text-align: center;
+    background: #E6E6EB;
+    border-radius: 100px;
+    font-size: 32px;
+    color: #252525;
+    padding: 5px;
+    border: none;
+    width: 48px;
+}
+
+.add_meeting_title {
+    margin-left: 30px;
+    color: #EEEEEE;
+}
+
+.add-meeting::after {
+  transition-duration: 1.0s;
+}
+
+.add-meeting:hover {
+    background:#409787;
+  }
+
+.meeting-content-box {
+    padding: 0 100px;
+}
+
+
+
+.search-input form{
+    width: 550px;
+    background: #E6E6EB;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 100px;
+}
+
+.search-input form input[type=text]{
+    flex: 1;
+    padding: 23px 20px;
+    font-size: 24px;
+    height: 30px;
+    margin-right: 40px;
+    border-radius: 100px;
+    border:0;
+    background-color : #E6E6EB;
+}
+
+.search-input form input[type=submit]{
+    font-weight: bold;
+    font-size: 16px;
+    background:#409787;
+    color: #E9E8E5;
+    padding: 13px 26px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.search-input form input[type=submit]::after {
+  transition-duration: 1.0s;
+}
+
+.search-input form input[type=submit]:hover {
+    background: #2f6351;
+  }
+
+.search-input form input[type=submit] b{
+    font-size: 24px;
+}
+
+
+.meeting-box {
+    background: #E6E6EB;
+    padding: 15px 30px;
+    margin: 30px 10px;
+    display: inline-block;
+    width: 520px;
+    color: #252525;
+    position: relative;
+    height: 300px;
+    float: left;
+    border-radius: 20px;
+}
+
+.logo_icons {
+    text-align: right;
+}
+.link_logo, .link_logo_edit {
+    border: 3px solid rgba(0,0,0,0);
+    border-radius: 100px;
+    padding: 5px;
+    width: 50px;
+    margin: 10px;
+}
+.link_logo_edit {
+    padding: 10px;
+}
+.link_logo::after, .link_logo_edit::after {
+  transition-duration: 1.0s;
+}
+
+.link_logo:hover, .link_logo_edit:hover {
+
+    border: 3px solid  #409787;
+  }
+
+.meeting-box2 {
+    background: rgba(255,255,255,0.4);
+    color: rgba(0,0,0,0.2);
+    position: relative;
+    float: left;
+    border-radius: 20px;
+    padding: 15px 30px;
+    margin: 30px 10px;
+    display: inline-block;
+    width: 520px;
+    color: #252525;
+    height: 300px;
+}
+
+.meeting-title2 {
+    font-size: 32px;
+    height: 114px;
+    color: rgba(57,92,79,0.4);
+}
+.meeting-box-content {
+    width: 500px;
+}
+
+.meeting-title {
+    font-size: 32px;
+    height: 114px;
+    color: #395c4f;
+}
+
+.meeting-id {
+    color: rgba(0,0,0,0.2);
+    font-size: 180px;
+    position: absolute;
+}
+
+.meeting-date {
+    font-size: 24px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+
+/****************************************** [ DELETE PAGE ]************************************/
+
+.delete_confirm {
+    width: 100%;
+    max-width: 1820px;
+    display: block;
+    margin: 30px auto;
+    height: 550px;
+    padding: 100px;
+}
+.delete_confirm_box b{
+    color: #409787;
+}
+.delete_confirm_box form {
+    text-align: center;
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    background: #E6E6EB;
+    padding: 50px 50px;
+
+
+}
+
+.text_confirm {
+    color: #252525;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.yes_no {
+    margin: 30px auto;
+}
+
+.yes_confirm, .no_confirm {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    background:#409787;
+    color: #E6E6EB;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin: 0 30px;
+    border: 2px solid  #409787;
+    border-radius: 100px;
+}
+
+.yes_confirm:hover, .no_confirm:hover {
+    border: 2px solid  #409787;
+    background-color: #E6E6EB;
+    color: #246251;
+}
+/************************************************************************************
+
+
+ */
+/****************************************** [ MEETING EDIT ]************************************/
+.form-main {
+    text-align: left;
+    width: 100%;
+    max-width: 1820px;
+    display: block;
+    height: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 60px 160px 120px ;
+}
+
+.meeting_form_box {
+    width: 620px;
+}
+
+.create_meeting {
+    text-align: left;
+    font-size: 32px;
+    color: #409787;
+    margin-bottom: 60px;
+}
+
+.meeting_edit_form {
+    display: block;
+    color: #E6E6EB;
+    margin-bottom: 10px;
+}
+
+.title_form input[type=text]{
+    width: 620px;
+    border-radius: 100px;
+    border: 0;
+    height: 40px;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.date_field {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+
+
+.meeting_form_box input[type=number]{
+    border: 0;
+    background: #E6E6EB;
+    width: 259px;
+    padding: 10px 30px;
+    border-radius: 100px;
+    margin-bottom: 40px;
+    font-family: "Century Gothic";
+    font-size: 16px;
+}
+
+.semi_title {
+    text-align: left;
+    font-size: 16px;
+    color: #E6E6EB;
+    margin-bottom: 60px;
+}
+
+.yes-no-field {
+    margin-bottom: 60px;
+}
+
+.meeting_edit_yes_no {
+    display: flex;
+    align-items: center;
+}
+
+.meeting_info_form {
+    color: #E6E6EB;
+}
+
+.meeting_form_box input[type=checkbox] {
+    margin-left: 10px ;
+    accent-color: #409787;
+    margin-right: 10px;
+}
+
+.description_area p{
+    width: 400px;
+    color: #E6E6EB;
+    margin-bottom: 10px;
+}
+
+
+.description_area textarea {
+    border-style: solid;
+    width: 589px;
+    height: 150px;
+    background: #E6E6EB;
+    padding: 30px;
+    margin-bottom: 40px;
+    font-family: "Century Gothic";
+    font-size: 16px;
+}
+
+
+.meeting_form_btn{
+    font-weight: bold;
+    font-size: 16px;
+    background:#409787;
+    color: #E6E6EB;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.meeting_form_btn::after {
+  transition-duration: 1.0s;
+}
+
+.meeting_form_btn:hover {
+    background: #2f6351;
+  }
+.date-box {
+    display: flex;
+    justify-content: space-between;
+}
+select {
+    border: 0;
+    background: #E6E6EB;
+    width: 80px;
+    padding: 10px 10px;
+    border-radius: 100px;
+    margin-right:10px;
+    font-family: "Century Gothic";
+}
+
+.date_field {
+    margin-bottom: 40px;
+}
+
+/************************************************************8
+
+ */
+
+.error_box {
+    margin: 60px auto;
+    width: 400px;
+    border: #D96B6B 2px solid;
+}
+
+.error_box_message {
+    width: 300px;
+    margin: 60px auto;
+    color: #D96B6B;
+}
+

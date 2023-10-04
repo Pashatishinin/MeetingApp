@@ -4,38 +4,109 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>MEETME</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
+    <script src="https://kit.fontawesome.com/c8dc484f72.js" crossorigin="anonymous"></script>
 
+    <style>
+        .main_body {
+            background-image: url('{% static "meetme/img/background.png" %}');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 1920px 1260px;
+            background-attachment: fixed;
+        }
 
+    </style>
 </head>
-<body>
-   <div class="header">
-       <nav>
-           <img class="logo" src="{% static "meetme/img/Logo.png" %}" alt="LOGO">
-           <ul class="nav-links">
+<body class="main_body">
 
-               <li><a href="{% url 'home' %}">Home</a></li>
-               <li><a href="{% url 'index' %}">Meetings</a></li>
-               <li><a href="#">Info</a></li>
-               {% if request.user.is_authenticated %}
-                    <li><p class="user_name">Hello, {{request.user|title}}!</p></li>
-                    <li class="btn"><a href="{% url 'logout' %}">Logout</a></li>
-               {% else %}
-                    <li class="btn"><a href="{% url 'login' %}">Sign Up</a></li>
-               {% endif %}
+    <!--    HEADER NAVIGATION-->
 
-           </ul>
-       </nav>
-       {% block content %}
+    <header>
 
-       {% endblock content %}
-   </div>
+        <div class="header">
+            <img class="logo" src="{% static "meetme/img/Logotype.png" %}" alt="LOGO">
+            <div>
+                <ul class="header-left">
+                    <li><a href="{% url 'home' %}"><B>HOME</B></a></li>
+                    <li><a href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
+                    <li><a href="{% url 'info' %}"><B>INFO</B></a></li>
+                </ul>
+            </div>
 
-  <div class="container">
+            <div>
+                <ul class="header-right">
+                    <li><ion-icon name="person-circle-outline"></ion-icon></li>
+                    {% if request.user.is_authenticated %}
+                    <li><p class="user_name"><b>{{request.user}}</b></p></li>
+                    <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
+                    {% else %}
+                    <li><a class="btn" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="body_content">
+
+        {% block content %}
+
+        {% endblock content %}
+
+    </div>
 
 
-  </div>
 
+    <!--    FOOTER NAVIGATION-->
+    <footer>
+        <div class="footer-box">
+            <h3><b>ABOUT US</b></h3>
+            <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your quests to
+                spend your time during meeting more comfortable</p>
+        </div>
+        <div class="footer-box">
+            <h3><b>LINKS</b></h3>
+            <ul class="header-left">
+                <li><a href="{% url 'home' %}">HOME</li>
+                <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
+                <li><a href="{% url 'info' %}">INFO</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h3><b>CONTACT US</b></h3>
+            <div class="contacts">
+                <div class="contacts-links">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    <p><a href="https://wa.me/4915111111111">MeetMeApp</a></p>
+                </div>
+                <div class="contacts-links">
+                    <ion-icon name="call"></ion-icon>
+                    <p><a href="tel:+4915111111111">+49 1511 111 11 11</a></p>
+                </div>
+                <div class="contacts-links">
+                    <ion-icon name="mail"></ion-icon>
+                    <p><a href="mailto: admin@admin.com">admin@admin.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3><b>FOLLOW US</b></h3>
+            <div class="contacts-links">
+                <ion-icon name="logo-twitter"></ion-icon>
+                <p>Follow us in Twitter</p>
+            </div>
+            <div class="contacts-links">
+                <ion-icon name="logo-instagram"></ion-icon>
+                <p>Follow us in Instagram</p>
+            </div>
+        </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</footer>
 </body>
 </html>

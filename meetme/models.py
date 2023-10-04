@@ -9,8 +9,8 @@ from core import settings
 class Meeting(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    start_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
-    end_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
+    start_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True, default=False)
+    end_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True, default=False)
     coffee_bar = models.BooleanField(default=False)
     coffee_station = models.BooleanField(default=False)
     restaurant = models.BooleanField(default=False)

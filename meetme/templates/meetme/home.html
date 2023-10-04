@@ -1,49 +1,47 @@
 {% extends 'meetme/main.html' %}
 {% load static %}
 {% block content %}
-<div class="main-content">
-    <div class="content-top">
+    <div class="content-home">
 
         <!--        TITLE CONTENT         -->
         <h1><b>Welcome to</b><p>MEET ME</p></b></h1>
         <h3>To know more about your meeting, please enter your code and press GO
         </h3>
 
-        <!--        IF ID NUMBER NOT EXIST WILL WORK THIS MESSAGE      -->
-
-
         <!--        FORM FOR SEARCHING MEETING BY ID      -->
         <form action="{% url 'home'%}" method="GET" autocomplete="off">
             {% csrf_token %}
             <label for="id_number"></label>
             <input type="text" name="id_number" id="id_number" placeholder="&#x270e Enter your meeting number">
-            <button class="btn_hover">GO</button>
+            <button class="btn">GO</button>
         </form>
+
+         <!--        IF IINPUT NUMBER IS NOT EXIST WILL WORK THIS MESSAGE      -->
         {% if info %}
         <style>
             input {
-                border: 3px solid #ff0000;
-
+                border: 3px solid #ff4747;
             }
         </style>
         <div class="error_info">
-            <p class="error_logo">X</p>
-            <span class="home_info">Meeting #{{info}} not exist . Please try to enter your number again</span>
+            <ion-icon name="close-circle-outline"></ion-icon>
+            <span>Meeting #{{info}} not exist . Please try to enter your number again</span>
         </div>
-
         {% endif %}
+
+        <!--        IF INPUT NUMBER IS NOT DIGITAL WORK THIS MESSAGE      -->
         {% if not_number %}
         <style>
             input {
-                border: 3px solid #ff0000;
-
+                border: 3px solid #ff4747;
             }
         </style>
         <div class="error_info">
-            <p class="error_logo">X</p>
-            <span class="home_info">"{{not_number}}" not a number. Your meeting number must contain only digits. Please try to enter your number again</span>
+            <ion-icon name="close-circle-outline"></ion-icon>
+            <span>"{{not_number}}" not a number. Your meeting number must contain only digits. Please try to enter your number again</span>
         </div>
         {% endif %}
     </div>
-</div>
+
+
 {% endblock content %}

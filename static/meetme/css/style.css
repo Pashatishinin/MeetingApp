@@ -15,6 +15,13 @@
 
 }
 
+.body_content {
+    width: 100%;
+    max-width: 1920px;
+    min-height: 600px;
+    margin: 30px auto;
+
+}
 
 /****************************************** [ HEADER PAGE ]************************************/
 
@@ -25,9 +32,6 @@ header {
     background: rgba(34,40,49,0.8);
 }
 
-header div {
-    display: flex;
-}
 .logo {
     width: 100px;
 }
@@ -37,8 +41,6 @@ header div {
     justify-content: space-between;
     padding: 20px 60px;
     align-items: center;
-
-
 }
 
 .header .header-right,.header .header-left{
@@ -52,11 +54,11 @@ header div {
     height: 30px;
     width: 50px;
 }
+
 ul li{
     list-style: none;
     margin: 0 20px;
     color: #f4e7d7;
-
 }
 
 ul li a,.form-body a,.form-body-reg a{
@@ -84,14 +86,8 @@ ul li a,.form-body a,.form-body-reg a{
     width: 100%;
 }
 
-.main_body hr {
-    width: 100%;
-    max-width: 1800px;
-    margin: 0 auto;
-    border: 1px solid #494949;
-}
 
-.btn_hover {
+.btn {
     text-align: center;
     border: 3px solid #00ADB5;
     padding: 10px 20px;
@@ -102,7 +98,7 @@ ul li a,.form-body a,.form-body-reg a{
     color: #f4e7d7;
 }
 
-.btn_hover:hover{
+.btn:hover{
     background: #00ADB5;
     color: #f4e7d7;
     tansition: all .3s linear;
@@ -127,9 +123,6 @@ footer {
     color: #f4e7d7;
     background: rgba(34,40,49,0.8);
 }
-
-
-
 
 .footer-box {
     width: 300px;
@@ -158,81 +151,47 @@ footer ion-icon {
     height: 25px;
 }
 
-.icons {
-    width: 40px;
-    margin-right: 20px;
-}
 
 .footer-box li{
     margin-bottom: 10px;
 }
 
 /****************************************** [ HOME PAGE ]************************************/
-
-.main-content {
-    width: 100%;
-    max-width: 1920px;
-    height: 600px;
-    margin: 30px auto;
+.content-home {
     text-align: left;
     padding: 100px 100px;
-    border-radius: 100px;
 }
 
-.content-top h1{
+.content-home h1{
     font-size: 32px;
     color: #f4e7d7;
     margin-bottom: 50px;
     font-family: "Century Gothic";
-
 }
-.content-top h1 p{
+
+.content-home h1 p{
     font-size: 64px;
     color:#00ADB5;
-
 }
 
-.content-top h3{
+.content-home h3{
     width: 300px;
     font-weight: normal;
     margin-bottom: 50px;
     color: #f4e7d7;
-
 }
 
-.content-top input,.search-input input[type=text] {
+.content-home input,.search-input input[type=text] {
     padding: 10px 30px;
     border: 3px solid #494949;
     font-size: 16px;
     width: 300px;
     background: #f4e7d7;
 }
+
+
 /****************************************** [ ERROR_PAGE ]************************************/
-
-.error_info {
-    display: flex;
-    margin: 20px 0;
-    align-items: center;
-}
-
-.error_logo {
-    font-size: 16px;
-    background: #ff0000;
-    border-radius: 100px;
-    width: 30px;
-    padding: 5px;
-    text-align: center;
-    color: #F4E7D7;
-}
-
-.error_info span {
-    font-size: 14px;
-    color: #ff0000;
-    margin-left: 20px;
-}
-
 .error_box {
-    width: 100%;
     max-width: 480px;
     margin: 100px auto;
     padding: 50px 20px;
@@ -241,83 +200,158 @@ footer ion-icon {
     border-radius: 50px;
 }
 
-.error_box_message {
-    font-size: 24px;
-    color: #F4E7D7;
-}
-
 .error_box ion-icon {
     color: #F4E7D7;
     width: 40px;
     height: 50px;
 }
 
+
+.error_box h1 {
+    font-size: 24px;
+    color: #F4E7D7;
+}
+.error_info {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.error_info ion-icon {
+    font-size: 36px;
+    color: #ff4747;
+}
+
+.error_logo {
+    font-size: 16px;
+    background: #ff4747;
+    border-radius: 100px;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+    color: #F4E7D7;
+}
+
+.error_info span {
+    max-width: 500px;
+    font-size: 16px;
+    color: #ff4747;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 /******************************************************************************************
 
 
 /****************************************** [ LOGIN ]************************************/
-
-.form-body {
-    width: 100%;
-    max-width: 600px;
+.form_content {
     margin: 100px auto;
+}
+
+.form-log {
+    position: relative;
+    width: 750px;
+    height: 550px;
+    background: transparent;
+    border-radius: 50px;
+    margin: 0 auto;
     display: flex;
 
 }
 
-.form-body a {
-    text-decoration: none;
-}
-
-.login-left {
-    padding: 50px 50px;
-    width: 300px;
-    height: 400px;
-    text-align: center;
-    background: rgba(73,73,73,0.6);
-    border-radius: 50px 0 0 50px;
-}
-
-.login-left h1 {
-    color: #F4E7D7;
-}
-
-.login-right {
-    padding: 50px 50px;
-    width: 300px;
-    height: 400px;
-    text-align: center;
+.form-log .form_box {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: rgba(244,231,215,0.8);
-    border-radius: 0 50px 50px 0;
+    border-radius: 0 50px 50px 0 ;
 }
-.login_title {
+
+.form_box.login {
+    right: 0;
+    padding: 0 40px;
+}
+.form_box h1 {
     font-size: 36px;
     color: #494949;
-    margin-bottom: 30px;
-}
-
-.form-up {
-    display: inline-block;
-    color: #f4e7d7;
-}
-
-.login-right input[type=text],.login-right input[type=password] {
-    width: 200px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 10px 30px;
-    font-size: 16px;
-    border: none;
-}
-
-.login-right input[type=submit] {
     text-align: center;
-    width: 200px;
+}
+
+
+.form_box .input_box {
+    position: relative;
+    width:  100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+
+.input_box input{
+    width: 95%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #494949;
+    font-size: 16px;
+    color: #494949;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.input_box input:focus {
+    border-bottom-color: #00ADB5;
+}
+
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #494949;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input_box input:focus ~ label,
+.input_box input:valid ~ label{
+    top: -5px;
+    color: #494949;
+}
+
+.input_box ion-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #494949;
+    transition: .5s;
+}
+
+.input_box input:focus~ion-icon{
+    color: #00ADB5;
+}
+
+.btn2 {
+    width: 100%;
     font-size: 16px;
     background: #00ADB5;
     color: #F4E7D7;
     font-weight: bold;
-    margin-bottom: 50px;
     border: none;
     padding: 10px 0;
     cursor: pointer;
@@ -325,95 +359,159 @@ footer ion-icon {
     transition: 0.5s;
 }
 
-.login-right input[type=submit]:hover {
+.btn2:hover {
     letter-spacing: 0.5em;
 }
 
-.form-body p{
+.form-log .info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(73,73,73,0.6);
+    border-radius: 50px 0 0 50px;
     color: #F4E7D7;
- }
-
-.login_info {
-    margin-bottom: 40px;
 }
+
+.form-log .info-text.login {
+    left: 0;
+    text-align: center;
+    padding: 0 60px;
+
+}
+
+.info-text h1 {
+    font-size: 36px;
+}
+
+
+.info-text a {
+    color: #F4E7D7;
+    text-decoration: none;
+}
+
+.info-text p {
+    margin: 10px 0;
+}
+
 /************************************************************************************
 
 /****************************************** [ REGISTER ]************************************/
 
-.form-body-reg {
-    width: 100%;
-    max-width: 720px;
-    margin: 100px auto;
-    padding: 50px 65px;
-    text-align: center;
-    background: rgba(73,73,73,0.8);
-    border-radius: 50px;
-}
-
-.register_title {
-    font-size: 64px;
-    color: #F4E7D7;
-    margin-bottom: 30px;
-}
-
 .form-reg {
-    display: block;
-    color: #F4E7D7;
-    text-align: left;
-}
-
-.form-reg input[type=text] {
-    width: 270px;
-    margin-top: 10px;
-    padding: 10px 30px;
-    font-size: 16px;
-    background: #ffffff;
-    border: none;
-    margin-right: 49px;
-}
-
-.name_box {
-    width: 589px;
+    position: relative;
+    width: 750px;
+    height: 550px;
+    background: transparent;
+    border-radius: 50px;
+    margin: 0 auto;
     display: flex;
 
 }
-.form-reg input[type=email],.form-reg input[type=password] {
-    width: 589px;
-    margin-top: 10px;
-    padding: 10px 30px;
-    font-size: 16px;
-    background: #ffffff;
-    border: none;
-    margin-bottom: 40px;
-    text-align: center;
+
+.form-reg .form_box {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(244,231,215,0.8);
+    border-radius: 50px 0 0 50px ;
 }
 
-.form-reg input[type=password] {
-    margin-bottom: 10px;
+.form_box.register {
+    left: 0;
+    padding: 0 40px;
+}
+.form_box h1 {
+    font-size: 36px;
+    color: #494949;
+    text-align: center;
 }
 
 .name_box {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.name_box,.user_box {
     display: flex;
-    align-items: center;
+}
+.form_box .input_box {
+    position: relative;
+    width:  100%;
+    height: 50px;
+    margin: 25px 0;
 }
 
-.form-reg p{
-    font-size: 14px;
+.name_box .input_box input {
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #494949;
+    font-size: 16px;
+    color: #494949;
+    font-weight: 500;
+    transition: .5s;
+}
+.input_box input{
+    width: 90%;
+    height: 100%;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #494949;
+    font-size: 16px;
+    color: #494949;
+    font-weight: 500;
+    transition: .5s;
 }
 
-.form-body-reg input[type=submit] {
-    text-align: center;
-    width: 589px;
+.input_box input:focus {
+    border-bottom-color: #00ADB5;
+
+}
+
+
+.input_box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #494949;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input_box input:focus ~ label,
+.input_box input:valid ~ label{
+    top: -5px;
+    color: #494949;
+}
+
+.input_box ion-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #494949;
+    transition: .5s;
+}
+
+.input_box input:focus~ion-icon{
+    color: #00ADB5;
+}
+
+.btn2 {
+    width: 100%;
     font-size: 16px;
     background: #00ADB5;
     color: #F4E7D7;
     font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: 50px;
     border: none;
     padding: 10px 0;
     cursor: pointer;
@@ -421,13 +519,39 @@ footer ion-icon {
     transition: 0.5s;
 }
 
-.form-body-reg input[type=submit]:hover {
+.btn2:hover {
     letter-spacing: 0.5em;
 }
 
-.form-body-reg a{
+.form-reg .info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(73,73,73,0.6);
+    border-radius: 0 50px 50px 0;
     color: #F4E7D7;
- }
+}
+
+.form-reg .info-text.register {
+    right: 0;
+    text-align: center;
+    padding: 0 60px;
+}
+
+.info-text h1 {
+    font-size: 36px;
+}
+
+.info-text a {
+    color: #F4E7D7;
+    text-decoration: none;
+}
+
+
 /************************************************************************************
 
 
@@ -440,27 +564,25 @@ footer ion-icon {
     padding: 50px 60px;
     text-align: left;
     color: #F4E7D7;
+    position: relative;
 }
 
 .meeting-id2 {
     font-size: 300px;
     color: rgba(0, 173, 181, 0.2);
     position: absolute;
-    top: 10%;
+    top: 0;
     left: 5%;
+}
+
+.first_last_name {
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 
 .name_main_date {
     font-size: 24px;
     margin-top: 20px;
-
-}
-
-
-
-.first_last_name {
-    font-size: 32px;
-    margin-bottom: 20px;
 }
 
 .name_main {
@@ -469,33 +591,30 @@ footer ion-icon {
     margin-bottom: 20px;
 }
 
-.yes, .no {
-    width: 365px;
-    background: #494949;
-    border-radius: 25px;
-    padding: 21px 0;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    color: #F4E7D7;
-}
-
-.no {
-    text-decoration: line-through;
-    background: rgba(73,73,73,0.7)
-}
-
 .restaurant_box {
     display: flex;
     margin-top: 30px;
 }
 
-.restaurant_box hr {
-    margin: 10px 0;
+.yes, .no {
+    width: 365px;
+    background: #F4E7D7;
+    color: #494949;
+    border-radius: 25px;
+    padding: 21px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
-.meeting_detail_last {
-    margin-top: 50px;
+.no {
+    text-decoration: line-through;
+    background: rgba(73,73,73,0.7);
+    color: #F4E7D7;
+}
+
+.restaurant_box hr {
+    margin: 10px 0;
 }
 
 .description {
@@ -519,12 +638,12 @@ footer ion-icon {
     text-align: left;
 }
 
-.meeting-content-title {
+.meeting-content-main {
     position: sticky;
     max-width: 500px;
     top: 0;
-
 }
+
 .meeting-page-title {
     font-size: 64px;
     color: #00ADB5;
@@ -560,17 +679,15 @@ footer ion-icon {
 .add-meeting:hover {
     background:#00ADB5;
     color: #EEEEEE;
-  }
+}
 
-
-.plus {
-    font-size: 24px;
-    background: #393E46;
-    border-radius: 100px;
-    width: 40px;
-    padding: 5px;
-    text-align: center;
+.add_meeting_title {
     color: #EEEEEE;
+}
+
+.add-meeting ion-icon {
+    font-size: 40px;
+    color: #E6E6EB;
 }
 
 .search-input {
@@ -592,9 +709,9 @@ footer ion-icon {
     display: inline-block;
 }
 
-
 .meeting-box {
-    background: #393E46;
+    background: #F4E7D7;
+    color: #494949;
     padding: 15px 30px;
     margin: 30px 10px;
     display: flex;
@@ -620,31 +737,22 @@ footer ion-icon {
 }
 
 .meeting-id {
-    color: rgba(0, 173, 181, 0.4);
+    color: rgba(0, 173, 181);
     font-size: 64px;
     position: absolute;
     top: 5%;
     left: 5%;
-
 }
 
 .meeting-box-content {
     margin-left: 150px;
     text-align: left;
-
 }
-
-.add_meeting_title {
-    color: #EEEEEE;
-}
-
 
 .meeting-title {
     font-size: 32px;
-    color: #EEEEEE;
     text-align: left;
     width: 800px;
-
 }
 
 .meeting-title2 {
@@ -653,11 +761,10 @@ footer ion-icon {
     text-align: left;
     width: 800px;
 }
+
 .meeting-date {
-    color: #EEEEEE;
     text-align: left;
     font-size: 16px;
-
 }
 
 .meeting-date2 {
@@ -667,14 +774,13 @@ footer ion-icon {
 }
 
 .meeting-box ion-icon {
-    color: #EEEEEE;
+    color: #494949;
     width: 40px;
     height: 25px;
 }
 
 .meeting-box ion-icon:hover {
     color: #00ADB5;
-
 }
 
 .meeting-box2 ion-icon {
@@ -690,61 +796,52 @@ footer ion-icon {
 
 
 /****************************************** [ DELETE PAGE ]************************************/
-
 .delete_confirm_box {
-    width: 100%;
     max-width: 480px;
     margin: 100px auto;
     padding: 50px 20px;
     text-align: center;
-    background: rgba(244,231,215,0.8);
+    background: rgba(73,73,73,0.8);
     border-radius: 50px;
 }
 
 .delete_confirm_box ion-icon {
     width: 40px;
     height: 50px;
-    color: #222831;
+    color: #F4E7D7;
 }
+
 .text_confirm {
     font-size: 24px;
-    color: #222831;
+    color: #F4E7D7;
 }
+
 .delete_confirm_box b{
     color: #00ADB5;
 }
 
-.yes_confirm, .no_confirm {
+.btn3 {
     text-align: center;
     width: 100px;
     font-size: 16px;
     background: #00ADB5;
-    color: #222831;
+    color: #F4E7D7;
     font-weight: bolder;
     margin: 30px 50px;
     border: none;
-    padding: 10px 0;
     cursor: pointer;
     letter-spacing: 0.05em;
     transition: 0.5s;
     max-height: 48px;
+    text-decoration: none;
+    padding: 10px 30px;
 }
 
-.yes_confirm:hover,.no_confirm:hover {
+.btn3:hover{
     letter-spacing: 0.5em;
     width: 120px;
 }
 
-.no_confirm {
-    text-decoration: none;
-    text-align: center;
-    padding: 10px 40px;
-    font-size: 16px;
-    font-weight: bolder;
-    max-height: 48px;
-    width: 100px;
-
-}
 /************************************************************************************
 
 
@@ -758,6 +855,7 @@ footer ion-icon {
     padding: 20px 60px;
     text-align: left;
     color: #F4E7D7;
+    position: relative;
 }
 
 .create_meeting {
@@ -765,11 +863,10 @@ footer ion-icon {
     color: #00ADB5;
     margin-bottom: 40px;
 }
+
 .meeting_form_box {
     width: 599px;
 }
-
-
 
 .title_form input[type=text] {
     width: 589px;
@@ -779,7 +876,6 @@ footer ion-icon {
     border: none;
     margin-right:10px;
 }
-
 
 .date_field {
     display: flex;
@@ -798,7 +894,6 @@ select {
 
 .title_form_numbers {
     display: block;
-
     width: 259px;
 }
 
@@ -815,11 +910,13 @@ select {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .meeting_edit_yes_no {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
+
 .meeting_form_box input[type=checkbox] {
     margin-left: 10px ;
     accent-color: #00ADB5;

@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('error/', TemplateView.as_view(template_name="meetme/error_message.html"), name='error'),
 
-    path('create/', views.create_view, name="create"),
+    path('create/', views.info_view, name="info"),
 
 
     # LOGIN/LOGOUT/REGISTER

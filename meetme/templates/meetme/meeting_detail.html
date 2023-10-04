@@ -1,91 +1,72 @@
 {% extends 'meetme/main.html' %}
 {% block content %}
 
-<body>
-    <div class="meeting_detail">
-        <div class="meeting_detail_up">
-            <h1 class="meeting-id2">{{ object.id}}</h1>
-
-
-        </div>
-        <div class="meeting_detail_second">
-            <p class="first_last_name">{{ user.first_name|upper }} {{ user.last_name|upper }} </p>
-            <div>
-                {% if object.end_date == object.start_date %}
-                    <p class="name_main_date"><b>{{ object.start_date}}</b></p>
-                {% elif object.end_date %}
-                    <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>
-                {% else %}
-                    <p class="name_main_date"><b>{{ object.start_date}}</b></p>
-                {% endif %}
-            </div>
-            <p class="name_main"><b>{{ object|upper}}</b>
-
-            <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
-
-        </div>
-        <div class="meeting_detail_third">
-            <p class="name_main_date">Place where you can eat and drink for free:</p>
-            <div>
-                <div class="restaurant_box">
-
-                    {% if object.restaurant %}
-
-                        <p class="yes"><b>RESTAURANT : YES</b></p>
-                    {% else %}
-                        <p class="no"><b>RESTAURANT : NO</b></p>
-                    {% endif %}
-                    <div>
-                        <p><b>Breakfast:</b> from 7-30 to 9-30</p>
-                        <hr>
-                        <p><b>Lunch:</b> from 11-30 to 14-00</p>
-                    </div>
-
-
-                </div>
-
-
-
-                {% if object.coffee_station %}
-                    <p class="yes"><b>COFFEE STATIONS : YES</b></p>
-                {% else %}
-                    <p class="no"><b>COFFEE STATIONS : NO</b></p>
-                {% endif %}
-
-
-                {% if object.coffee_bar %}
-                    <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
-                    <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
-                {% else %}
-                    <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
-                    <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
-                {% endif %}
-
-            </div>
-        </div>
-        <!--        DATE AND NAME CONTENT-->
-
-
-        <!--        COFFEE BARS AND RESTAURANTS-->
-
-        <!--        INFORMATION-->
-        <div class="meeting_detail_last">
-        {% if object.description %}
-            <p class="name_main_date">Some information about this meeting: </p>
-            <div>
-                <p class="description">{{object.description}}</p>
-            </div>
-        {% else %}
-            <p class="coffee_bars">There no information about this meeting</p>
-        {% endif %}
-
-        </div>
-
+<div class="meeting_detail">
+    <div>
+        <h1 class="meeting-id2">{{ object.id}}</h1>
     </div>
 
 
+    <!--        DATE AND NAME CONTENT-->
+    <div>
+        <p class="first_last_name">{{ user.first_name|upper }} {{ user.last_name|upper }} </p>
+        <div>
+            {% if object.end_date == object.start_date %}
+            <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+            {% elif object.end_date %}
+            <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>
+            {% else %}
+            <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+            {% endif %}
+        </div>
+        <p class="name_main"><b>{{ object|upper}}</b>
+        <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
+    </div>
 
+    <!--        COFFEE BARS AND RESTAURANTS-->
+    <div>
+        <p class="name_main_date">Place where you can eat and drink for free:</p>
+        <div>
+            <div class="restaurant_box">
+                {% if object.restaurant %}
+                <p class="yes"><b>RESTAURANT : YES</b></p>
+                {% else %}
+                <p class="no"><b>RESTAURANT : NO</b></p>
+                {% endif %}
+                <div>
+                    <p><b>Breakfast:</b> from 7-30 to 9-30</p>
+                    <hr>
+                    <p><b>Lunch:</b> from 11-30 to 14-00</p>
+                </div>
+            </div>
 
-</body>
+            {% if object.coffee_station %}
+            <p class="yes"><b>COFFEE STATIONS : YES</b></p>
+            {% else %}
+            <p class="no"><b>COFFEE STATIONS : NO</b></p>
+            {% endif %}
+
+            {% if object.coffee_bar %}
+            <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
+            <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
+            {% else %}
+            <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
+            <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!--        INFORMATION-->
+    <div>
+        {% if object.description %}
+        <p class="name_main_date">Some information about this meeting: </p>
+        <div>
+            <p class="description">{{object.description}}</p>
+        </div>
+        {% else %}
+        <p>There no information about this meeting</p>
+        {% endif %}
+    </div>
+</div>
 
 {% endblock content %}

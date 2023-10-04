@@ -1,37 +1,29 @@
 {% extends 'meetme/main.html' %}
 {% load static %}
 {% block content %}
+
 <div class="meeting-content">
-    <div class="meeting-content-title">
-        <!--        NAME AND COUNTER OF MEETINGS      -->
-        <div>
-            <h1 class="meeting-page-title">{{ request.user.first_name|upper }} {{ request.user.last_name|upper }}</h1>
-            <p class="meeting-counter">You have {{ count }} Meeting{{ count|pluralize }} </p>
-            <div onclick="location.href='{% url 'meeting-create' %}'" style="cursor:pointer;" class="add-meeting">
-                <p class="plus">+</p>
-                <p class="add_meeting_title">ADD A NEW MEETING</p>
-            </div>
 
-
-
+    <!--        NAME AND COUNTER OF MEETINGS      -->
+    <div class="meeting-content-main">
+        <h1 class="meeting-page-title">{{ request.user.first_name|upper }} {{ request.user.last_name|upper }}</h1>
+        <p class="meeting-counter">You have {{ count }} Meeting{{ count|pluralize }} </p>
+        <div onclick="location.href='{% url 'meeting-create' %}'" style="cursor:pointer;" class="add-meeting">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <p class="add_meeting_title">ADD A NEW MEETING</p>
         </div>
-
-        <!--        SEARCHING BLOCK FOR MEETING      -->
-
-
     </div>
 
-
-
+    <!--        SEARCHING BLOCK FOR MEETING      -->
     <div  class="meeting-content-box">
-
         <div class="meeting_page_content">
             <div class="search-input">
-            <form method="GET">
-                <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
-                <input class="btn_hover" type="submit" value="SEARCH">
-            </form>
+                <form method="GET">
+                    <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
+                    <input class="btn" type="submit" value="SEARCH">
+                </form>
             </div>
+
             <!--        MEETING LIST      -->
             {% for meeting in sorted_meetings  %}
             {% if meeting.end_date|date:"Y-m-d" > timenow|date:"Y-m-d" %}
@@ -41,7 +33,6 @@
                     <h1 class="meeting-id">{{meeting.id}}</h1>
                     <h1 class="meeting-title">{{meeting.title|upper}}</h1>
 
-
                     {% if meeting.end_date == meeting.start_date %}
                         <p class="meeting-date">{{ meeting.start_date}}</p>
                     {% elif meeting.end_date %}
@@ -49,24 +40,22 @@
                     {% else %}
                         <p class="meeting-date">{{ meeting.start_date}}</p>
                     {% endif %}
-
                 </div>
-                <div class="logo_icons">
+
+                <div>
                     <!--        MEETING LINKS FOR SETTINGS      -->
                     <a href="{% url 'meeting' meeting.id%}"><ion-icon name="eye-outline"></ion-icon></a>
                     <a href="{% url 'meeting-update' meeting.id%}"><ion-icon name="create-outline"></ion-icon></a>
                     <a href="{% url 'meeting-delete' meeting.id%}"><ion-icon name="trash-outline"></ion-icon></a>
                 </div>
-
             </div>
 
             {% else %}
+            <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
             <div class="meeting-box2">
-
                 <div class="meeting-box-content">
                     <h1 class="meeting-id">{{meeting.id}}</h1>
                     <h1 class="meeting-title2">{{meeting.title|upper}}</h1>
-
 
                     {% if meeting.end_date == meeting.start_date %}
                         <p class="meeting-date2">{{ meeting.start_date}}</p>
@@ -75,16 +64,12 @@
                     {% else %}
                         <p class="meeting-date2">{{ meeting.start_date}}</p>
                     {% endif %}
-
                 </div>
-                <div class="logo_icons">
+                <div>
                     <!--        MEETING LINKS FOR SETTINGS      -->
-
                     <a href="{% url 'meeting' meeting.id%}"><ion-icon name="eye-outline"></ion-icon></a>
                     <a href="{% url 'meeting-delete' meeting.id%}"><ion-icon name="trash-outline"></ion-icon></a>
                 </div>
-
-
             </div>
 
 
@@ -93,12 +78,8 @@
             {% empty %}
 
             {% endfor %}
-
         </div>
-
-        </div>
-
+    </div>
 </div>
-
 
 {% endblock content %}

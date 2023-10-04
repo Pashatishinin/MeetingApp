@@ -12,7 +12,7 @@
 
     <style>
         .main_body {
-            background-image: url('{% static "meetme/img/back6.png" %}');
+            background-image: url('{% static "meetme/img/background.png" %}');
             background-repeat: no-repeat;
             background-position: top;
             background-size: 1920px 1260px;
@@ -33,28 +33,25 @@
                 <ul class="header-left">
                     <li><a href="{% url 'home' %}"><B>HOME</B></a></li>
                     <li><a href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
-                    <li><a href="{% url 'create' %}"><B>INFO</B></a></li>
+                    <li><a href="{% url 'info' %}"><B>INFO</B></a></li>
                 </ul>
             </div>
 
             <div>
-
                 <ul class="header-right">
                     <li><ion-icon name="person-circle-outline"></ion-icon></li>
                     {% if request.user.is_authenticated %}
                     <li><p class="user_name"><b>{{request.user}}</b></p></li>
-                    <li class="btn"><a class="btn_hover" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
+                    <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
                     {% else %}
-                    <li class="btn"><a class="btn_hover" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
+                    <li><a class="btn" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
                     {% endif %}
                 </ul>
             </div>
         </div>
-
     </header>
 
-    <div>
-
+    <div class="body_content">
 
         {% block content %}
 
@@ -76,7 +73,7 @@
             <ul class="header-left">
                 <li><a href="{% url 'home' %}">HOME</li>
                 <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
-                <li><a href="{% url 'create' %}">INFO</a></li>
+                <li><a href="{% url 'info' %}">INFO</a></li>
             </ul>
         </div>
         <div class="footer-box">
@@ -94,15 +91,10 @@
                     <ion-icon name="mail"></ion-icon>
                     <p><a href="mailto: admin@admin.com">admin@admin.com</a></p>
                 </div>
-
-
-
             </div>
-
         </div>
         <div class="footer-box">
             <h3><b>FOLLOW US</b></h3>
-
             <div class="contacts-links">
                 <ion-icon name="logo-twitter"></ion-icon>
                 <p>Follow us in Twitter</p>
@@ -111,7 +103,6 @@
                 <ion-icon name="logo-instagram"></ion-icon>
                 <p>Follow us in Instagram</p>
             </div>
-
         </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

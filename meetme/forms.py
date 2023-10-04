@@ -39,15 +39,16 @@ class NewMeetingForm(forms.ModelForm):
 
 
 class RegisterForm(forms.ModelForm):
-    user = forms.CharField()
+    user = forms.CharField(required=False)
     first_name = forms.CharField()
     second_name = forms.CharField()
-    password = forms.CharField()
+    password = forms.CharField(required=False)
     password2 = forms.CharField()
 
     class Meta:
         model = User
         fields = '__all__'
+
 
 
 

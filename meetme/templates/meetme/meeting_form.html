@@ -3,7 +3,6 @@
 {% block content %}
 
 <div class="form-main">
-    <h1 class="create_meeting">{{meetme_meeting.id}}</h1>
     <h1 class="create_meeting" >MEETING EDIT</h1>
     <div class="meeting_form_box">
 
@@ -11,25 +10,22 @@
             {% csrf_token %}
 
             <div>
-
                 <div class="title_form">
-                    <label class="meeting_edit_form" for="title">Title</label>
+                    <label class="meeting_edit_form" for="title">TITLE</label>
                     {{form.title}}
                 </div>
 
             <div class="time_form">
                 <div class="date_field">
                     <div class="meeting_edit_field_date">
-                        <label class="meeting_edit_form" for="form.start_date">Start Date</label>
+                        <label class="meeting_edit_form" for="form.start_date">START DATE</label>
                         <div class="date-box">
                             {{form.start_date}}
                         </div>
-
-
                     </div>
 
                     <div class="meeting_edit_field_date">
-                        <label class="meeting_edit_form" for="form.end_date">End Date</label>
+                        <label class="meeting_edit_form" for="form.end_date">END DATE</label>
                         <div class="date-box">
                             {{form.end_date}}
                         </div>
@@ -37,14 +33,31 @@
                     </div>
 
                 </div>
+                {% if form.errors%}
+                    <style>
+                        select {
+                            border: 3px solid #ff4747;
+                            margin-bottom: 5px;
+                        }
+                    </style>
+                    <div class="error_info">
+                        <ion-icon name="close-circle-outline"></ion-icon>
+                        {% for error in form.non_field_errors %}
+                        <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+
+
 
             </div>
             <div class="title_form_numbers">
-                <label class="meeting_edit_form" for="form.kst_number">KST Number</label>
+                <label class="meeting_edit_form" for="form.kst_number">KST NUMBER</label>
                 {{form.kst_number}}
             </div>
             <div class="title_form_numbers">
-                <label class="meeting_edit_form" for="form.number_of_quests">Number of Guests</label>
+                <label class="meeting_edit_form" for="form.number_of_quests">NUMBER OF GUESTS</label>
                 {{form.number_of_quests}}
             </div>
             <div>
@@ -79,7 +92,7 @@
 
             <div class="description_area">
                 <div>
-                    <label class="meeting_info_form" for="form.description">Description</label>
+                    <label class="meeting_info_form" for="form.description">DESCRIPTION</label>
                     <p class="info_descr">Leave some information about your meeting for quests to have a comfortable
                         and cozy time</p>
 

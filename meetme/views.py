@@ -1,6 +1,5 @@
 import datetime
 
-from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -9,16 +8,14 @@ from django import forms
 
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.forms import SelectDateWidget
-from django.http import HttpResponse
 
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, render
 
 from django.utils import timezone
 
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView
 
 from django.urls import reverse_lazy
 
@@ -84,18 +81,21 @@ def register_page(request):
             last_name = request.POST.get('lastname')
             email = request.POST.get('email')
             password = request.POST.get('password')
-            my_user = User.objects.create_user(user_name, email, password)
-            my_user.first_name = first_name
-            my_user.last_name = last_name
-            my_user.save()
-            user = authenticate(request, username=user_name, password=password)
-            if user is not None:
-                login(request, user)
-            return redirect('meetings')
+            if user_name:
+                my_user = User.objects.create_user(user_name, email, password)
+                my_user.first_name = first_name
+                my_user.last_name = last_name
+                my_user.save()
+                user = authenticate(request, username=user_name, password=password)
+                if user is not None:
+                    login(request, user)
+                return redirect('meetings')
+
+            else:
+                return redirect('register')
+
         except IntegrityError as e:
             return render(request, "meetme/register.html", {"info": e, "username" : user_name})
-
-
 
     return render(request, "meetme/register.html")
 
@@ -136,25 +136,26 @@ class MeetingCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        meeting = form.save()
-        MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
-        return super(MeetingCreate, self).form_valid(form)
+        field_s_data = form.cleaned_data.get('start_date')
+        field_e_data = form.cleaned_data.get('end_date')
+        today = datetime.date.today()
+        if field_s_data and field_e_data:
+            if field_s_data < today:
+                form.add_error(None, "The start date of the event cannot be earlier than the current date")
+                return self.form_invalid(form)
+            elif field_e_data < field_s_data:
+                form.add_error(None, "The end date of the event cannot be earlier than the start date")
+                return self.form_invalid(form)
+            else:
+                meeting = form.save()
+                MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
+                return super(MeetingCreate, self).form_valid(form)
+        else:
+            form.add_error(None, "You forgot to indicate the event dates")
+            return self.form_invalid(form)
 
     def get_initial(self):
         return {'user': self.request.user}
-
-
-def create_view(request):
-    pass
-    # if request.method == 'POST':
-    #     form = NewMeetingForm(request.POST)
-    #     if form.is_valid():
-    #         meeting = form.save()
-    #         MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
-    #         return redirect('meetings')
-    # else:
-    #     form = NewMeetingForm(user=request.user.username)
-    # return render(request, 'meetme/meeting_form.html', {"form": form})
 
 
 def update_view(request, pk):
@@ -170,10 +171,6 @@ def update_view(request, pk):
     else:
         return redirect("error")
 
-
-
-
-
     return render(request, 'meetme/meeting_form.html', {'form': form})
 
 
@@ -181,5 +178,14 @@ class MeetingDelete(LoginRequiredMixin, DeleteView):
     model = Meeting
     context_object_name = 'meetings'
     success_url = reverse_lazy('meetings')
+
+
+"""""""""""""""""""""""""""""""""
+INFO PAGE
+"""""""""""""""""""""""""""""""""
+
+
+def info_view(request):
+    return redirect('home')
 
 

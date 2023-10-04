@@ -2,63 +2,67 @@
 {% block content %}
 
 
-<div class="form-body-reg">
-  <h1 class="register_title">REGISTER</h1>
-  <form method="POST">
-    {% csrf_token %}
+
 
     <!--        REGISTER FORM      -->
-    <div class="form-reg">
-        <label class="login_info_form" for="username">USERNAME</label>
 
-        <!--        USERNAME INPUT AND INFO      -->
-        <div class="user_box">
-        <input class="register_form_username" type="text" name="username" id="username" placeholder="&#x270e username">
-        <p>Letters, digits and @/./+/-/_ only.</p>
+    <div class="form_content">
+
+        <div class="form-reg">
+
+            <!--        USERNAME INPUT AND INFO      -->
+            <div class="form_box register">
+                <h1 class="register_title">REGISTER</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input_box">
+                        <input class="register_form_username" type="text" name="username" id="username">
+                        <label class="login_info_form" for="username">USERNAME</label>
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    {% if info %}
+                    <div class="error_info">
+                        <ion-icon class="error-icon" name="close-circle-outline"></ion-icon>
+                        <span>Username "{{ username }}" already exist.
+                            Please use another username</span>
+                    </div>
+                    {% endif %}
+                    <div class="name_box">
+                        <div class="input_box">
+                            <input class="login_form_name" type="text" name="firstname" id="firstname">
+                            <label class="login_info_form" for="firstname">FIRSTNAME</label>
+
+                        </div>
+                        <div class="input_box">
+                            <input class="login_form_name" type="text" name="lastname" id="lastname">
+                            <label class="login_info_form" for="lastname">LASTNAME</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input_box">
+                        <input class="register_form_left" type="email" name="email" id="email">
+                        <label class="login_info_form" for="email">EMAIL</label>
+                        <ion-icon name="mail-outline"></ion-icon>
+
+                    </div>
+                    <div class="input_box">
+                        <input class="register_form_left" type="password" name="password" id="password">
+                        <label class="login_info_form" for="password">PASSWORD</label>
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </div>
+                    <input class="btn2" type="submit" value="REGISTER">
+
+            </div>
+
+            <div class="info-text register">
+                <h1>Hello!</h1>
+                <p class="login_info">If you have an account, you can sign in here</p>
+                <p class="btn"><a href="{% url 'login' %}">Sign in</a></p>
+            </div>
+
         </div>
-        {% if info %}
-        <div class="error_info">
-            <p class="error_logo">X</p>
-            <span>Username "{{ username }}" already exist.
-                Please use another username</span>
-        </div>
-        {% endif %}
-
-        <!--        FIRST NAME AND LAST NAME INPUTS      -->
-        <div class="name_box">
-
-          <div>
-            <label class="login_info_form" for="firstname">FIRSTNAME</label>
-            <input class="login_form_name" type="text" name="firstname" id="firstname" placeholder="&#x270e firstname">
-          </div>
-
-          <div>
-            <label class="login_info_form" for="lastname">LASTNAME</label>
-            <input class="login_form_name" type="text" name="lastname" id="lastname" placeholder="&#x270e lastname">
-          </div>
-        </div>
-
-      <!--        INPUTS      -->
-      <label class="login_info_form" for="email">EMAIL</label>
-      <input class="register_form_left" type="email" name="email" id="email" placeholder="&#x270e email">
-      <label class="login_info_form" for="password">PASSWORD</label>
-      <input class="register_form_left" type="password" name="password" id="password" placeholder="&#x270e password">
-
-      <!--        INFO ABOUT PASSWORD      -->
-      <p>Your password can't be too similar to your other personal information.</p>
-      <p>Your password must contain at least 8 characters.</p>
-      <p>Your password can't be a commonly used password.</p>
-      <p>Your password can't be entirely numeric.</p>
-
-
-
-    </div>
-    <!--        BUTTON      -->
-    <input type="submit" value="REGISTER">
-
-    <!--        LINK IF YOU HAVE ACCOUNT      -->
-    <p><a href="{% url 'login' %}">Already have an account? LOGIN</a></p>
-
 </div>
 
 {% endblock content %}

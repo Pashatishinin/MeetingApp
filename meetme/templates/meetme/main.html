@@ -28,7 +28,36 @@
     <header>
 
         <div class="header">
+            <!-- Menu will change for mobile screen            -->
+            <div class="mobile_menu">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                <label for="menu-toggle" class="menu-button"><ion-icon name="menu-outline"></ion-icon>
+                    </label>
+                <div class="menu">
+                    <ul>
+                        {% if request.user.is_authenticated %}
+                        <li class="mobile_menu_user"><ion-icon name="person-circle-outline"></ion-icon>
+                            <p class="user_name"><b>{{request.user}}</b></p></li>
+                        <hr>
+                        {% endif %}
+                        <li><a class="btn4" href="{% url 'home' %}"><B>HOME</B></a></li>
+                        <li><a class="btn4" href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
+                        <li><a class="btn4" href="{% url 'info' %}"><B>INFO</B></a></li>
+                        {% if request.user.is_authenticated %}
+                        <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
+                        {% else %}
+                        <li><a class="btn" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
+                        {% endif %}
+                    </ul>
+
+
+                </div>
+            </div>
+
+            <!--            -->
+
             <img class="logo" src="{% static "meetme/img/Logotype.png" %}" alt="LOGO">
+
             <div>
                 <ul class="header-left">
                     <li><a href="{% url 'home' %}"><B>HOME</B></a></li>
@@ -39,8 +68,9 @@
 
             <div>
                 <ul class="header-right">
-                    <li><ion-icon name="person-circle-outline"></ion-icon></li>
+
                     {% if request.user.is_authenticated %}
+                    <li><ion-icon name="person-circle-outline"></ion-icon></li>
                     <li><p class="user_name"><b>{{request.user}}</b></p></li>
                     <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
                     {% else %}
@@ -63,47 +93,51 @@
 
     <!--    FOOTER NAVIGATION-->
     <footer>
-        <div class="footer-box">
-            <h3><b>ABOUT US</b></h3>
-            <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your quests to
-                spend your time during meeting more comfortable</p>
-        </div>
-        <div class="footer-box">
-            <h3><b>LINKS</b></h3>
-            <ul class="header-left">
-                <li><a href="{% url 'home' %}">HOME</li>
-                <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
-                <li><a href="{% url 'info' %}">INFO</a></li>
-            </ul>
-        </div>
-        <div class="footer-box">
-            <h3><b>CONTACT US</b></h3>
-            <div class="contacts">
-                <div class="contacts-links">
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <p><a href="https://wa.me/4915111111111">MeetMeApp</a></p>
-                </div>
-                <div class="contacts-links">
-                    <ion-icon name="call"></ion-icon>
-                    <p><a href="tel:+4915111111111">+49 1511 111 11 11</a></p>
-                </div>
-                <div class="contacts-links">
-                    <ion-icon name="mail"></ion-icon>
-                    <p><a href="mailto: admin@admin.com">admin@admin.com</a></p>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3><b>ABOUT US</b></h3>
+                <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your quests to
+                    spend your time during meeting more comfortable</p>
+            </div>
+            <div class="footer-box">
+                <h3><b>LINKS</b></h3>
+                <ul class="header-left">
+                    <li><a href="{% url 'home' %}">HOME</li>
+                    <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
+                    <li><a href="{% url 'info' %}">INFO</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3><b>CONTACT US</b></h3>
+                <div class="contacts">
+                    <div class="contacts-links">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <p><a href="https://wa.me/4915111111111">MeetMeApp</a></p>
+                    </div>
+                    <div class="contacts-links">
+                        <ion-icon name="call"></ion-icon>
+                        <p><a href="tel:+4915111111111">+49 1511 111 11 11</a></p>
+                    </div>
+                    <div class="contacts-links">
+                        <ion-icon name="mail"></ion-icon>
+                        <p><a href="mailto: admin@admin.com">admin@admin.com</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-box">
-            <h3><b>FOLLOW US</b></h3>
-            <div class="contacts-links">
-                <ion-icon name="logo-twitter"></ion-icon>
-                <p>Follow us in Twitter</p>
+            <div class="footer-box">
+                <h3><b>FOLLOW US</b></h3>
+                <div class="contacts-links">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <p>Follow us in Twitter</p>
+                </div>
+                <div class="contacts-links">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <p>Follow us in Instagram</p>
+                </div>
             </div>
-            <div class="contacts-links">
-                <ion-icon name="logo-instagram"></ion-icon>
-                <p>Follow us in Instagram</p>
-            </div>
+
         </div>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

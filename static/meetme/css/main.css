@@ -26,7 +26,6 @@
 /****************************************** [ HEADER PAGE ]************************************/
 
 header {
-    width: 100%;
     max-width: 1920px;
     margin: 0 auto;
     background: rgba(34,40,49,0.8);
@@ -39,7 +38,7 @@ header {
 .header {
     display: flex;
     justify-content: space-between;
-    width: 87%;
+    max-width: 1920px;
     margin: 10px auto;
     padding: 20px 0;
     align-items: center;
@@ -723,7 +722,9 @@ footer ion-icon {
 .meeting_page_content {
     display: inline-block;
 }
-
+.icons_button {
+    width: 130px;
+}
 .meeting-box {
     background: #F4E7D7;
     color: #494949;
@@ -732,7 +733,7 @@ footer ion-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    max-width: 1200px;
     position: relative;
     height: 100px;
     border-radius: 25px;
@@ -745,7 +746,7 @@ footer ion-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1200px;
+    max-width: 1200px;
     position: relative;
     height: 100px;
     border-radius: 25px;
@@ -767,14 +768,21 @@ footer ion-icon {
 .meeting-title {
     font-size: 32px;
     text-align: left;
-    width: 800px;
+    max-width: 800px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .meeting-title2 {
     font-size: 32px;
     color: rgba(238,238,238, 0.5);
     text-align: left;
-    width: 800px;
+    max-width: 800px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .meeting-date {

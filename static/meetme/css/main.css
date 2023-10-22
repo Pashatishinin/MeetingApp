@@ -27,6 +27,7 @@
 
 header {
     max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
     background: rgba(34,40,49,0.8);
 }
@@ -38,6 +39,7 @@ header {
 .header {
     display: flex;
     justify-content: space-between;
+    width: 90%;
     max-width: 1920px;
     margin: 10px auto;
     padding: 20px 0;
@@ -519,6 +521,7 @@ footer ion-icon {
 .input_box input:focus~ion-icon{
     color: #00ADB5;
 }
+
 
 .btn2 {
     width: 100%;

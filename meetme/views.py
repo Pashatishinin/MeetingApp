@@ -139,17 +139,22 @@ class MeetingCreate(LoginRequiredMixin, CreateView):
         field_s_data = form.cleaned_data.get('start_date')
         field_e_data = form.cleaned_data.get('end_date')
         today = datetime.date.today()
+
         if field_s_data and field_e_data:
-            if field_s_data < today:
-                form.add_error(None, "The start date of the event cannot be earlier than the current date")
+
+            if field_e_data < today:
+                form.add_error(None, "The end date of the event cannot be earlier than the current date")
                 return self.form_invalid(form)
+
             elif field_e_data < field_s_data:
                 form.add_error(None, "The end date of the event cannot be earlier than the start date")
                 return self.form_invalid(form)
+
             else:
                 meeting = form.save()
                 MeetingHistory.objects.create(meeting=meeting, action='Added meeting')
                 return super(MeetingCreate, self).form_valid(form)
+
         else:
             form.add_error(None, "You forgot to indicate the event dates")
             return self.form_invalid(form)
@@ -160,14 +165,36 @@ class MeetingCreate(LoginRequiredMixin, CreateView):
 
 def update_view(request, pk):
     obj = Meeting.objects.get(id=pk)
+
     if obj.user == request.user:
+
         if request.method == 'POST':
             form = NewMeetingForm(request.POST, instance=obj)
+
             if form.is_valid():
+                field_s_data = form.cleaned_data.get('start_date')
+                field_e_data = form.cleaned_data.get('end_date')
+                today = datetime.date.today()
+
+                if field_s_data and field_e_data:
+
+                    if field_e_data < today:
+                        form.add_error(None, "The end date of the event cannot be earlier than the current date")
+                        return render(request, 'meetme/meeting_form.html', {'form': form})
+
+                    elif field_e_data < field_s_data:
+                        form.add_error(None, "The end date of the event cannot be earlier than the start date")
+                        return render(request, 'meetme/meeting_form.html', {'form': form})
+
+                else:
+                    form.add_error(None, "You forgot to indicate the event dates")
+                    return render(request, 'meetme/meeting_form.html', {'form': form})
                 form.save()
                 return redirect('meetings')
+
         else:
             form = NewMeetingForm(instance=obj)
+
     else:
         return redirect("error")
 

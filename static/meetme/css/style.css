@@ -183,7 +183,9 @@
     .footer-content {
         width: 95%;
     }
-
+   .icons_button {
+        width: 250px;
+    }
     .meeting-box, .meeting-box2 {
         max-width: 580px;
     }
@@ -193,7 +195,7 @@
     }
 
     .meeting-title {
-        max-width: 100%;
+        max-width: 70%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -202,8 +204,9 @@
     .meeting-content {
 
         padding: 25px 25px;
-        text-align: left;
     }
+
+
 }
 
 /*** [ Medium Device, Desktops ] ***/

@@ -11,7 +11,7 @@
     height: 100%;
     width: 100%;
     background: #222831;
-    font-family: "Century Gothic";
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -180,7 +180,6 @@ footer ion-icon {
     font-size: 32px;
     color: #f4e7d7;
     margin-bottom: 50px;
-    font-family: "Century Gothic";
 }
 
 .content-home h1 p{

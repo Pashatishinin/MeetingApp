@@ -23,7 +23,6 @@ from .models import Meeting, MeetingHistory
 
 from .forms import NewMeetingForm, SearchForm
 
-
 """""""""""""""""""""""""""""""""
 HOME PAGE
 """""""""""""""""""""""""""""""""

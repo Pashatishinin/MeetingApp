@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 import os
 
@@ -83,6 +83,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES['default'] = dj_database_url.parse("postgres://meet_me_django_render_user:jTNlMuVBpg4p4qOgxnCLWe6V6eQjJaAT@dpg-cp1qk5sf7o1s73cgp2t0-a.oregon-postgres.render.com/meet_me_django_render")
+
 
 
 # Password validation

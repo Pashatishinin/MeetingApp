@@ -71,6 +71,7 @@ class CustomLoginView(LoginView):
 REGISTER PAGE
 """""""""""""""""""""""""""""""""
 
+
 def register_page(request):
     if request.method == 'POST':
 

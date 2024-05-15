@@ -22,12 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+# 'django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -84,7 +86,8 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse("postgres://meet_me_django_render_user:jTNlMuVBpg4p4qOgxnCLWe6V6eQjJaAT@dpg-cp1qk5sf7o1s73cgp2t0-a.oregon-postgres.render.com/meet_me_django_render")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 
@@ -121,7 +124,6 @@ USE_TZ = True
 LOGIN_URL = 'login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 

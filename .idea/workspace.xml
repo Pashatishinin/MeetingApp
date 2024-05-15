@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,7 +213,7 @@
       <workItem from="1697790263898" duration="1174000" />
       <workItem from="1711911158231" duration="432000" />
       <workItem from="1712826195393" duration="622000" />
-      <workItem from="1715796425599" duration="770000" />
+      <workItem from="1715796425599" duration="1053000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -345,7 +342,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/core/settings.py</url>
-          <line>94</line>
+          <line>97</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,7 +214,7 @@
       <workItem from="1711911158231" duration="432000" />
       <workItem from="1712826195393" duration="622000" />
       <workItem from="1715796425599" duration="1053000" />
-      <workItem from="1715885970398" duration="1719000" />
+      <workItem from="1715885970398" duration="1877000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>

@@ -90,12 +90,9 @@ DATABASES = {
    }
 }
 
-#DATABASES = {
-#    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 database_url = os.environ.get("DATABASE_URL")
 DATABASES['default'] = dj_database_url.parse(database_url)
-#DATABASES['default'] = dj_database_url.parse("postgres://meet_me_django_render_user:jTNlMuVBpg4p4qOgxnCLWe6V6eQjJaAT@dpg-cp1qk5sf7o1s73cgp2t0-a.oregon-postgres.render.com/meet_me_django_render")
 
 
 

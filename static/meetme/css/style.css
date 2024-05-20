@@ -4,8 +4,8 @@
 @media screen and (max-width: 1000px) {
 
 
+    /********* [ HEADER PAGE ] *********/
 
-    /**[ HEADER ]**/
     .header .header-left{
         display: none;
     }
@@ -15,65 +15,152 @@
     }
 
     .logo {
-        width: 250px;
+        width: 200px;
+        position: static;
+        margin: 0 auto;
+    }
+    /********* [ FOOTER PAGE ] *********/
+    .footer-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
-}
+    .footer-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 30px;
+        width: 600px;
 
-/*    .menu-toggle {*/
-/*      display: none;*/
-/*    }*/
-/*    .mobile_menu {*/
-/*      display: initial;*/
-/*    }*/
-/*    .mobile_menu ion-icon {*/
-/*        height: 100px;*/
-/*        width: 100px;*/
-/*    }*/
+    }
 
-/*    !* Стили для кнопки меню *!*/
-/*    .menu-button {*/
-/*        cursor: pointer;*/
-/*        color: #fff;*/
-/*        border-radius: 5px;*/
-/*    }*/
+    .footer-box h3 {
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
 
-/*    .mobile_menu_user {*/
-/*        display: flex;*/
-/*        align-items: center;*/
-/*    }*/
-/*    !* Стили для всплывающего меню *!*/
-/*    .menu {*/
-/*        position: absolute;*/
-/*        top: 200px;*/
-/*        left: -100%; !* Скрываем меню за пределами видимости *!*/
-/*        width: 100%;*/
-/*        background-color: rgba(34,40,49,0.8);*/
-/*        transition: left 0.3s ease; !* Анимация движения меню *!*/
-/*        z-index: 2;*/
-/*    }*/
+    .footer-box p {
+        font-size: 24px;
+    }
 
-/*    !* Стили для элементов меню *!*/
-/*    .menu ul {*/
-/*        list-style-type: none;*/
-/*        padding: 0;*/
-/*    }*/
+    /********* [ HOME PAGE ] *********/
+    .content-home {
+        text-align: left;
+    }
 
-/*    .menu li {*/
-/*        padding: 30px;*/
-/*        font-size: 36px;*/
-/*        text-align: left;*/
-/*    }*/
+    .content-home h1{
+        font-size: 64px;
+    }
 
-/*    .btn {*/
-/*        font-size: 36px;*/
-/*    }*/
+    .content-home h1 p{
+        font-size: 128px;
+    }
 
-/*    !* Анимация при активации (нажатии) чекбокса *!*/
-/*    .menu-toggle:checked + .menu-button + .menu {*/
-/*        left: 0;*/
-/*        position: absolute;!* Показываем меню при активации чекбокса *!*/
-/*    }*/
+    .content-home h3{
+        font-size: 32px;
+        width: 600px;
+    }
+
+    .content-home input,.search-input input[type=text] {
+        font-size: 32px;
+        width: 600px;
+        border-radius: 30px;
+    }
+
+    .btn {
+        font-size: 32px;
+        border-radius: 30px;
+    }
+    .error_info ion-icon {
+        font-size: 72px;
+    }
+
+    .error_info span {
+        max-width: 600px;
+        font-size: 24px;
+    }
+    /********* [ MEETING DETAIL ] *********/
+    .meeting-id2 {
+        font-size: 500px;
+
+    }
+
+    .name_main_date {
+        font-size: 48px;
+    }
+
+    .name_main {
+        font-size: 140px;
+    }
+
+    .yes, .no {
+        width: 500px;
+        font-size: 32px;
+
+    }
+
+    .work_time p {
+        font-size: 24px;
+    }
+
+    /********* [ MOBILE MENU ] *********/
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+    .mobile_menu {
+      display: initial;
+    }
+    .mobile_menu ion-icon {
+        height: 100px;
+        width: 100px;
+    }
+
+    /* Стили для кнопки меню */
+    .menu-button {
+        cursor: pointer;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .mobile_menu_user {
+        display: flex;
+        align-items: center;
+    }
+    /* Стили для всплывающего меню */
+    .menu {
+        position: absolute;
+        top: 200px;
+        left: -100%; /* Скрываем меню за пределами видимости */
+        width: 100%;
+        background-color: rgba(34,40,49,0.8);
+        transition: left 0.3s ease; /* Анимация движения меню */
+        z-index: 2;
+    }
+
+    /* Стили для элементов меню */
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .menu li {
+        padding: 30px;
+        font-size: 36px;
+        text-align: left;
+    }
+
+    .btn {
+        font-size: 36px;
+    }
+
+    /* Анимация при активации (нажатии) чекбокса */
+    .menu-toggle:checked + .menu-button + .menu {
+        left: 0;
+        position: absolute;/* Показываем меню при активации чекбокса */
+    }
 
 
 

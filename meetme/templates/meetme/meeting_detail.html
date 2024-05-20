@@ -28,32 +28,70 @@
         <p class="name_main_date">Place where you can eat and drink for free:</p>
         <div>
             <div class="restaurant_box">
-                {% if object.restaurant %}
-                <p class="yes"><b>RESTAURANT : YES</b></p>
-                {% else %}
-                <p class="no"><b>RESTAURANT : NO</b></p>
-                {% endif %}
-                <div>
-                    <p><b>Breakfast:</b> from 7-30 to 9-30</p>
-                    <hr>
-                    <p><b>Lunch:</b> from 11-30 to 14-00</p>
+                <div class="restaurant_info">
+                    <div></div>
+                        {% if object.restaurant %}
+                        <p class="yes"><b>RESTAURANT : YES</b></p>
+                        {% else %}
+                        <div>
+                             <p class="no"><b>RESTAURANT : NO</b></p>
+                            <div class="contine_info">
+                                <ion-icon name="alert-circle-outline"></ion-icon>
+                                <h4 >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</h4>
+                            </div>
+
+                        </div>
+                         {% endif %}
+                    </div>
+                    <div class="work_time">
+                        <p ><b>Breakfast:</b> from 7-30 to 9-30</p>
+                        <hr>
+                        <p ><b>Lunch:</b> from 11-30 to 14-00</p>
+                    </div>
                 </div>
+
+            </div>
+            <div>
+                {% if object.coffee_station %}
+                <p class="yes"><b>COFFEE STATIONS : YES</b></p>
+                {% else %}
+                <div>
+                    <p class="no"><b>COFFEE STATIONS : NO</b></p>
+                    <div class="contine_info">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <h4 >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</h4>
+                    </div>
+                </div>
+
+                {% endif %}
             </div>
 
-            {% if object.coffee_station %}
-            <p class="yes"><b>COFFEE STATIONS : YES</b></p>
-            {% else %}
-            <p class="no"><b>COFFEE STATIONS : NO</b></p>
-            {% endif %}
 
-            {% if object.coffee_bar %}
-            <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
-            <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
-            {% else %}
-            <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
-            <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
-            {% endif %}
-        </div>
+            <div>
+
+            </div>
+                {% if object.coffee_bar %}
+                <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
+                <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
+                {% else %}
+                <div>
+                    <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
+                    <div class="contine_info">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <h4 >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</h4>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
+                    <div class="contine_info">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <h4 >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</h4>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
     </div>
 
     <!--        INFORMATION-->

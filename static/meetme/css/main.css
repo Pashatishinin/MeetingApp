@@ -24,6 +24,14 @@
 }
 
 /****************************************** [ HEADER PAGE ]************************************/
+.mobile_menu {
+    display: none;
+}
+
+.menu {
+    padding: 40px 0;
+}
+
 
 header {
     max-width: 1920px;
@@ -114,9 +122,7 @@ ul li a,.form-body a,.form-body-reg a{
     color: #f4e7d7;
 }
 
-.mobile_menu {
-    display: none;
-}
+
 
 
 /****************************************** [ FOOTER PAGE ]************************************/
@@ -609,7 +615,33 @@ footer ion-icon {
 
 .restaurant_box {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contine_info {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contine_info ion-icon {
+    font-size: 32px;
+    margin-right: 20px;
+}
+
+.contine_info h4 {
+    width: 400px;
+}
+
+.restaurant_info {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
 }
 
 .yes, .no {

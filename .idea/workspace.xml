@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="register/login">
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Meeting edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
     </list>
@@ -219,7 +219,7 @@
       <workItem from="1715796425599" duration="1053000" />
       <workItem from="1715885970398" duration="2345000" />
       <workItem from="1716219976817" duration="10909000" />
-      <workItem from="1716308737324" duration="7138000" />
+      <workItem from="1716308737324" duration="7801000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -369,7 +369,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716313379066</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Meeting edit">
+      <option name="closed" value="true" />
+      <created>1716316204750</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716316204750</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +398,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit" />
     <MESSAGE value="register/login" />
-    <option name="LAST_COMMIT_MESSAGE" value="register/login" />
+    <MESSAGE value="Meeting edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meeting edit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MeetingApp$schnekel.coverage" NAME="schnekel Coverage Results" MODIFIED="1681237111266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

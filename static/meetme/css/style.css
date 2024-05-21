@@ -308,8 +308,35 @@
 
     .meeting_form_box input[type=submit]:hover {
         width: 240px;
+    }
 
+    /********* [ MEETING EDIT ] *********/
+    .meeting-content {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .add-meeting {
+        width: 450px;
+        height: 110px;
+        font-size: 28px;
+    }
+
+    .add-meeting ion-icon {
+        font-size: 60px;
+    }
+
+    .search-input {
+        margin-left: 0;
+    }
+
+    .icons_button {
+        width: 190px;
+    }
+
+    .meeting-box ion-icon {
+        width: 60px;
+        height: 35px;
     }
 
 }

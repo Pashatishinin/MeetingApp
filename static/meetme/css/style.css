@@ -5,8 +5,7 @@
 
 
     /********* [ HEADER PAGE ] *********/
-
-    .header .header-left{
+    .header .header-left {
         display: none;
     }
 
@@ -19,6 +18,7 @@
         position: static;
         margin: 0 auto;
     }
+
     /********* [ FOOTER PAGE ] *********/
     .footer-content {
         display: flex;
@@ -49,29 +49,31 @@
         text-align: left;
     }
 
-    .content-home h1{
+    .content-home h1 {
         font-size: 64px;
     }
 
-    .content-home h1 p{
+    .content-home h1 p {
         font-size: 128px;
     }
 
-    .content-home h3{
+    .content-home h3 {
         font-size: 32px;
         width: 600px;
     }
 
-    .content-home input,.search-input input[type=text] {
+    .content-home input, .search-input input[type=text] {
         font-size: 32px;
         width: 600px;
-        border-radius: 30px;
+        border-radius: 20px;
+        margin-right: 10px;
     }
 
     .btn {
         font-size: 32px;
-        border-radius: 30px;
+        border-radius: 20px;
     }
+    /********* [ ERROR MESSAGE ] *********/
     .error_info ion-icon {
         font-size: 72px;
     }
@@ -80,14 +82,17 @@
         max-width: 600px;
         font-size: 24px;
     }
+
     /********* [ MEETING DETAIL ] *********/
+
+
     .meeting-id2 {
-        font-size: 500px;
+        font-size: 400px;
 
     }
 
     .name_main_date {
-        font-size: 48px;
+        font-size: 28px;
     }
 
     .name_main {
@@ -104,21 +109,33 @@
         font-size: 24px;
     }
 
-    /********* [ MOBILE MENU ] *********/
+    .contine_info ion-icon {
+        font-size: 40px;
     }
 
+    .contine_info p {
+        width: 400px;
+        font-size: 24px;
+    }
+
+    .description {
+        width: 700px;
+    }
+    /********* [ MOBILE MENU ] *********/
     .menu-toggle {
-      display: none;
+        display: none;
     }
+
     .mobile_menu {
-      display: initial;
+        display: initial;
     }
+
     .mobile_menu ion-icon {
         height: 100px;
         width: 100px;
     }
 
-    /* Стили для кнопки меню */
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     .menu-button {
         cursor: pointer;
         color: #fff;
@@ -129,18 +146,20 @@
         display: flex;
         align-items: center;
     }
-    /* Стили для всплывающего меню */
+
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     .menu {
         position: absolute;
         top: 200px;
-        left: -100%; /* Скрываем меню за пределами видимости */
+        left: -100%; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         width: 100%;
-        background-color: rgba(34,40,49,0.8);
-        transition: left 0.3s ease; /* Анимация движения меню */
+        height: 100%;
+        background-color: rgba(34, 40, 49, 0.8);
+        transition: left 0.3s ease; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
         z-index: 2;
     }
 
-    /* Стили для элементов меню */
+    /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ */
     .menu ul {
         list-style-type: none;
         padding: 0;
@@ -156,11 +175,12 @@
         font-size: 36px;
     }
 
-    /* Анимация при активации (нажатии) чекбокса */
+    /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ) пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     .menu-toggle:checked + .menu-button + .menu {
         left: 0;
-        position: absolute;/* Показываем меню при активации чекбокса */
+        position: absolute; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     }
+}
 
 
 

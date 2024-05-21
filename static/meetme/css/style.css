@@ -215,142 +215,105 @@
         width: 700px;
     }
 
+    /********* [ DELETE PAGE ] *********/
+    .delete_confirm_box {
+        max-width: 800px;
+    }
+
+    .delete_confirm_box ion-icon {
+        width: 80px;
+        height: 100px;
+    }
+
+    .text_confirm {
+        font-size: 48px;
+    }
+
+    .btn3 {
+        width: 180px;
+        font-size: 32px;
+        margin: 60px 100px;
+        max-height: 90px;
+        padding: 20px 50px;
+    }
+
+    .btn3:hover{
+        width: 200px;
+    }
+
+    /********* [ DELETE PAGE ] *********/
+    .error_box {
+        max-width: 800px;
+    }
+
+    .error_box ion-icon {
+        width: 80px;
+        height: 100px;
+    }
+
+    .error_box h1 {
+        font-size: 48px;
+    }
+    /********* [ MEETING EDIT ] *********/
+    .create_meeting {
+        font-size: 64px;
+    }
+
+    .meeting_edit_form, .meeting_edit_yes_no, .meeting_info_form {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .title_form input[type=text] {
+        width: 730px;
+        font-size: 28px;
+    }
+    .date_field {
+        width: 750px;
+    }
+    select {
+        width: 100px;
+        margin-right: 20px;
+        font-size: 28px;
+    }
+
+    .title_form_numbers input[type=number] {
+        width: 400px;
+        font-size: 28px;
+    }
+
+    .semi_title,.description_area p{
+        width: 500px;
+        font-size: 14px;
+    }
+
+    .meeting_form_box input[type=checkbox] {
+        width: 80px;
+        height: 40px;
+    }
+
+    .meeting_form_box input[type=checkbox]::before {
+        width: 40px;
+        height: 40px;
+    }
+
+    .meeting_form_box input[type=checkbox]:checked::before {
+        left: 40px;
+    }
+
+    .meeting_form_box input[type=submit] {
+        max-height: 90px;
+        width: 200px;
+        font-size: 32px;
+    }
+
+    .meeting_form_box input[type=submit]:hover {
+        width: 240px;
+
+
+    }
+
 }
 
-
-
-/*    !**[ FOOTER ]**!*/
-/*    footer {*/
-/*        display: block;*/
-/*        font-size: 28px;*/
-/*    }*/
-
-/*    .footer-box{*/
-/*        margin: 40px auto;*/
-/*        width: 600px;*/
-/*    }*/
-/*    .footer_links {*/
-/*        display: none;*/
-/*    }*/
-
-/*    .contacts-links {*/
-/*        margin: 10px 20%;*/
-/*    }*/
-
-
-
-/*    !**[ HOME PAGE ]**!*/
-/*    .content-home {*/
-/*    text-align: center;*/
-/*}*/
-
-/*    .content-home h1{*/
-/*        font-size: 48px;*/
-/*    }*/
-
-/*    .content-home h1 p{*/
-/*        font-size: 100px;*/
-/*    }*/
-
-/*    .content-home h3{*/
-/*        width: 600px;*/
-/*        font-size: 36px;*/
-/*        margin: 30px auto;*/
-/*        font-weight: normal;*/
-/*        color: #f4e7d7;*/
-
-/*    }*/
-
-/*    .content-home input,.search-input input[type=text] {*/
-
-/*        font-size: 36px;*/
-/*        width: 600px;*/
-/*    }*/
-
-
-
-/*    !**[ ERROR ]**!*/
-
-/*    .error_info {*/
-/*        display: flex;*/
-/*        margin: 20px 10%;*/
-/*}*/
-
-/*    .error_info ion-icon {*/
-/*        font-size: 60px;*/
-/*    }*/
-
-/*    .error_info span {*/
-/*        max-width: 500px;*/
-/*        font-size: 30px;*/
-/*        text-align: left;*/
-/*    }*/
-/*    }*/
-
-
-/*** [ Large Device, Wide Screen ] ***/
-/*@media screen and (max-width: 1200px) {*/
-
-/*    * {*/
-/*        font-size: 14px;*/
-/*    }*/
-/*    .body_content {*/
-/*        min-height: 70%;*/
-/*    }*/
-/*    .header {*/
-/*        width: 95%;*/
-/*    }*/
-/*    .logo {*/
-/*        width: 70px;*/
-/*        }*/
-
-/*    .body_content {*/
-/*        margin: 15px auto;*/
-/*    }*/
-/*    .content-home {*/
-/*        padding: 50px 50px;*/
-/*    }*/
-/*    .content-home h1 {*/
-/*        font-size: 24px;*/
-/*        margin-bottom: 25px*/
-/*    }*/
-
-/*    .content-home h1 p {*/
-/*        font-size: 48px;*/
-/*    }*/
-
-/*    .content-home h3 {*/
-/*        margin-bottom: 25px;*/
-/*    }*/
-
-/*    .footer-content {*/
-/*        width: 95%;*/
-/*    }*/
-/*   .icons_button {*/
-/*        width: 250px;*/
-/*    }*/
-/*    .meeting-box, .meeting-box2 {*/
-/*        max-width: 580px;*/
-/*    }*/
-
-/*    .meeting-box-content {*/
-/*        max-width: 48%;*/
-/*    }*/
-
-/*    .meeting-title {*/
-/*        max-width: 70%;*/
-/*        white-space: nowrap;*/
-/*        overflow: hidden;*/
-/*        text-overflow: ellipsis;*/
-/*    }*/
-
-/*    .meeting-content {*/
-
-/*        padding: 25px 25px;*/
-/*    }*/
-
-
-/*}*/
 
 /*** [ Medium Device, Desktops ] ***/
 @media screen and (max-width: 992px) {

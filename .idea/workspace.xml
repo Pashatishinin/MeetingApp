@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/meetme/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +221,7 @@
       <workItem from="1715796425599" duration="1053000" />
       <workItem from="1715885970398" duration="2345000" />
       <workItem from="1716219976817" duration="10909000" />
-      <workItem from="1716308737324" duration="1628000" />
+      <workItem from="1716308737324" duration="4265000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -348,7 +347,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716235512480</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit">
+      <option name="closed" value="true" />
+      <created>1716310728743</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716310728743</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge pull request #4 from Pashatishinin/second&#10;&#10;commit">
+      <option name="closed" value="true" />
+      <created>1716310746570</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716310746570</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -31,6 +31,16 @@
 
                 <div class="meeting-box-content">
                     <h1 class="meeting-id">{{meeting.id}}</h1>
+                    {% if request.user.is_superuser %}
+                        <div class="user_box">
+                            <p class="user_names usernames_nickname">{{meeting.user.username}}</p>
+                            <p class="user_names">{{meeting.user.first_name|upper}}</p>
+                            <p class="user_names">{{meeting.user.last_name|upper}}</p>
+
+                        </div>
+
+                    {% endif %}
+
                     <h1 class="meeting-title">{{meeting.title|upper}}</h1>
 
                     {% if meeting.end_date == meeting.start_date %}

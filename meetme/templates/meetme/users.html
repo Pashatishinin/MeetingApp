@@ -1,0 +1,22 @@
+{% extends 'meetme/main.html' %}
+{% load static %}
+{% block content %}
+<div class="users_page">
+    {% for user in users %}
+    <div class="users_list_box">
+        <h4 class="users_list_box_nickname">{{user}}</h4>
+        <div>
+            <h4>{{user.first_name|upper}}</h4>
+            <h4>{{user.last_name|upper}}</h4>
+        </div>
+        <a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+
+
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock content %}

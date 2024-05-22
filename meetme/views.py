@@ -109,19 +109,34 @@ class Meetings(LoginRequiredMixin, ListView):
     context_object_name = 'meetings'
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
-        sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
-            obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
-        context['sorted_meetings'] = sorted_dates
-        context['count'] = context['meetings'].count()
-        context['timenow'] = timezone.now()
-        search_input = self.request.GET.get('search-area') or ''
-        if search_input:
-            context['sorted_meetings'] = context['meetings'].filter(title__icontains=search_input)
+        if self.request.user.is_superuser:
+            context = super().get_context_data(**kwargs)
+            context['meetings'] = context['meetings'].order_by('start_date')
+            sorted_dates = sorted(context['meetings'], key=lambda
+                obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
+            context['sorted_meetings'] = sorted_dates
+            context['count'] = context['meetings'].count()
+            context['timenow'] = timezone.now()
+            search_input = self.request.GET.get('search-area') or ''
+            if search_input:
+                context['sorted_meetings'] = context['meetings'].filter(title__icontains=search_input)
 
-        context['search_input'] = search_input
-        return context
+            context['search_input'] = search_input
+            return context
+        else:
+            context = super().get_context_data(**kwargs)
+            context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
+            sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
+                obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
+            context['sorted_meetings'] = sorted_dates
+            context['count'] = context['meetings'].count()
+            context['timenow'] = timezone.now()
+            search_input = self.request.GET.get('search-area') or ''
+            if search_input:
+                context['sorted_meetings'] = context['meetings'].filter(title__icontains=search_input)
+
+            context['search_input'] = search_input
+            return context
 
 
 class MeetingDetail(DetailView):
@@ -213,5 +228,10 @@ INFO PAGE
 
 def info_view(request):
     return redirect('home')
+
+
+def users_view(request):
+    users = User.objects.all()
+    return render(request, "meetme/users.html", {"users": users})
 
 

@@ -80,10 +80,12 @@ def register_page(request):
             last_name = request.POST.get('lastname')
             email = request.POST.get('email')
             password = request.POST.get('password')
+            user_type = request.POST.get('type')
             if user_name:
                 my_user = User.objects.create_user(user_name, email, password)
                 my_user.first_name = first_name
                 my_user.last_name = last_name
+                my_user.type = user_type
                 my_user.save()
                 user = authenticate(request, username=user_name, password=password)
                 if user is not None:
@@ -233,5 +235,11 @@ def info_view(request):
 def users_view(request):
     users = User.objects.all()
     return render(request, "meetme/users.html", {"users": users})
+
+
+def delete_view(request, id):
+    dele = User.objects.get(id=id)
+    dele.delete()
+    return redirect('users')
 
 

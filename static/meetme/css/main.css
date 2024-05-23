@@ -1090,26 +1090,34 @@ footer ion-icon {
 
 .users_list_box {
     color: #E6E6EB;
-    display: flex;
     width: 400px;
     background: #222831;
     margin-bottom: 20px;
-    height: 60px;
     padding: 10px;
     border-radius: 10px;
-    justify-content: space-between;
     border: 2px solid #E6E6EB;
 }
-
-.users_list_box_nickname {
-    width: 100px;
+.users_page th {
+    text-align: center;
+    font-size: 14px;
+    color: #E6E6EB;
 }
-.users_list_box ion-icon {
-    text-align: end;
-    width: 40px;
-    padding: 5px;
+
+.users_page h3 {
+    font-size: 14px;
+    color: #E6E6EB;
+}
+.users_list_box ion-icon, .users_list_box td {
+    padding: 10px;
     font-size: 24px;
     color: #E6E6EB;
+    margin: 20px;
+    text-align: center;
+
+}
+
+.users_list_box td {
+    font-size: 18px;
 }
 
 .users_list_box ion-icon:hover {

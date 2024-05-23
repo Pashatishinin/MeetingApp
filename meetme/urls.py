@@ -33,7 +33,8 @@ urlpatterns = [
     path('meeting-delete/<int:pk>/', views.MeetingDelete.as_view(), name="meeting-delete"),
 
     # USERS VIEW
-    path('users/', views.users_view, name="users")
+    path('users/', views.users_view, name="users"),
+    path('delete/<int:id>', views.delete_view, name="delete")
     ]
 
 

@@ -2,18 +2,52 @@
 {% load static %}
 {% block content %}
 <div class="users_page">
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">TYPE</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">FULL NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">DELETE</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
     {% for user in users %}
-    <div class="users_list_box">
-        <h4 class="users_list_box_nickname">{{user}}</h4>
-        <div>
-            <h4>{{user.first_name|upper}}</h4>
-            <h4>{{user.last_name|upper}}</h4>
-        </div>
-        <a href="#"><ion-icon name="trash-outline"></ion-icon></a>
+        <tr class="users_list_box">
+            <td>{{user.id}}</td>
+            <td>{{user.type}}</td>
+            <td>{{user}}</td>
+            <td>{{user.first_name|upper}} {{user.last_name|upper}}</td>
+            <td>{{user.email}}</td>
 
+            <td>
+                <a href="{% url 'delete' user.id%}"><ion-icon name="trash-outline"></ion-icon></a>
+            </td>
+        </tr>
+<!--        <h4 class="users_list_box_nickname">{{user}}</h4>-->
+<!--        <div>-->
+<!--            <h4>{{user.first_name|upper}}</h4>-->
+<!--            <h4>{{user.last_name|upper}}</h4>-->
+<!--        </div>-->
+<!--        <a href="#"><ion-icon name="trash-outline"></ion-icon></a>-->
+    {% empty %}
+        <h3>NO USERS</h3>
+        <style>
+            .users_page th {
+                display: none;
+            }
 
-    </div>
+        </style>
     {% endfor %}
+
+    </table>
+
+
 </div>
 
 

@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Meeting page final">
-      <change afterPath="$PROJECT_DIR$/meetme/templates/meetme/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_24,_20_11_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_05_24__20_11__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/meetme/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="superuser edit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,7 +217,7 @@
       <workItem from="1715885970398" duration="2345000" />
       <workItem from="1716219976817" duration="10909000" />
       <workItem from="1716308737324" duration="7958000" />
-      <workItem from="1716398327127" duration="4271000" />
+      <workItem from="1716398327127" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -394,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716316979645</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="superuser edit">
+      <option name="closed" value="true" />
+      <created>1716403326927</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1716403326928</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +414,8 @@
     <MESSAGE value="register/login" />
     <MESSAGE value="Meeting edit" />
     <MESSAGE value="Meeting page final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meeting page final" />
+    <MESSAGE value="superuser edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="superuser edit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MeetingApp$schnekel.coverage" NAME="schnekel Coverage Results" MODIFIED="1681237111266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

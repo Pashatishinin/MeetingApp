@@ -233,8 +233,13 @@ def info_view(request):
 
 
 def users_view(request):
-    users = User.objects.all()
-    return render(request, "meetme/users.html", {"users": users})
+
+    if request.user.is_superuser:
+        users = User.objects.all()
+        return render(request, "meetme/users.html", {"users": users})
+
+    else:
+        return redirect("error")
 
 
 def delete_view(request, id):

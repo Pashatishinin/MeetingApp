@@ -52,7 +52,7 @@
                         <li><a class="btn4" href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
                         <li><a class="btn4" href="{% url 'info' %}"><B>INFO</B></a></li>
                         {% if request.user.is_superuser %}
-                            <li><a class="btn4" href="{% url 'info' %}"><B>USERS</B></a></li>
+                            <li><a class="btn4" href="{% url 'users' %}"><B>USERS</B></a></li>
                         {% endif %}
                         {% if request.user.is_authenticated %}
                         <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>

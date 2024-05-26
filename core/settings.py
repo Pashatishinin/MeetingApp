@@ -90,7 +90,7 @@ DATABASES = {
    }
 }
 
-# DATABASES['default'] = dj_database_url.parse("postgres://meetme_django_render_user:bR2P64T1hkM5W88aoHDSo5G0gFMDnktA@dpg-cp7oeqol6cac73e7j2bg-a.oregon-postgres.render.com/meetme_django_render")
+# DATABASES['default'] = dj_database_url.parse("postgres://meetme_database_render_user:fQoxFq0gRsYnbhTIWAQw1wIskCnUQl9D@dpg-cp9q3vsf7o1s73a58ds0-a.oregon-postgres.render.com/meetme_database_render")
 
 database_url = os.environ.get("DATABASE_URL")
 DATABASES['default'] = dj_database_url.parse(database_url)

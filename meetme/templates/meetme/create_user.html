@@ -1,0 +1,55 @@
+{% extends 'meetme/main.html' %}
+
+{% block content %}
+
+<div class="form-main">
+    <div class="form_box register">
+        <h1 class="register_title">REGISTER</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input_box">
+                <input class="register_form_username" type="text" name="username" id="username">
+                <label class="login_info_form" for="username">USERNAME</label>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
+            {% if info %}
+            <div class="error_info">
+                <ion-icon class="error-icon" name="close-circle-outline"></ion-icon>
+                <span>Username "{{ username }}" already exist.
+                    Please use another username</span>
+            </div>
+            {% endif %}
+            <div class="name_box">
+                <div class="input_box">
+                    <input class="login_form_name" type="text" name="firstname" id="firstname">
+                    <label class="login_info_form" for="firstname">FIRSTNAME</label>
+
+                </div>
+                <div class="input_box">
+                    <input class="login_form_name" type="text" name="lastname" id="lastname">
+                    <label class="login_info_form" for="lastname">LASTNAME</label>
+
+                </div>
+
+            </div>
+
+            <div class="input_box">
+                <input class="register_form_left" type="email" name="email" id="email">
+                <label class="login_info_form" for="email">EMAIL</label>
+                <ion-icon name="mail-outline"></ion-icon>
+
+            </div>
+            <div class="input_box">
+                <input class="register_form_left" type="password" name="password" id="password">
+                <label class="login_info_form" for="password">PASSWORD</label>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+            <input class="btn2" type="submit" value="REGISTER">
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}

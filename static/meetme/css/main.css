@@ -185,12 +185,10 @@ footer ion-icon {
 .content-home h1{
     font-size: 32px;
     color: #f4e7d7;
+    margin-bottom: 50px;
 }
 
-.logo2 {
-    width: 700px;
-    text-align: left;
-}
+
 .content-home h1 p{
     font-size: 64px;
     color:#00ADB5;

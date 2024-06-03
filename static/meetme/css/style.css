@@ -110,7 +110,10 @@
     .content-home h1 {
         font-size: 64px;
     }
-
+    .logo2 {
+        width: 300px;
+        text-align: left;
+}
     .content-home h1 p {
         font-size: 128px;
     }

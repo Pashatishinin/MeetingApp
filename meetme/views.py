@@ -21,7 +21,7 @@ from django.urls import reverse_lazy
 
 from .models import Meeting, MeetingHistory
 
-from .forms import NewMeetingForm, SearchForm
+from .forms import NewMeetingForm, SearchForm, RegisterForm
 
 """""""""""""""""""""""""""""""""
 HOME PAGE
@@ -87,17 +87,22 @@ def register_page(request):
                 my_user.last_name = last_name
                 my_user.type = user_type
                 my_user.save()
-                user = authenticate(request, username=user_name, password=password)
-                if user is not None:
-                    login(request, user)
-                return redirect('meetings')
+                if request.user.is_superuser:
+                    return redirect('users')
+                else:
+                    user = authenticate(request, username=user_name, password=password)
+                    if user is not None:
+                        login(request, user)
+
+                    return redirect('meetings')
 
             else:
                 return redirect('register')
 
         except IntegrityError as e:
             return render(request, "meetme/register.html", {"info": e, "username" : user_name})
-
+    if request.user.is_superuser:
+        return render(request, "meetme/create_user.html")
     return render(request, "meetme/register.html")
 
 
@@ -235,7 +240,7 @@ def info_view(request):
 def users_view(request):
 
     if request.user.is_superuser:
-        users = User.objects.all()
+        users = User.objects.all().order_by('-date_joined')
         return render(request, "meetme/users.html", {"users": users})
 
     else:
@@ -246,5 +251,15 @@ def delete_view(request, id):
     dele = User.objects.get(id=id)
     dele.delete()
     return redirect('users')
+
+
+def update_user_view(request, pk):
+    user = User.objects.get(id=pk)
+    if request.method == 'POST':
+        form = RegisterForm(request.POST, instance=user)
+    else:
+        form = RegisterForm(instance=user)
+
+    return render(request, 'meetme/create_user.html', {'form': form})
 
 

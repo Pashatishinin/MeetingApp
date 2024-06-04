@@ -1128,9 +1128,40 @@ footer ion-icon {
     /****************/
 
 
+/******** [ CREATE_USER ] ********/
 
+.create_user_content {
+    text-align: left;
+    padding: 100px 100px;
+}
 
+.create_user_content_box h1 {
+    font-size: 64px;
+    color: #00adb5;
+    text-align: left;
+    margin-bottom: 40px;
+}
 
+.create_user_content_box form {
+    width: 500px;
+}
+
+.create_user_content_name_box {
+    width: 450px;
+}
+
+.create_user_content_type_box {
+    width: 300px;
+}
+
+.create_user_content_box input, .create_user_content_box label{
+    color: #F4E7D7;
+}
+
+.create_user_content_box input:focus ~ label,
+.create_user_content_box input:valid ~ label{
+    color: #F4E7D7;
+}
 
 
 

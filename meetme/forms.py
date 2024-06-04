@@ -31,17 +31,13 @@ class NewMeetingForm(forms.ModelForm):
             'end_date': SelectDateWidget(),
         }
 
-    # def __init__(self,*args, **kwargs):
-    #     user = kwargs.pop('user', None)
-    #     super().__init__(*args, **kwargs)
-    #     if user:
-    #         self.fields['user'].initial = user
 
 
 class RegisterForm(forms.ModelForm):
     user = forms.CharField(required=False)
     first_name = forms.CharField()
     second_name = forms.CharField()
+    user_type = forms.NumberInput()
     password = forms.CharField(required=False)
     password2 = forms.CharField()
 
@@ -52,39 +48,4 @@ class RegisterForm(forms.ModelForm):
 
 
 
-
-# class NewMeetingForm(ModelForm):
-#     user = forms.CharField(max_length=100)
-#     start_date = forms.DateField(widget=DateInput)
-#     end_date = forms.DateField(widget=DateInput)
-#     title = forms.CharField(max_length=100)
-#     coffee_bar = forms.BooleanField(required=False)
-#     coffee_station = forms.BooleanField(required=False)
-#     restaurant = forms.BooleanField(required=False)
-#     kst_number = forms.IntegerField()
-#     number_of_quests = forms.IntegerField()
-#     description = forms.Textarea()
-#
-#     class Meta:
-#         model = Meeting
-#         fields = '__all__'
-#         widgets = {
-#             'start_date': forms.DateInput(format="%d.%m.%Y",
-#                                      attrs={
-#                                          "class": "form-control",
-#                                          "value": datetime.datetime.strftime(datetime.datetime.now(),
-#                                                                              format="%d.%m.%Y"),
-#                                          "type": "datetime",
-#                                      }
-#                                      ),
-#             'end_date': forms.DateInput(format="%d.%m.%Y",
-#                                      attrs={
-#                                          "class": "form-control",
-#                                          "value": datetime.datetime.strftime(datetime.datetime.now(),
-#                                                                              format="%d.%m.%Y"),
-#                                          "type": "datetime",
-#                                      }
-#                                      ),
-#             'random_code': forms.HiddenInput()
-#         }
 

@@ -2,15 +2,21 @@
 
 {% block content %}
 
-<div class="form-main">
-    <div class="form_box register">
-        <h1 class="register_title">REGISTER</h1>
+<div class="create_user_content">
+    <div class="form_box create_user_content_box">
+        <h1 >CREATE USER</h1>
         <form method="POST">
             {% csrf_token %}
             <div class="input_box">
                 <input class="register_form_username" type="text" name="username" id="username">
                 <label class="login_info_form" for="username">USERNAME</label>
                 <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div class="input_box">
+                <input class="login_form_name" type="number" name="type" id="type">
+                <label class="login_info_form" for="type">TYPE</label>
+                <ion-icon name="keypad-outline"></ion-icon>
+
             </div>
             {% if info %}
             <div class="error_info">
@@ -19,7 +25,7 @@
                     Please use another username</span>
             </div>
             {% endif %}
-            <div class="name_box">
+            <div class="create_user_content_name_box name_box">
                 <div class="input_box">
                     <input class="login_form_name" type="text" name="firstname" id="firstname">
                     <label class="login_info_form" for="firstname">FIRSTNAME</label>
@@ -44,7 +50,8 @@
                 <label class="login_info_form" for="password">PASSWORD</label>
                 <ion-icon name="lock-closed-outline"></ion-icon>
             </div>
-            <input class="btn2" type="submit" value="REGISTER">
+            <input class="btn2" type="submit" value="CREATE">
+            </form>
     </div>
 
 </div>

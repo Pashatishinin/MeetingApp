@@ -2,6 +2,10 @@
 {% load static %}
 {% block content %}
 <div class="users_page">
+    <div onclick="location.href='{% url 'create_user' %}'" style="cursor:pointer;" class="add-meeting">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <p class="add_meeting_title">ADD A NEW USER</p>
+    </div>
     <table>
         <thead>
         <tr>
@@ -10,6 +14,7 @@
             <th scope="col">USERNAME</th>
             <th scope="col">FULL NAME</th>
             <th scope="col">EMAIL</th>
+            <th scope="col">DATE</th>
             <th scope="col">DELETE</th>
         </tr>
     </thead>
@@ -24,9 +29,12 @@
             <td>{{user}}</td>
             <td>{{user.first_name|upper}} {{user.last_name|upper}}</td>
             <td>{{user.email}}</td>
+            <td>{{user.date_joined}}</td>
+
 
             <td>
                 <a href="{% url 'delete' user.id%}"><ion-icon name="trash-outline"></ion-icon></a>
+                <a href="{% url 'user-update' user.id%}"><ion-icon name="create-outline"></ion-icon></a>
             </td>
         </tr>
 <!--        <h4 class="users_list_box_nickname">{{user}}</h4>-->

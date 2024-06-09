@@ -3,6 +3,7 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MEETME</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
             background-size: 1920px 1080px;
             background-attachment: fixed;
         }
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 768px) {
 
             .main_body {
                 background-image: url('{% static "meetme/img/background_2.png" %}') !important;
@@ -36,7 +37,7 @@
 
     <header>
 
-        <div class="header">
+        <div class="header_box header">
             <!-- Menu will change for mobile screen            -->
             <div class="mobile_menu">
                 <input type="checkbox" id="menu-toggle" class="menu-toggle">
@@ -115,14 +116,6 @@
                 <h3><b>ABOUT US</b></h3>
                 <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your guests to
                     spend your time during meeting more comfortable</p>
-            </div>
-            <div class="footer-box">
-                <h3><b>LINKS</b></h3>
-                <ul class="header-left">
-                    <li><a href="{% url 'home' %}">HOME</li>
-                    <li><a href="{% url 'meetings' %}">MEETINGS</a></li>
-                    <li><a href="{% url 'info' %}">INFO</a></li>
-                </ul>
             </div>
             <div class="footer-box">
                 <h3><b>CONTACT US</b></h3>

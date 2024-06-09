@@ -25,7 +25,7 @@
     {% for user in users %}
         <tr class="users_list_box">
             <td>{{user.id}}</td>
-            <td>{{user.type}}</td>
+            <td>{{user.user_type}}</td>
             <td>{{user}}</td>
             <td>{{user.first_name|upper}} {{user.last_name|upper}}</td>
             <td>{{user.email}}</td>
@@ -37,12 +37,7 @@
                 <a href="{% url 'user-update' user.id%}"><ion-icon name="create-outline"></ion-icon></a>
             </td>
         </tr>
-<!--        <h4 class="users_list_box_nickname">{{user}}</h4>-->
-<!--        <div>-->
-<!--            <h4>{{user.first_name|upper}}</h4>-->
-<!--            <h4>{{user.last_name|upper}}</h4>-->
-<!--        </div>-->
-<!--        <a href="#"><ion-icon name="trash-outline"></ion-icon></a>-->
+
     {% empty %}
         <h3>NO USERS</h3>
         <style>

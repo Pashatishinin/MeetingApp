@@ -17,6 +17,7 @@ class Meeting(models.Model):
     kst_number = models.IntegerField()
     number_of_quests = models.IntegerField(null=True, default=False)
     description = models.TextField(max_length=300, null=True, blank=True)
+    recorded = models.BooleanField(default=False)
 
 
     def __str__(self):

@@ -11,17 +11,17 @@
     height: 100%;
     width: 100%;
     background: #222831;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: 'Montserrat', sans-serif;
 }
 
 .body_content {
     width: 100%;
     max-width: 1920px;
-    min-height: 600px;
-    margin: 30px auto;
-
+    margin: 0 auto;
 }
+
+
+
 
 /****************************************** [ HEADER PAGE ]************************************/
 .mobile_menu {
@@ -31,7 +31,6 @@
 .menu {
     padding: 40px 0;
 }
-
 
 header {
     max-width: 1920px;
@@ -44,7 +43,7 @@ header {
     width: 100px;
 }
 
-.header {
+.header_box {
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -54,13 +53,13 @@ header {
     align-items: center;
 }
 
-.header .header-right,.header .header-left{
+.header-right, .header-left{
     list-style: none;
     display: flex;
     align-items: center;
 }
 
-.header ion-icon {
+.header_box ion-icon {
     color: #f4e7d7;
     height: 30px;
     width: 50px;
@@ -72,17 +71,16 @@ ul li{
     color: #f4e7d7;
 }
 
-ul li a,.form-body a,.form-body-reg a{
+ul li a{
     text-decoration: none;
     color: #f4e7d7;
-
 }
 
-.header-left li a,.form-body a,.form-body-reg a, .btn4{
+.header-left li a{
     position: relative;
 }
 
-.header-left li a::after,.form-body a::after,.form-body-reg a::after, .btn4::after{
+.header-left li a::after{
     content: '';
     background: #00ADB5;
     width: 0;
@@ -93,10 +91,9 @@ ul li a,.form-body a,.form-body-reg a{
     transition: width 0.5s;
 }
 
-.header-left li a:hover::after,.form-body a:hover::after,.form-body-reg a:hover::after, .btn4:hover::after {
+.header-left li a:hover::after{
     width: 100%;
 }
-
 
 .btn {
     text-align: center;
@@ -122,10 +119,8 @@ ul li a,.form-body a,.form-body-reg a{
     color: #f4e7d7;
 }
 
-
-
-
 /****************************************** [ FOOTER PAGE ]************************************/
+
 footer {
     margin: 0 auto;
     width: 100%;
@@ -137,20 +132,24 @@ footer {
 }
 
 .footer-content {
-    width: 87%;
+    width: 95%;
     margin: 10px auto;
+    text-align: center;
     display: flex;
-    align-items: start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .footer-box {
-    width: 300px;
+    width: 280px;
+    margin: 20px;
 }
 
 .footer-box h3 {
     margin-bottom: 20px;
 }
+
 .contacts-links {
     display: flex;
     align-items: center;
@@ -165,21 +164,264 @@ footer {
 .contacts a:hover{
     color:#00ADB5;
 }
+
 footer ion-icon {
     color: #f4e7d7;
     width: 40px;
     height: 25px;
 }
 
+/****************************************** [ HOME PAGE ]************************************/
 
-.footer-box li{
-    margin-bottom: 10px;
+/****************************************** [ MEETING PAGE ]************************************/
+
+.meeting-content {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 60px;
+    text-align: left;
 }
+
+.meeting-content-main {
+    position: sticky;
+    width: 350px;
+    top: 0;
+}
+
+.meeting-page-title {
+    font-size: 64px;
+    color: #00ADB5;
+    margin-bottom: 20px;
+}
+
+.meeting-counter {
+    font-size: 24px;
+    color: #F4E7D7;
+    margin-bottom: 20px;
+}
+
+.add-meeting {
+    width: 333px;
+    height: 98px;
+    border: 3px dashed #00ADB5;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.add-meeting:hover {
+    tansition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+}
+
+.add-meeting:hover {
+    background: #00ADB5;
+    color: #F4E7D7;
+}
+
+.add_meeting_title {
+    color: #F4E7D7;
+}
+
+.add-meeting ion-icon {
+    font-size: 40px;
+    color: #F4E7D7;
+}
+
+.meeting-content-box {
+    margin-left: 10px;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search-input input[type=text] {
+    padding: 10px 30px;
+    border: 3px solid #494949;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 20px;
+}
+
+.meeting_page_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meeting_week {
+    font-size: 24px;
+    color: #F4E7D7;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.meeting-box {
+    width: 260px;
+    height: 300px;
+    background: #F4E7D7;
+    color: #494949;
+    padding: 15px 30px;
+    margin: 30px 10px;
+    position: relative;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.meeting-box2 {
+    background: rgba(73, 73, 73, 0.7);
+    width: 260px;
+    height: 300px;
+    color: #494949;
+    padding: 15px 30px;
+    margin: 30px 10px;
+    position: relative;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.meeting-id {
+    color: rgba(0, 173, 181, 0.4);
+    font-size: 72px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.meeting-title, .meeting-title2 {
+    height: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    font-size: 32px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.meeting-title2 {
+    color: rgba(238, 238, 238, 0.5);
+}
+
+.meeting-date {
+    font-size: 16px;
+}
+
+.meeting-date2 {
+    color: rgba(238, 238, 238, 0.5);
+}
+
+.icons_button {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.meeting-box ion-icon {
+    color: #494949;
+    width: 40px;
+    height: 25px;
+}
+
+.meeting-box ion-icon:hover {
+    color: #00ADB5;
+}
+
+.meeting-box2 ion-icon {
+    color: #EEEEEE;
+    width: 40px;
+    height: 25px;
+}
+
+.meeting-box2 ion-icon:hover {
+    color: #00ADB5;
+}
+
+.user_box {
+    background: #494949;
+    color: #F4E7D7;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    height: 70px;
+
+}
+.user_box div{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.user_names_box {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.user_names {
+    margin-right: 10px;
+
+}
+
+.meeting_box input[type=checkbox] {
+        margin-left: 10px;
+        accent-color: #00ADB5;
+        margin-right: 10px;
+        appearance: none;
+        border-radius: 50px;
+        width: 40px;
+        background: white;
+        height: 20px;
+        box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+        inset 0 8px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+        outline: none;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .meeting_box input[type=checkbox]::before {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        background: linear-gradient(to bottom, #F4E7D7, #00ADB5);
+        border-radius: 50px;
+        transform: scale(0.9);
+        transition: 0.5s;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+        inset 4px 4px rgba(255, 255, 255, 0.2),
+        inset -4px 4px rgba(255, 255, 255, 0.2);
+
+    }
+
+    .meeting_box input[type=checkbox]:checked {
+        background: #00ADB5;
+        box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+        inset 0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .meeting_box input[type=checkbox]:checked::before {
+        left: 20px;
+    }
 
 /****************************************** [ HOME PAGE ]************************************/
 .content-home {
     text-align: left;
-    padding: 100px 100px;
+    padding: 60px 60px;
 }
 
 .content-home h1{
@@ -208,8 +450,165 @@ footer ion-icon {
     width: 300px;
     background: #f4e7d7;
     border-radius: 15px;
+    margin-bottom: 20px;
 }
 
+
+/******************************************************************************************/
+
+/****************************************** [ MEETING DETAIL ]************************************/
+
+.meeting_detail {
+    width: 100%;
+    max-width: 1920px;
+    margin: 10px auto;
+    padding: 50px 60px;
+    text-align: left;
+    color: #F4E7D7;
+    position: relative;
+}
+
+.meeting-id2 {
+    font-size: 300px;
+    color: rgba(0, 173, 181, 0.2);
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+
+.first_last_name {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.name_main_date {
+    text-align: left;
+    color: #f4e7d7;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.name_main {
+    font-size: 64px;
+    color: #00ADB5;
+    margin-bottom: 20px;
+}
+
+.restaurant_box {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contine_info {
+    display: flex;
+    align-items: center;
+    width: 500px;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contine_info ion-icon {
+    font-size: 64px;
+    margin-right: 20px;
+}
+
+.contine_info h4 {
+    width: 400px;
+}
+
+.restaurant_info {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+}
+
+.yes, .no {
+    width: 500px;
+    background: #F4E7D7;
+    color: #494949;
+    border-radius: 25px;
+    padding: 21px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.no {
+    text-decoration: line-through;
+    background: rgba(73,73,73,0.7);
+    color: #F4E7D7;
+}
+
+.restaurant_box hr {
+    margin: 10px 0;
+}
+
+.description {
+    width: 500px;
+    font-size: 24px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    color: rgba(73,73,73,0.7);
+}
+/******************************************************************************************/
+
+/****************************************** [ DELETE PAGE ]************************************/
+
+    .delete_confirm_box {
+        max-width: 480px;
+        margin: 100px auto;
+        padding: 50px 20px;
+        text-align: center;
+        background: rgba(73, 73, 73, 0.8);
+        border-radius: 50px;
+    }
+
+
+    .delete_confirm_box ion-icon {
+        width: 40px;
+        height: 50px;
+        color: #F4E7D7;
+    }
+
+    .text_confirm {
+        font-size: 24px;
+        color: #F4E7D7;
+    }
+
+    .delete_confirm_box b {
+        color: #00ADB5;
+    }
+
+    .btn3 {
+        text-align: center;
+        width: 100px;
+        font-size: 16px;
+        background: #00ADB5;
+        color: #F4E7D7;
+        font-weight: bolder;
+        margin: 30px 50px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        max-height: 48px;
+        text-decoration: none;
+        padding: 10px 30px;
+    }
+
+    .btn3:hover {
+        letter-spacing: 0.5em;
+        width: 120px;
+    }
+
+    /************************************************************************************
+
+
+     */
 
 /****************************************** [ ERROR_PAGE ]************************************/
 .error_box {
@@ -261,16 +660,7 @@ footer ion-icon {
 }
 
 
-
-
-
-
-
-
-
-
 /******************************************************************************************
-
 
 /****************************************** [ LOGIN ]************************************/
 .form_content {
@@ -279,7 +669,7 @@ footer ion-icon {
 
 .form-log {
     position: relative;
-    width: 750px;
+    max-width: 750px;
     height: 550px;
     background: transparent;
     border-radius: 50px;
@@ -420,12 +810,14 @@ footer ion-icon {
 }
 
 /************************************************************************************
+ */
+
 
 /****************************************** [ REGISTER ]************************************/
 
 .form-reg {
     position: relative;
-    width: 750px;
+    max-width: 750px;
     height: 550px;
     background: transparent;
     border-radius: 50px;
@@ -450,6 +842,8 @@ footer ion-icon {
     left: 0;
     padding: 0 40px;
 }
+
+
 .form_box h1 {
     font-size: 36px;
     color: #494949;
@@ -578,343 +972,9 @@ footer ion-icon {
 /************************************************************************************
 
 
-/****************************************** [ MEETING DETAIL ]************************************/
-
-.meeting_detail {
-    width: 100%;
-    max-width: 1920px;
-    margin: 10px auto;
-    padding: 50px 60px;
-    text-align: left;
-    color: #F4E7D7;
-    position: relative;
-}
-
-.meeting-id2 {
-    font-size: 300px;
-    color: rgba(0, 173, 181, 0.2);
-    position: absolute;
-    top: 0;
-    left: 5%;
-}
-
-.first_last_name {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.name_main_date {
-    text-align: left;
-    color: #f4e7d7;
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-.name_main {
-    font-size: 72px;
-    color: #00ADB5;
-    margin-bottom: 20px;
-}
-
-.restaurant_box {
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.contine_info {
-    display: flex;
-    align-items: center;
-    width: 500px;
-    padding: 5px;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.contine_info ion-icon {
-    font-size: 64px;
-    margin-right: 20px;
-}
-
-.contine_info h4 {
-    width: 400px;
-}
-
-.restaurant_info {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-
-}
-
-.yes, .no {
-    width: 500px;
-    background: #F4E7D7;
-    color: #494949;
-    border-radius: 25px;
-    padding: 21px 0;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-right: 20px;
-}
-
-.no {
-    text-decoration: line-through;
-    background: rgba(73,73,73,0.7);
-    color: #F4E7D7;
-}
-
-.restaurant_box hr {
-    margin: 10px 0;
-}
-
-.description {
-    width: 500px;
-    font-size: 24px;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    color: rgba(73,73,73,0.7);
-}
-/*****************************************************************************************
-
-
  */
-/****************************************** [ MEETING PAGE ]************************************/
 
-
-
-
-    .meeting-content {
-        display: flex;
-        align-items: start;
-        width: 100%;
-        max-width: 1920px;
-        margin: 0 auto;
-        padding: 60px 60px;
-        text-align: left;
-    }
-
-    .meeting-content-main {
-        position: sticky;
-        max-width: 500px;
-        top: 0;
-    }
-
-    .meeting-page-title {
-        font-size: 64px;
-        color: #00ADB5;
-        margin: 40px 0;
-    }
-
-    .meeting-counter {
-        font-size: 32px;
-        color: #EEEEEE;
-        margin-bottom: 20px;
-    }
-
-    .add-meeting {
-        width: 333px;
-        height: 98px;
-        border: 3px dashed #00ADB5;
-        text-align: center;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 50px;
-        border-radius: 25px;
-        margin-bottom: 20px;
-
-    }
-
-    .add-meeting:hover {
-        tansition: all .3s linear;
-        -webkit-transition: all .3s linear;
-        -moz-transition: all .3s linear;
-    }
-
-    .add-meeting:hover {
-        background: #00ADB5;
-        color: #EEEEEE;
-    }
-
-    .add_meeting_title {
-        color: #EEEEEE;
-    }
-
-    .add-meeting ion-icon {
-        font-size: 40px;
-        color: #E6E6EB;
-    }
-
-    .search-input {
-        margin-left: 30px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-
-    .search-input input[type=text] {
-        padding: 10px 30px;
-        border: 3px solid #494949;
-        font-size: 16px;
-        width: 300px;
-        margin-right: 20px;
-    }
-
-    .meeting_page_content {
-        display: inline-block;
-    }
-
-    .icons_button {
-        width: 130px;
-    }
-
-    .meeting-box {
-        background: #F4E7D7;
-        color: #494949;
-        padding: 15px 30px;
-        margin: 30px 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        position: relative;
-        height: 100px;
-        border-radius: 25px;
-    }
-
-    .meeting-box2 {
-        background: rgba(73, 73, 73, 0.7);
-        padding: 15px 30px;
-        margin: 30px 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        position: relative;
-        height: 100px;
-        border-radius: 25px;
-    }
-
-    .meeting-id {
-        color: rgba(0, 173, 181);
-        font-size: 64px;
-        position: absolute;
-        top: 5%;
-        left: 5%;
-    }
-
-    .meeting-box-content {
-        margin-left: 150px;
-        text-align: left;
-    }
-
-    .meeting-title {
-        font-size: 32px;
-        text-align: left;
-        max-width: 800px;
-        width: 90%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .meeting-title2 {
-        font-size: 32px;
-        color: rgba(238, 238, 238, 0.5);
-        text-align: left;
-        max-width: 800px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .meeting-date {
-        text-align: left;
-        font-size: 16px;
-    }
-
-    .meeting-date2 {
-        color: rgba(238, 238, 238, 0.5);
-        text-align: left;
-        font-size: 16px;
-    }
-
-    .meeting-box ion-icon {
-        color: #494949;
-        width: 40px;
-        height: 25px;
-    }
-
-    .meeting-box ion-icon:hover {
-        color: #00ADB5;
-    }
-
-    .meeting-box2 ion-icon {
-        color: #EEEEEE;
-        width: 40px;
-        height: 25px;
-    }
-
-    .meeting-box2 ion-icon:hover {
-        color: #00ADB5;
-    }
-
-
-    /****************************************** [ DELETE PAGE ]************************************/
-
-    .delete_confirm_box {
-        max-width: 480px;
-        margin: 100px auto;
-        padding: 50px 20px;
-        text-align: center;
-        background: rgba(73, 73, 73, 0.8);
-        border-radius: 50px;
-    }
-
-    .delete_confirm_box ion-icon {
-        width: 40px;
-        height: 50px;
-        color: #F4E7D7;
-    }
-
-    .text_confirm {
-        font-size: 24px;
-        color: #F4E7D7;
-    }
-
-    .delete_confirm_box b {
-        color: #00ADB5;
-    }
-
-    .btn3 {
-        text-align: center;
-        width: 100px;
-        font-size: 16px;
-        background: #00ADB5;
-        color: #F4E7D7;
-        font-weight: bolder;
-        margin: 30px 50px;
-        border: none;
-        cursor: pointer;
-        letter-spacing: 0.05em;
-        transition: 0.5s;
-        max-height: 48px;
-        text-decoration: none;
-        padding: 10px 30px;
-    }
-
-    .btn3:hover {
-        letter-spacing: 0.5em;
-        width: 120px;
-    }
-
-    /************************************************************************************
-
-
-     */
-    /****************************************** [ MEETING EDIT ]************************************/
+/****************************************** [ MEETING EDIT ]************************************/
 
     .form-main {
         width: 100%;
@@ -933,11 +993,11 @@ footer ion-icon {
     }
 
     .meeting_form_box {
-        width: 599px;
+        max-width: 599px;
     }
 
     .title_form input[type=text] {
-        width: 589px;
+        max-width: 700px;
         margin-bottom: 40px;
         padding: 10px 30px;
         font-size: 18px;
@@ -1037,7 +1097,7 @@ footer ion-icon {
 
     .description_area p {
         font-size: 14px;
-        width: 470px;
+        max-width: 470px;
     }
 
     .meeting_form_box input[type=submit] {
@@ -1063,105 +1123,5 @@ footer ion-icon {
 
 
 /***************************************************************************************/
-
-/******** [ SUPERUSER ] ********/
-.users_page {
-    text-align: left;
-    padding: 100px 100px;
-}
-.user_box {
-    width: 500px;
-    display: flex;
-    font-size: 16px;
-    align-items: center;
-}
-
-
-.usernames_nickname {
-    background: #222831;
-    color: #E6E6EB;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-
-.user_names {
-    margin-right: 10px;
-}
-
-.users_list_box {
-    color: #E6E6EB;
-    width: 400px;
-    background: #222831;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #E6E6EB;
-}
-.users_page th {
-    text-align: center;
-    font-size: 14px;
-    color: #E6E6EB;
-}
-
-.users_page h3 {
-    font-size: 14px;
-    color: #E6E6EB;
-}
-.users_list_box ion-icon, .users_list_box td {
-    padding: 10px;
-    font-size: 24px;
-    color: #E6E6EB;
-    margin: 20px;
-    text-align: center;
-
-}
-
-.users_list_box td {
-    font-size: 18px;
-}
-
-.users_list_box ion-icon:hover {
-        color: #00ADB5;
-    }
-
-    /****************/
-
-
-/******** [ CREATE_USER ] ********/
-
-.create_user_content {
-    text-align: left;
-    padding: 100px 100px;
-}
-
-.create_user_content_box h1 {
-    font-size: 64px;
-    color: #00adb5;
-    text-align: left;
-    margin-bottom: 40px;
-}
-
-.create_user_content_box form {
-    width: 500px;
-}
-
-.create_user_content_name_box {
-    width: 450px;
-}
-
-.create_user_content_type_box {
-    width: 300px;
-}
-
-.create_user_content_box input, .create_user_content_box label{
-    color: #F4E7D7;
-}
-
-.create_user_content_box input:focus ~ label,
-.create_user_content_box input:valid ~ label{
-    color: #F4E7D7;
-}
-
 
 

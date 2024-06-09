@@ -37,7 +37,7 @@ class RegisterForm(forms.ModelForm):
     user = forms.CharField(required=False)
     first_name = forms.CharField()
     second_name = forms.CharField()
-    user_type = forms.NumberInput()
+    user_type = forms.IntegerField()
     password = forms.CharField(required=False)
     password2 = forms.CharField()
 

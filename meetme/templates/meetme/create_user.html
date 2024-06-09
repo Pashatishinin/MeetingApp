@@ -7,14 +7,15 @@
         <h1 >CREATE USER</h1>
         <form method="POST">
             {% csrf_token %}
+
             <div class="input_box">
                 <input class="register_form_username" type="text" name="username" id="username">
                 <label class="login_info_form" for="username">USERNAME</label>
                 <ion-icon name="person-outline"></ion-icon>
             </div>
             <div class="input_box">
-                <input class="login_form_name" type="number" name="type" id="type">
-                <label class="login_info_form" for="type">TYPE</label>
+                <input class="login_form_name" type="number" name="user_type" id="user_type">
+                <label class="login_info_form" for="user_type">TYPE</label>
                 <ion-icon name="keypad-outline"></ion-icon>
 
             </div>

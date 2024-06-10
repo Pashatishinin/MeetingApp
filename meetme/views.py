@@ -132,9 +132,9 @@ class Meetings(LoginRequiredMixin, ListView):
             context['meetings'] = context['meetings'].order_by('start_date')
             sorted_dates = sorted(context['meetings'], key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
-            context['star_this_week'] = this_week[0]
+            context['start_this_week'] = this_week[0]
             context['end_this_week'] = this_week[6]
-            context['star_next_week'] = next_week[0]
+            context['start_next_week'] = next_week[0]
             context['end_next_week'] = next_week[6]
             context['sorted_meetings'] = sorted_dates
             context['count'] = context['meetings'].count()
@@ -154,9 +154,9 @@ class Meetings(LoginRequiredMixin, ListView):
             context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
             sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
-            context['star_this_week'] = this_week[0]
+            context['start_this_week'] = this_week[0]
             context['end_this_week'] = this_week[6]
-            context['star_next_week'] = next_week[0]
+            context['start_next_week'] = next_week[0]
             context['end_next_week'] = next_week[6]
             context['sorted_meetings'] = sorted_dates
             context['count'] = context['meetings'].count()

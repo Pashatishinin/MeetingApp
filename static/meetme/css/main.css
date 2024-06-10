@@ -253,6 +253,29 @@ footer ion-icon {
     margin-right: 20px;
 }
 
+.week_buttons button {
+    text-align: center;
+    border: 1px solid #00ADB5;
+    padding: 10px 20px;
+    background: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+    color: #f4e7d7;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.week_buttons button.active {
+    background: #00ADB5;
+    color: #f4e7d7;
+}
+
+.content-btn > .content:not(:first-child){
+    display: none;
+}
+
+
 .meeting_page_content {
     display: flex;
     flex-wrap: wrap;
@@ -265,48 +288,56 @@ footer ion-icon {
     margin-left: 30px;
 }
 
+
 .meeting-box {
-    width: 260px;
-    height: 300px;
     background: #F4E7D7;
     color: #494949;
     padding: 15px 30px;
-    margin: 30px 10px;
+    margin: 10px 10px;
+    max-width: 500px;
     position: relative;
+    min-height: 100px;
     border-radius: 25px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .meeting-box2 {
     background: rgba(73, 73, 73, 0.7);
-    width: 260px;
-    height: 300px;
     color: #494949;
     padding: 15px 30px;
-    margin: 30px 10px;
+    margin: 10px 10px;
+    align-items: center;
+    max-width: 500px;
     position: relative;
+    min-height: 100px;
     border-radius: 25px;
-    text-align: center;
 }
 
 .meeting-id {
     color: rgba(0, 173, 181, 0.4);
     font-size: 72px;
     position: absolute;
-    top: 15%;
+    top: 5%;
     left: 5%;
 }
 
+.meeting_info {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    justify-content: space-between;
+}
 .meeting-title, .meeting-title2 {
-    height: 80px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    height: 40px;
     text-align: left;
     font-size: 32px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    max-width: 300px;
 }
 
 .meeting-title2 {
@@ -322,7 +353,10 @@ footer ion-icon {
 }
 
 .icons_button {
-    margin: 30px 0;
+    width: 100px;
+    position: absolute;
+    top: 40%;
+    right: 10%;
     display: flex;
     justify-content: space-around;
 }
@@ -348,75 +382,31 @@ footer ion-icon {
 }
 
 .user_box {
-    background: #494949;
-    color: #F4E7D7;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-bottom: 5px;
-    height: 70px;
+    margin-bottom: 10px;
+    width: 400px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
 
 }
-.user_box div{
-    display: flex;
-    margin-bottom: 5px;
+
+
+.usernames_nickname {
+    background: #222831;
+    color: #E6E6EB;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .user_names_box {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: flex;
 }
+
 .user_names {
     margin-right: 10px;
-
 }
 
-.meeting_box input[type=checkbox] {
-        margin-left: 10px;
-        accent-color: #00ADB5;
-        margin-right: 10px;
-        appearance: none;
-        border-radius: 50px;
-        width: 40px;
-        background: white;
-        height: 20px;
-        box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
-        inset 0 8px 8px rgba(0, 0, 0, 0.1),
-        inset 0 -4px 4px rgba(0, 0, 0, 0.1);
-        position: relative;
-        outline: none;
-        cursor: pointer;
-        transition: 0.5s;
-    }
 
-    .meeting_box input[type=checkbox]::before {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: "";
-        background: linear-gradient(to bottom, #F4E7D7, #00ADB5);
-        border-radius: 50px;
-        transform: scale(0.9);
-        transition: 0.5s;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
-        inset 4px 4px rgba(255, 255, 255, 0.2),
-        inset -4px 4px rgba(255, 255, 255, 0.2);
-
-    }
-
-    .meeting_box input[type=checkbox]:checked {
-        background: #00ADB5;
-        box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
-        inset 0 2px 8px rgba(0, 0, 0, 0.1),
-        inset 0 -4px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .meeting_box input[type=checkbox]:checked::before {
-        left: 20px;
-    }
 
 /****************************************** [ HOME PAGE ]************************************/
 .content-home {

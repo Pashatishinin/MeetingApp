@@ -226,6 +226,12 @@
         display: flex;
         flex-direction: column;
     }
+
+    /********* [ MEETING LIST ] *********/
+    .week_buttons button {
+        font-size: 12px;
+    }
+
 }
 
 
@@ -250,6 +256,38 @@
 
     .error_box h1 {
         font-size: 20px;
+    }
+
+    /********* [ MEETING LIST ] *********/
+    .meeting-content-box {
+        margin-left: 0;
+    }
+    .meeting-box, .meeting-box2 {
+        max-width: 500px;
+        margin: 10px 20px;
+    }
+
+    .meeting-title, .meeting-title2 {
+        font-size: 24px;
+        height: 30px;
+    }
+
+    .meeting-date {
+        font-size: 12px;
+    }
+
+    .user_box {
+        max-width: 300px;
+    }
+
+
+    .meeting-box2 ion-icon, .meeting-box ion-icon {
+        width: 35px;
+        height: 20px;
+    }
+
+    .icons_button {
+        right: 6%;
     }
 
 

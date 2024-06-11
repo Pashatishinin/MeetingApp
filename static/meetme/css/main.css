@@ -171,7 +171,6 @@ footer ion-icon {
     height: 25px;
 }
 
-/****************************************** [ HOME PAGE ]************************************/
 
 /****************************************** [ MEETING PAGE ]************************************/
 
@@ -211,7 +210,7 @@ footer ion-icon {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    border-radius: 25px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -294,10 +293,11 @@ footer ion-icon {
     color: #494949;
     padding: 15px 30px;
     margin: 10px 10px;
+    width: 400px;
     max-width: 500px;
     position: relative;
     min-height: 100px;
-    border-radius: 25px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -309,10 +309,11 @@ footer ion-icon {
     padding: 15px 30px;
     margin: 10px 10px;
     align-items: center;
+    width: 400px;
     max-width: 500px;
     position: relative;
     min-height: 100px;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .meeting-id {
@@ -330,9 +331,10 @@ footer ion-icon {
     justify-content: space-between;
 }
 .meeting-title, .meeting-title2 {
+    margin-top: 15px;
     height: 40px;
     text-align: left;
-    font-size: 32px;
+    font-size: 28px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -353,27 +355,31 @@ footer ion-icon {
 }
 
 .icons_button {
-    width: 100px;
+    width: 80px;
     position: absolute;
-    top: 40%;
-    right: 10%;
+    top: 5%;
+    right: 3%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .meeting-box ion-icon {
     color: #494949;
-    width: 40px;
+    width: 20px;
     height: 25px;
+    margin: 0 auto;
 }
 
 .meeting-box ion-icon:hover {
     color: #00ADB5;
 }
-
+.meeting-box2 .icons_button {
+    width: 50px;
+}
 .meeting-box2 ion-icon {
     color: #EEEEEE;
-    width: 40px;
+    width: 20px;
     height: 25px;
 }
 
@@ -389,8 +395,13 @@ footer ion-icon {
     align-items: center;
 
 }
-
-
+.meeting-box2 .usernames_nickname {
+    background: rgba(238, 238, 238, 0.5);;
+    color: #494949;
+}
+.meeting-box2 .user_names_box {
+    color: rgba(238, 238, 238, 0.5);;
+}
 .usernames_nickname {
     background: #222831;
     color: #E6E6EB;
@@ -400,10 +411,12 @@ footer ion-icon {
 
 .user_names_box {
     display: flex;
+    flex-direction: column;
 }
 
 .user_names {
     margin-right: 10px;
+    font-size: 12px;
 }
 
 
@@ -485,22 +498,25 @@ footer ion-icon {
 }
 
 .restaurant_box {
+    width: 500px;
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .contine_info {
+    color: #ff4747;
     display: flex;
     align-items: center;
-    width: 500px;
+    width: 400px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 .contine_info ion-icon {
-    font-size: 64px;
+    font-size: 120px;
     margin-right: 20px;
 }
 
@@ -516,13 +532,13 @@ footer ion-icon {
 }
 
 .yes, .no {
-    width: 500px;
+    width: 400px;
     background: #F4E7D7;
     color: #494949;
-    border-radius: 25px;
-    padding: 21px 0;
+    border-radius: 5px;
+    padding: 25px 0;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-right: 20px;
 }
 
@@ -544,6 +560,14 @@ footer ion-icon {
     border-radius: 10px;
     color: rgba(73,73,73,0.7);
 }
+
+.work_time {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-size: 10px;
+}
+
 /******************************************************************************************/
 
 /****************************************** [ DELETE PAGE ]************************************/

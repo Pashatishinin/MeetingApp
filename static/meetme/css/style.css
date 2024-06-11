@@ -108,7 +108,7 @@
     /* ����� ��� ������������ ���� */
     .menu {
         position: absolute;
-        top: 200px;
+        top: 130px;
         left: -100%; /* �������� ���� �� ��������� ��������� */
         width: 100%;
         height: 100%;
@@ -164,9 +164,7 @@
         font-size: 16px;
     }
     /********* [ MEETING DETAIL ] *********/
-    .yes, .no {
-        width: 250px;
-    }
+
 
     .contine_info {
         width: 300px;
@@ -174,9 +172,7 @@
         font-size: 14px;
     }
 
-    .work_time {
-        font-size: 14px;
-    }
+
 
     .description {
         width: 500px;
@@ -259,12 +255,24 @@
     }
 
     /********* [ MEETING LIST ] *********/
+
+    .meeting-content {
+        padding: 30px 30px;
+    }
+
+    .meeting-page-title {
+        font-size: 48px;
+    }
+
+    .meeting-counter {
+        font-size: 20px;
+    }
     .meeting-content-box {
         margin-left: 0;
     }
     .meeting-box, .meeting-box2 {
-        max-width: 500px;
-        margin: 10px 20px;
+        width: 300px;
+        margin: 10px 0px;
     }
 
     .meeting-title, .meeting-title2 {
@@ -282,23 +290,97 @@
 
 
     .meeting-box2 ion-icon, .meeting-box ion-icon {
-        width: 35px;
-        height: 20px;
-    }
-
-    .icons_button {
-        right: 6%;
+        width: 20px;
+        height: 25px;
     }
 
 
+    .week_buttons button {
+        font-size: 10px;
+    }
 
-}
+    .add-meeting {
+        width: 250px;
+        height: 70px;
+        padding: 0 30px;
+    }
+
+    .add_meeting_title {
+        font-size: 12px;
+    }
+
+    .add-meeting ion-icon {
+        font-size: 30px;
+    }
+
+    /********* [ HOME PAGE ] *********/
+    .content-home h1 p{
+        font-size: 48px;
+        color:#00ADB5;
+    }
+
+    /********* [ MEETING DETAIL ] *********/
+
+
+    .restaurant_box {
+        width: 350px;
+
+    }
+    .yes, .no {
+        width: 250px;
+    }
+    .name_main {
+        font-size: 48px;
+    }
+
+    .first_last_name {
+        font-size: 20px;
+    }
+
+    .name_main_date {
+        font-size: 18px;
+    }
+
+
+
+
+    }
 @media screen and (max-width: 400px) {
     /********* [ MEETING LIST ] *********/
 
     .meeting-box, .meeting-box2 {
-        max-width: 500px;
-        margin: 10px 5px;
+        width: 270px;
+    }
+
+    .search-input input[type=text] {
+        width: 250px;
+        margin-right: 10px;
+    }
+
+    .meeting-title, .meeting-title2 {
+        font-size: 20px;
+        height: 25px;
+    }
+
+    /********* [ HOME PAGE ] *********/
+    .content-home {
+        padding: 30px 30px;
+    }
+    .content-home h3{
+        width: 250px;
+    }
+    .content-home input,.search-input input[type=text] {
+        width: 250px;
+    }
+
+    /********* [ MEETING DETAIL ] *********/
+    .restaurant_box {
+        width: 300px;
+
+    }
+    .yes, .no {
+        font-size: 14px;
+        width: 200px;
     }
 }
 

@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Meeting Week" />
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Meeting Week">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,7 +234,8 @@
       <workItem from="1717521396075" duration="5399000" />
       <workItem from="1717608373755" duration="980000" />
       <workItem from="1717910095060" duration="24583000" />
-      <workItem from="1718043245194" duration="9072000" />
+      <workItem from="1718043245194" duration="9337000" />
+      <workItem from="1718128642081" duration="5229000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -544,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718053302737</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Meeting Week">
+      <option name="closed" value="true" />
+      <created>1718053493138</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1718053493138</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

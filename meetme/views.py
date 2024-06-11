@@ -127,7 +127,7 @@ class Meetings(LoginRequiredMixin, ListView):
             context = super().get_context_data(**kwargs)
             monday = datetime.date.today() - datetime.timedelta(days = datetime.date.today().weekday())
             this_week = [monday + datetime.timedelta(days=day) for day in range(7)]
-            next_monday = datetime.date.today() - datetime.timedelta(days=7-datetime.date.today().weekday())
+            next_monday = datetime.date.today() + datetime.timedelta(days=7 - datetime.date.today().weekday())
             next_week = [next_monday + datetime.timedelta(days=day) for day in range(7)]
             context['meetings'] = context['meetings'].order_by('start_date')
             sorted_dates = sorted(context['meetings'], key=lambda
@@ -149,7 +149,7 @@ class Meetings(LoginRequiredMixin, ListView):
             context = super().get_context_data(**kwargs)
             monday = datetime.date.today() - datetime.timedelta(days=datetime.date.today().weekday())
             this_week = [monday + datetime.timedelta(days=day) for day in range(7)]
-            next_monday = datetime.date.today() - datetime.timedelta(days=7 - datetime.date.today().weekday())
+            next_monday = datetime.date.today() + datetime.timedelta(days=7 - datetime.date.today().weekday())
             next_week = [next_monday + datetime.timedelta(days=day) for day in range(7)]
             context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
             sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda

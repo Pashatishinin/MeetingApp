@@ -1,67 +1,77 @@
 {% extends 'meetme/main.html' %}
+
+
 {% block content %}
 
+   <div class="form_content">
+       <div class="box">
+            <!----------------- Register Box ----------------->
+           <div class="box-login" id="login">
+               <div class="top-header">
+                   <h3>Sign Up, Now</h3>
+                   <small>We are happy to have you with us.</small>
+               </div>
+               <div class="input-group">
+                   <form method="POST">
+                   {% csrf_token %}
+                       <div class="input-field">
+                           <input type="text" name="username" class="input-box" id="username" required>
+                           <label for="username">Username</label>
+                       </div>
+
+                       <div class="input-field">
+                           <input type="password" name="password" class="input-box" id="password" required>
+                           <label for="password">Password</label>
+                           <div class="eye-area">
+                               <div class="eye-box" onclick="myPassword()">
+                                   <ion-icon name="eye-outline" id="eye"></ion-icon>
+                                   <ion-icon name="eye-off-outline" id="eye-slash"></ion-icon>
+
+                               </div>
+                           </div>
+                       </div>
+                       <div class="input-field">
+                           <input type="password" name="confirm_password" class="input-box" id="confirm_password" required>
+                           <label for="confirm_password">Confirm password</label>
+                           <div class="eye-area">
+                               <div class="eye-box" onclick="myPassword2()">
+                                   <ion-icon name="eye-outline" id="eye-2"></ion-icon>
+                                   <ion-icon name="eye-off-outline" id="eye-slash-2"></ion-icon>
+
+                               </div>
+                           </div>
+                       </div>
+                       {% if user_form.errors or profile_form.errors %}
+                            <div class="error_login">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                <ul>
+                                    {% for field, errors in user_form.errors.items %}
+                                        {% for error in errors %}
+
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                       <div class="input-field">
+                            <input type="submit" class="input-submit" value="Sign up">
+                       </div>
+                   </form>
+                   <div class="link_to_register">
+                       <small>Already have an account?</small>
+                       <a href="{% url 'login' %}">Sign in</a>
+
+                   </div>
 
 
+               </div>
 
-    <!--        REGISTER FORM      -->
+           </div>
 
-    <div class="form_content">
+       </div>
 
-        <div class="form-reg">
-
-            <!--        USERNAME INPUT AND INFO      -->
-            <div class="form_box register">
-                <h1 class="register_title">REGISTER</h1>
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="input_box">
-                        <input class="register_form_username" type="text" name="username" id="username">
-                        <label class="login_info_form" for="username">USERNAME</label>
-                        <ion-icon name="person-outline"></ion-icon>
-                    </div>
-                    {% if info %}
-                    <div class="error_info">
-                        <ion-icon class="error-icon" name="close-circle-outline"></ion-icon>
-                        <span>Username "{{ username }}" already exist.
-                            Please use another username</span>
-                    </div>
-                    {% endif %}
-                    <div class="name_box">
-                        <div class="input_box">
-                            <input class="login_form_name" type="text" name="firstname" id="firstname">
-                            <label class="login_info_form" for="firstname">FIRSTNAME</label>
-
-                        </div>
-                        <div class="input_box">
-                            <input class="login_form_name" type="text" name="lastname" id="lastname">
-                            <label class="login_info_form" for="lastname">LASTNAME</label>
-
-                        </div>
-
-                    </div>
-
-                    <div class="input_box">
-                        <input class="register_form_left" type="email" name="email" id="email">
-                        <label class="login_info_form" for="email">EMAIL</label>
-                        <ion-icon name="mail-outline"></ion-icon>
-
-                    </div>
-                    <div class="input_box">
-                        <input class="register_form_left" type="password" name="password" id="password">
-                        <label class="login_info_form" for="password">PASSWORD</label>
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                    </div>
-                    <input class="btn2" type="submit" value="REGISTER">
-            </div>
-
-            <div class="info-text register">
-                <h1>Hello!</h1>
-                <p class="info-semi-text">If you have an account, you can sign in here</p>
-                <p class="btn"><a href="{% url 'login' %}">Sign in</a></p>
-            </div>
-
-        </div>
 </div>
+
 
 {% endblock content %}

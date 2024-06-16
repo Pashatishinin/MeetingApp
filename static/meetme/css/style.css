@@ -26,38 +26,8 @@
     color: #f4e7d7;
     }
 
-    /********* [ LOGIN PAGE ] *********/
-    .form_content {
-        margin: 100px 30px;
-
-    }
-
-    .form-log {
-        height: 400px;
-    }
-
-    .form_box h1, .info-text h1{
-        font-size: 24px;
-    }
 
 
-    .info-text p {
-       font-size: 14px;
-    }
-
-    /********* [ REGISTER PAGE ] *********/
-
-    .form-reg {
-        height: 600px;
-    }
-    .name_box {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .input_box label,.input_box ion-icon {
-        font-size: 14px;
-    }
 
 }
 
@@ -138,22 +108,10 @@
         left: 0;
         position: absolute; /* ���������� ���� ��� ��������� �������� */
     }
-    /********* [ LOGIN PAGE ] *********/
-    .form_box.login, .form-log .info-text.login {
-    padding: 0 10px;
-    }
 
-    .form_box.register, .form-reg .info-text.register {
-    padding: 0 10px;
-}
-
-
+    /************************************************************************************
     /********* [ HOME PAGE ] *********/
-        .content-home h1{
-    font-size: 24px;
-    color: #f4e7d7;
-    margin-bottom: 50px;
-}
+
 
     .content-home h1 p{
     font-size: 56px;
@@ -237,20 +195,19 @@
 
 
 @media screen and (max-width: 580px){
+
+     .content-home h1 {
+        font-size: 32px;
+    }
+
+
+    /**************************************************************************/
     /********* [ DELETE PAGE ] *********/
     .delete_confirm_box {
         margin: 100px 30px;
     }
 
     .text_confirm {
-        font-size: 20px;
-    }
-    /********* [ ERROR PAGE ] *********/
-    .error_box {
-        margin: 100px 30px;
-    }
-
-    .error_box h1 {
         font-size: 20px;
     }
 
@@ -314,6 +271,8 @@
     }
 
     /********* [ HOME PAGE ] *********/
+
+
     .content-home h1 p{
         font-size: 48px;
         color:#00ADB5;
@@ -346,6 +305,33 @@
 
     }
 @media screen and (max-width: 400px) {
+    /********************************************* [ LOGIN/REGISTER ] *********************************************/
+    .top-header h3{
+        font-size: 20px;
+
+    }
+
+    .box-login small, .input-box, .input-field label, .link_to_register a {
+        font-size: 12px;
+    }
+
+    .link_to_register a {
+        font-size: 14px
+    }
+    .error_login li,.error_login p{
+        font-size: 10px;
+    }
+
+    /*************************************** [ UPDATE USER PAGE ] **********************************************************/
+    .content-home {
+        padding: 30px 30px;
+    }
+
+
+
+    /**************************************************************************************/
+
+
     /********* [ MEETING LIST ] *********/
 
     .meeting-box, .meeting-box2 {
@@ -362,10 +348,8 @@
         height: 25px;
     }
 
-    /********* [ HOME PAGE ] *********/
-    .content-home {
-        padding: 30px 30px;
-    }
+
+
     .content-home h3{
         width: 250px;
     }

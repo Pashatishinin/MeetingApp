@@ -1,17 +1,31 @@
 {% extends 'meetme/main.html' %}
 {% block content %}
-<div class="delete_confirm_box">
-    <form method="POST">
-      {% csrf_token %}
-      <ion-icon name="trash-outline"></ion-icon>
-      <h1 class="text_confirm">Are you sure that you want to delete <b>{{ meetings|upper }}</b> meeting?</h1>
-      <div class="yes_no">
-        <input class="btn3" type="submit" value="YES">
-        <a class="btn3"href="{% url 'meetings' %}">NO</a>
+<!--<div class="delete_confirm_box">-->
+<!--    <form method="POST">-->
+<!--      {% csrf_token %}-->
+<!--      <ion-icon name="trash-outline"></ion-icon>-->
+<!--      <h1 class="text_confirm">Are you sure that you want to delete <b>{{ meetings|upper }}</b> meeting?</h1>-->
+<!--      <div class="yes_no">-->
+<!--        <input class="btn3" type="submit" value="YES">-->
+<!--        <a class="btn3"href="{% url 'meetings' %}">NO</a>-->
 
-      </div>
-    </form>
+<!--      </div>-->
+<!--    </form>-->
+<!--</div>-->
+<div class="form_content">
+    <div class="confirm_box">
+
+        <form method="POST">
+              {% csrf_token %}
+              <ion-icon name="trash-outline"></ion-icon>
+              <p class="text_confirm">Are you sure that you want to delete <b>{{ meetings.title|upper }}</b> meeting?</p>
+              <div class="confirm_box_delete">
+                <input class="input-submit" type="submit" value="YES">
+                <a href="{% url 'meetings' %}">NO</a>
+
+              </div>
+        </form>
+    </div>
 </div>
-
 
 {% endblock content %}

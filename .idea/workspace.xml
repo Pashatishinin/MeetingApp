@@ -4,14 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Meeting Week">
+    <list default="true" id="b8937266-f543-4194-a2ac-bb6a0991b41a" name="Changes" comment="Adaptation for phone and change view">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7321f85f-478d-47fd-a1dd-67fec8d74da3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7321f85f-478d-47fd-a1dd-67fec8d74da3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7321f85f-478d-47fd-a1dd-67fec8d74da3/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7321f85f-478d-47fd-a1dd-67fec8d74da3/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0002_alter_meeting_end_date_alter_meeting_start_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0003_alter_meeting_end_date_alter_meeting_start_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0004_alter_meeting_kst_number.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0005_alter_meeting_end_date_alter_meeting_start_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0006_alter_meeting_random_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0007_alter_meeting_random_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0008_alter_meeting_random_code.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0009_newusers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0010_alter_newusers_email.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0011_delete_newusers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0012_remove_meeting_random_code_meeting_number_of_quests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0013_alter_meeting_number_of_quests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0014_meetinghistory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0015_alter_meeting_end_date_alter_meeting_start_date.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/migrations/0016_meeting_recorded.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/error_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/error_message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/meeting_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/templates/meetme/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/templates/meetme/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetme/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meetme/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meetme/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/meetme/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/meetme/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/meetme/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +109,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -235,7 +267,10 @@
       <workItem from="1717608373755" duration="980000" />
       <workItem from="1717910095060" duration="24583000" />
       <workItem from="1718043245194" duration="9337000" />
-      <workItem from="1718128642081" duration="5229000" />
+      <workItem from="1718128642081" duration="5602000" />
+      <workItem from="1718214689966" duration="5348000" />
+      <workItem from="1718439330367" duration="21035000" />
+      <workItem from="1718516074133" duration="42125000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1683050018566</created>
@@ -561,7 +596,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718053493138</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Adaptation for phone and change view">
+      <option name="closed" value="true" />
+      <created>1718135475952</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1718135475952</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +636,18 @@
     <MESSAGE value="update desing_2" />
     <MESSAGE value="create_user" />
     <MESSAGE value="Meeting Week" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meeting Week" />
+    <MESSAGE value="Adaptation for phone and change view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adaptation for phone and change view" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/meetme/models.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MeetingApp$schnekel.coverage" NAME="schnekel Coverage Results" MODIFIED="1681237111266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

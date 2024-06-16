@@ -2,62 +2,41 @@
 
 {% block content %}
 
-<div class="create_user_content">
-    <div class="form_box create_user_content_box">
-        <h1 >CREATE USER</h1>
-        <form method="POST">
-            {% csrf_token %}
 
-            <div class="input_box">
-                <input class="register_form_username" type="text" name="username" id="username">
-                <label class="login_info_form" for="username">USERNAME</label>
-                <ion-icon name="person-outline"></ion-icon>
-            </div>
-            <div class="input_box">
-                <input class="login_form_name" type="number" name="user_type" id="user_type">
-                <label class="login_info_form" for="user_type">TYPE</label>
-                <ion-icon name="keypad-outline"></ion-icon>
+<div class="content-home">
+       <div>
+           <div class="update_user_box">
+               <div>
+                   <h1><b>Hello, {{request.user}}</b></h1>
+               </div>
+               <div class="input-group">
+                   <form method="POST">
+                   {% csrf_token %}
+                       <div class="input-field">
+                           <p>First name</p>
+                           {{form.first_name}}
+                       </div>
+                       <div class="input-field">
+                           <p>Last name</p>
+                           {{form.last_name}}
+                       </div>
+                       <div class="input-field">
+                           <p>Email</p>
+                           {{form.email}}
+                       </div>
 
-            </div>
-            {% if info %}
-            <div class="error_info">
-                <ion-icon class="error-icon" name="close-circle-outline"></ion-icon>
-                <span>Username "{{ username }}" already exist.
-                    Please use another username</span>
-            </div>
-            {% endif %}
-            <div class="create_user_content_name_box name_box">
-                <div class="input_box">
-                    <input class="login_form_name" type="text" name="firstname" id="firstname">
-                    <label class="login_info_form" for="firstname">FIRSTNAME</label>
+                       <div class="input-field">
+                            <button type="submit">Update</button>
+                       </div>
+                   </form>
 
-                </div>
-                <div class="input_box">
-                    <input class="login_form_name" type="text" name="lastname" id="lastname">
-                    <label class="login_info_form" for="lastname">LASTNAME</label>
+               </div>
 
-                </div>
+           </div>
 
-            </div>
-
-            <div class="input_box">
-                <input class="register_form_left" type="email" name="email" id="email">
-                <label class="login_info_form" for="email">EMAIL</label>
-                <ion-icon name="mail-outline"></ion-icon>
-
-            </div>
-            <div class="input_box">
-                <input class="register_form_left" type="password" name="password" id="password">
-                <label class="login_info_form" for="password">PASSWORD</label>
-                <ion-icon name="lock-closed-outline"></ion-icon>
-            </div>
-            <input class="btn2" type="submit" value="CREATE">
-            </form>
-    </div>
+       </div>
 
 </div>
-
-
 
 
 {% endblock content %}

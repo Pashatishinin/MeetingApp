@@ -2,115 +2,90 @@
 
 {% block content %}
 
-<div class="form-main">
-    <h1 class="create_meeting" >MEETING EDIT</h1>
-    <div class="meeting_form_box">
+<div class="content-home">
+       <div>
+           <div class="update_user_box">
+               <div>
+                   <h1><b>Meeting edit</b></h1>
+               </div>
+               <div class="input-group-meeting">
+                   <form method="POST">
+                   {% csrf_token %}
+                       <div class="input-field">
+                           <p>Title</p>
+                           {{form.title}}
+                       </div>
+                       <div class="date_fields">
+                           <div class="input-field">
+                               <p>Start date</p>
+                               <div class="date_box">
+                                   {{form.start_date}}
+                               </div>
 
-        <form method="POST" action="" enctype="multipart/form-data">
-            {% csrf_token %}
+                           </div>
+                           <div class="input-field">
+                               <p>End date</p>
+                               <div class="date_box">
+                                   {{form.end_date}}
+                               </div>
 
-            <div>
-                <div class="title_form">
-                    <label class="meeting_edit_form" for="title">TITLE</label>
-                    {{form.title}}
-                </div>
-
-            <div class="time_form">
-                <div class="date_field">
-                    <div class="meeting_edit_field_date">
-                        <label class="meeting_edit_form" for="form.start_date">START DATE</label>
-                        <div class="date-box">
-                            {{form.start_date}}
-                        </div>
-                    </div>
-
-                    <div class="meeting_edit_field_date">
-                        <label class="meeting_edit_form" for="form.end_date">END DATE</label>
-                        <div class="date-box">
-                            {{form.end_date}}
-                        </div>
-
-                    </div>
-
-                </div>
-                {% if form.errors%}
-                    <style>
-                        select {
-                            border: 3px solid #ff4747;
-                            margin-bottom: 5px;
-                        }
-                    </style>
-                    <div class="error_info">
-                        <ion-icon name="close-circle-outline"></ion-icon>
-                        {% for error in form.non_field_errors %}
-                        <span>{{error}}</span>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+                           </div>
+                       </div>
+                       {% if form.errors%}
+                            <style>
+                                select {
+                                    border: 3px solid #ff4747;
+                                    margin-bottom: 5px;
+                                }
 
 
+                            </style>
+                            <div class="error_info">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                                {% for error in form.non_field_errors %}
+                                <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                       {% endif %}
+
+                       <div class="input-field">
+                           <p>Kst number</p>
+                           {{form.kst_number}}
+                       </div>
+                       <div class="input-field">
+                           <p>Number of guests</p>
+                           {{form.number_of_quests}}
+                       </div>
+                       <p class="semi_title">Please mark the place where guests can eat and drink for free :</p class="semi_title">
+                       <div class="input-field">
+                           <p>Restaurant</p>
+                           {{form.restaurant}}
+                       </div>
+                       <div class="input-field">
+                           <p>Coffee station</p>
+                           {{form.coffee_station}}
+                       </div>
+                       <div class="input-field">
+                           <p>Coffee bars (Soho/Noho)</p>
+                           {{form.coffee_bar}}
+                       </div>
+                        <div class="description_area">
+                           <p>Leave some information about meeting</p>
+                           {{form.description}}
+                       </div>
 
 
-            </div>
-            <div class="title_form_numbers">
-                <label class="meeting_edit_form" for="form.kst_number">KST NUMBER</label>
-                {{form.kst_number}}
-            </div>
-            <div class="title_form_numbers">
-                <label class="meeting_edit_form" for="form.number_of_quests">NUMBER OF GUESTS</label>
-                {{form.number_of_quests}}
-            </div>
-            <div>
-                <p class="semi_title">Please mark the place where quests can eat and drink for free</p>
-                <div class="yes-no-field">
-                    <div class="meeting_edit_yes_no">
-                        {{form.restaurant}}
-                        <label class="meeting_info_form" for="form.restaurant">RESTAURANT</label>
+                       <div class="input-field">
+                            <button type="submit">Save</button>
+                       </div>
+                   </form>
 
-                    </div>
+               </div>
 
-                    <div class="meeting_edit_yes_no">
-                        {{form.coffee_station}}
-                        <label class="meeting_info_form" for="form.coffee_station">COFFEE STATION</label>
+           </div>
 
-                    </div>
-
-                    <div class="meeting_edit_yes_no">
-                        {{form.coffee_bar}}
-                        <label class="meeting_info_form" for="form.coffee_bar">COFFEE BAR (NOHO/SOHO)</label>
-
-                    </div>
-
-
-
-
-
-                </div>
-
-
-            </div>
-
-            <div class="description_area">
-                <div>
-                    <label class="meeting_info_form" for="form.description">DESCRIPTION</label>
-                    <p class="info_descr">Leave some information about your meeting for quests to have a comfortable
-                        and cozy time</p>
-
-                </div>
-                {{form.description}}<br>
-
-
-
-            </div>
-            <input class="meeting_form_btn" type="submit" value="SAVE">
-            </div>
-        </form>
-
-    </div>
+       </div>
 
 </div>
-
-
-
 
 {% endblock content %}

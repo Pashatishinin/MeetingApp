@@ -1,6 +1,8 @@
 import datetime
 
-from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from django.contrib.auth import login, authenticate, get_user_model
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -10,7 +12,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
-from django.db import IntegrityError
+from django.db import IntegrityError, transaction
 
 from django.shortcuts import redirect, render, get_object_or_404
 
@@ -26,7 +28,10 @@ from django.urls import reverse_lazy
 import meetme
 from .models import Meeting, MeetingHistory
 
-from .forms import NewMeetingForm, SearchForm, RegisterForm
+from .forms import NewMeetingForm, SearchForm, UserForm, UpdateUserForm
+import logging
+
+logger = logging.getLogger(__name__)
 
 """""""""""""""""""""""""""""""""
 HOME PAGE
@@ -72,6 +77,11 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('meetings')
 
+    def form_invalid(self, form):
+        # Добавляем сообщение об ошибке в случае неверного логина или пароля
+        messages.error(self.request, 'Invalid username or password.')
+        return super().form_invalid(form)
+
 
 """""""""""""""""""""""""""""""""
 REGISTER PAGE
@@ -79,45 +89,59 @@ REGISTER PAGE
 
 
 def register_page(request):
-    if request.method == 'POST':
 
-        try:
-            user_name = request.POST.get('username')
-            first_name = request.POST.get('firstname')
-            last_name = request.POST.get('lastname')
-            user_type = request.POST.get('user_type')
-            email = request.POST.get('email')
-            password = request.POST.get('password')
-            if user_name:
-                my_user = User.objects.create_user(user_name, email, password)
-                my_user.first_name = first_name
-                my_user.last_name = last_name
-                my_user.user_type = user_type
-                my_user.save()
-                if request.user.is_superuser:
-                    return redirect('users')
-                else:
+    if request.method == 'POST':
+        user_name = request.POST.get('username')
+        password = request.POST.get('password')
+        if user_name:
+            with transaction.atomic():
+                user_form = UserForm(request.POST)
+                if user_form.is_valid():
+                    user = user_form.save(commit=False)
+                    user.set_password(user_form.cleaned_data['password'])
+                    user.save()
                     user = authenticate(request, username=user_name, password=password)
                     if user is not None:
                         login(request, user)
 
                     return redirect('meetings')
 
-            else:
-                return redirect('register')
+        else:
+            return redirect('register')
+    else:
+        user_form = UserForm()
+    return render(request, "meetme/register.html", {'user_form': user_form})
 
-        except IntegrityError as e:
-            return render(request, "meetme/register.html", {"info": e, "username" : user_name})
-    if request.user.is_superuser:
-        return render(request, "meetme/create_user.html")
-    return render(request, "meetme/register.html")
+
+"""""""""""""""""""""""""""""""""
+UPDATE USER PAGE
+"""""""""""""""""""""""""""""""""
+
+@login_required
+def update_user(request):
+    user = request.user
+    if request.method == 'POST':
+        logger.debug('Received POST request')
+        form = UpdateUserForm(request.POST, instance=user)
+        if form.is_valid():
+            logger.debug('Form is valid')
+            form.save()
+            logger.debug('Form saved')
+            return redirect('meetings') # Перенаправление на страницу профиля после обновления
+        else:
+            logger.debug('Form is not valid')
+            logger.debug(form.errors)
+
+    else:
+        logger.debug('Received GET request')
+        form = UpdateUserForm(instance=user)
+
+    return render(request, 'meetme/create_user.html', {'form': form})
 
 
 """""""""""""""""""""""""""""""""
 MEETINGS
 """""""""""""""""""""""""""""""""
-
-
 class Meetings(LoginRequiredMixin, ListView):
     model = Meeting
     context_object_name = 'meetings'
@@ -281,14 +305,5 @@ def delete_view(request, id):
     dele.delete()
     return redirect('users')
 
-
-def update_user_view(request, pk):
-    user = User.objects.get(id=pk)
-    if request.method == 'POST':
-        form = RegisterForm(request.POST, instance=user)
-    else:
-        form = RegisterForm(instance=user)
-
-    return render(request, 'meetme/create_user.html', {'form': form})
 
 

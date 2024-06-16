@@ -16,10 +16,11 @@ urlpatterns = [
     path('create/', views.info_view, name="info"),
 
 
-    # LOGIN/LOGOUT/REGISTER
+    # LOGIN/LOGOUT/REGISTER/UPDATE USER
     path('login/', views.CustomLoginView.as_view(), name="login"),
     path('logout/', LogoutView.as_view(next_page='login'), name="logout"),
     path('register/', views.register_page, name='register'),
+    path('update_user/', views.update_user, name="update_user"),
 
     # MEETING LIST PAGE
     path('meetings/', views.Meetings.as_view(), name="meetings"),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('meeting/<int:pk>/', views.MeetingDetail.as_view(), name="meeting"),
 
     # MEETING CREATE/UPDATE/DELETE
+
     path('meeting-create/', views.MeetingCreate.as_view(), name="meeting-create"),
     path('meeting-update/<int:pk>/', views.update_view, name="meeting-update"),
     path('meeting-delete/<int:pk>/', views.MeetingDelete.as_view(), name="meeting-delete"),
@@ -36,7 +38,8 @@ urlpatterns = [
     path('users/', views.users_view, name="users"),
     path('delete/<int:id>', views.delete_view, name="delete"),
     path('create_user/', views.register_page, name="create_user"),
-    path('user-update/<int:pk>/', views.update_user_view, name="user-update"),
+
+
     ]
 
 

@@ -1,17 +1,6 @@
-import datetime
-
-from django.contrib.admin.widgets import AdminDateWidget, AdminTimeWidget
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.views.generic import CreateView
-from faker import Faker
-import random
-
-
 from django import forms
-from django.forms import ModelForm, PasswordInput, SelectDateWidget
+from django.forms import SelectDateWidget
 from .models import Meeting, User
-
-from django.db import models
 
 
 class DateInput(forms.DateInput):

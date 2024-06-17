@@ -121,23 +121,6 @@
     .content-home h3 {
         font-size: 16px;
     }
-    /********* [ MEETING DETAIL ] *********/
-
-
-    .contine_info {
-        width: 300px;
-        padding: 5px;
-        font-size: 14px;
-    }
-
-
-
-    .description {
-        width: 500px;
-        font-size: 24px;
-
-
-    }
 
     /********* [ DELETE PAGE ] *********/
 
@@ -194,9 +177,9 @@
 
 
 
-@media screen and (max-width: 580px){
+@media screen and (max-width: 580px) {
 
-     .content-home h1 {
+    .content-home h1 {
         font-size: 32px;
     }
 
@@ -212,7 +195,6 @@
     }
 
     /********* [ MEETING LIST ] *********/
-
     .meeting-content {
         padding: 30px 30px;
     }
@@ -224,9 +206,11 @@
     .meeting-counter {
         font-size: 20px;
     }
+
     .meeting-content-box {
         margin-left: 0;
     }
+
     .meeting-box, .meeting-box2 {
         width: 300px;
         margin: 10px 0px;
@@ -271,39 +255,12 @@
     }
 
     /********* [ HOME PAGE ] *********/
-
-
-    .content-home h1 p{
+    .content-home h1 p {
         font-size: 48px;
-        color:#00ADB5;
+        color: #00ADB5;
     }
 
-    /********* [ MEETING DETAIL ] *********/
-
-
-    .restaurant_box {
-        width: 350px;
-
-    }
-    .yes, .no {
-        width: 250px;
-    }
-    .name_main {
-        font-size: 48px;
-    }
-
-    .first_last_name {
-        font-size: 20px;
-    }
-
-    .name_main_date {
-        font-size: 18px;
-    }
-
-
-
-
-    }
+}
 @media screen and (max-width: 400px) {
     /********************************************* [ LOGIN/REGISTER ] *********************************************/
     .top-header h3{
@@ -332,6 +289,33 @@
     /**************************************************************************************/
 
 
+/* ====================================================================================================== */
+/* =========================================== MEETING DETAIL =========================================== */
+/* ====================================================================================================== */
+    .meeting_detail {
+        padding: 30px;
+
+    }
+
+    .canteen-box {
+        padding: 15px;
+    }
+
+
+    .yes, .no {
+        font-size: 14px;
+    }
+
+    .canteen-box button {
+        font-size: 22px;
+        top: 16px;
+        right: 16px;
+    }
+
+
+    .meeting_detail .info p {
+        font-size: 12px;
+    }
     /********* [ MEETING LIST ] *********/
 
     .meeting-box, .meeting-box2 {
@@ -357,15 +341,7 @@
         width: 250px;
     }
 
-    /********* [ MEETING DETAIL ] *********/
-    .restaurant_box {
-        width: 300px;
 
-    }
-    .yes, .no {
-        font-size: 14px;
-        width: 200px;
-    }
 }
 
 /******************************************************************************************/

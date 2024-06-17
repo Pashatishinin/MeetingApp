@@ -1,112 +1,321 @@
 {% extends 'meetme/main.html' %}
 {% load static %}
 {% block content %}
-
 <div class="meeting_detail">
     <div>
-        <h1 class="meeting-id2">{{ object.id}}</h1>
+        <h1 class="meeting-detail-id">{{ object.id}}</h1>
     </div>
-
-
-    <!--        DATE AND NAME CONTENT-->
     <div>
-        <p class="first_last_name">{{ user.first_name|upper }} {{ user.last_name|upper }} </p>
-        <div>
-            {% if object.end_date == object.start_date %}
-            <p class="name_main_date"><b>{{ object.start_date}}</b></p>
-            {% elif object.end_date %}
-            <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>
+        <p class="first_last_name">{{ object.user.first_name|upper }} {{ object.user.last_name|upper }} </p>
+    </div>
+    <div>
+        {% if object.end_date == object.start_date %}
+        <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+        {% elif object.end_date %}
+        <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>
+        {% else %}
+        <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+        {% endif %}
+    </div>
+    <p class="name_main"><b>{{ object.title|upper}}</b>
+    <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
+    <div>
+        <!--   RESTAURANT BOX   -->
+        <div class="canteen-box">
+            {% if object.restaurant %}
+            <p class="yes"><b>RESTAURANT : YES</b></p>
             {% else %}
-            <p class="name_main_date"><b>{{ object.start_date}}</b></p>
+            <div>
+                <p class="no"><b>RESTAURANT : NO</b></p>
+                <style>
+                    .btn-modal {
+                        color: #F4E7D7;
+                    }
+                </style>
+
+            </div>
             {% endif %}
+            <button  class="btn-modal" id="open-modal-btn">
+                <ion-icon name="information-circle-outline"></ion-icon>
+            </button>
         </div>
-        <p class="name_main"><b>{{ object|upper}}</b>
-        <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>
+        {% if not object.restaurant %}
+        <div class="info">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
+        </div>
+        {% endif %}
     </div>
-
-    <!--        COFFEE BARS AND RESTAURANTS-->
     <div>
-        <p class="name_main_date">Place where you can eat and drink for free:</p>
-        <div>
-            <div class="restaurant_box">
-                <div class="restaurant_info">
-                        {% if object.restaurant %}
-                        <p class="yes"><b>RESTAURANT : YES</b></p>
-                        {% else %}
-                        <div>
-                             <p class="no"><b>RESTAURANT : NO</b></p>
-                            <div class="contine_info">
-                                <ion-icon name="alert-circle-outline"></ion-icon>
-                                <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
-                            </div>
-
-                        </div>
-
-                         {% endif %}
-
-                    </div>
-                    <div class="work_time">
-                        <p><b>Breakfast:</b><br/> from 7-30 to 9-30</p>
-                        <hr>
-                        <p ><b>Lunch:</b><br/> from 11-30 to 14-00</p>
-                    </div>
-                </div>
-
-            </div>
+        <!--   COFFEE STATION BOX   -->
+        <div class="canteen-box">
+            {% if object.coffee_station %}
+            <p class="yes"><b>COFFEE STATION : YES</b></p>
+            {% else %}
             <div>
-                {% if object.coffee_station %}
-                <p class="yes"><b>COFFEE STATIONS : YES</b></p>
-                {% else %}
-                <div>
-                    <p class="no"><b>COFFEE STATIONS : NO</b></p>
-                    <div class="contine_info">
-                        <ion-icon name="alert-circle-outline"></ion-icon>
-                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
-                    </div>
-                </div>
-
-                {% endif %}
-            </div>
-
-
-            <div>
+                <p class="no"><b>COFFEE STATION : NO</b></p>
+                <style>
+                    .btn-modal2 {
+                        color: #F4E7D7;
+                    }
+                </style>
 
             </div>
-                {% if object.coffee_bar %}
-                <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
-                <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
-                {% else %}
-                <div>
-                    <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
-                    <div class="contine_info">
-                        <ion-icon name="alert-circle-outline"></ion-icon>
-                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
-                    <div class="contine_info">
-                        <ion-icon name="alert-circle-outline"></ion-icon>
-                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
-                    </div>
-                </div>
-                {% endif %}
-
-            </div>
-
-
-    <!--        INFORMATION-->
+            {% endif %}
+            <button  class="btn-modal2" id="open-modal-btn2">
+                <ion-icon name="information-circle-outline"></ion-icon>
+            </button>
+        </div>
+        {% if not object.coffee_station %}
+        <div class="info">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
+        </div>
+        {% endif %}
+    </div>
     <div>
+        <!--   COFFEE BAR SOHO BOX   -->
+        <div class="canteen-box">
+            {% if object.coffee_bar %}
+            <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>
+            {% else %}
+            <div>
+                <p class="no"><b>COFFEE BAR SOHO : NO</b></p>
+                <style>
+                    .btn-modal3 {
+                        color: #F4E7D7;
+                    }
+                </style>
+
+            </div>
+            {% endif %}
+            <button class="btn-modal3" id="open-modal-btn3">
+                <ion-icon name="information-circle-outline"></ion-icon>
+            </button>
+        </div>
+        {% if not object.coffee_bar %}
+        <div class="info">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
+        </div>
+        {% endif %}
+    </div>
+    <div>
+        <!--   COFFEE BAR NOHO BOX   -->
+        <div class="canteen-box">
+            {% if object.coffee_bar %}
+            <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>
+            {% else %}
+            <div>
+                <p class="no"><b>COFFEE BAR NOHO : NO</b></p>
+                <style>
+                    .btn-modal4 {
+                        color: #F4E7D7;
+                    }
+                </style>
+            </div>
+            {% endif %}
+            <button  class="btn-modal4" id="open-modal-btn4">
+                <ion-icon name="information-circle-outline"></ion-icon>
+            </button>
+        </div>
+        {% if not object.coffee_bar %}
+        <div class="info">
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="description-detail">
         {% if object.description %}
         <p class="name_main_date">Some information about this meeting: </p>
         <div>
-            <p class="description">{{object.description}}</p>
+            <p class="description"><b>{{object.description}}</b></p>
         </div>
         {% else %}
-        <p class="name_main_date">There no information about this meeting</p>
+        <p>There no information about this meeting</p>
         {% endif %}
     </div>
 </div>
+<!--   MODAL WINDOW RESTAURANT   -->
+<div class="modal" id="my-modal">
+    <div class="modal_box">
+        <button class="modal_close-btn" id="close-my-modal-btn">
+        <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h2>RESTAURANT</h2>
+        <img src="{% static 'meetme/img/restaurant.jpeg' %}" alt="restaurant">
+        <p>Breakfast</p>
+        <p><b>Mo-Fr: 8:00 - 10:00</b></p>
+        <p>Lunch</p>
+        <p><b>Mo-Fr: 11:30 - 14:00</b></p>
+
+    </div>
+</div>
+<!--   MODAL WINDOW COFFEE STATION   -->
+<div class="modal" id="my-modal2">
+    <div class="modal_box">
+        <button class="modal_close-btn" id="close-my-modal-btn2">
+        <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h2>COFFEE STATION</h2>
+        <img src="{% static 'meetme/img/coffeestation.jpeg' %}" alt="restaurant">
+        <p><b>Mo-Fr: all day</b></p>
+
+
+    </div>
+</div>
+<!--   MODAL WINDOW COFFEE BAR SOHO   -->
+<div class="modal" id="my-modal3">
+    <div class="modal_box">
+        <button class="modal_close-btn" id="close-my-modal-btn3">
+        <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h2>COFFEE BAR SOHO</h2>
+        <img src="{% static 'meetme/img/coffeebarsoho.jpeg' %}" alt="restaurant">
+        <p><b>Mo-Fr: 8:00 - 16:00</b></p>
+
+    </div>
+</div>
+<!--   MODAL WINDOW COFFEE BAR NOHO   -->
+<div class="modal" id="my-modal4">
+    <div class="modal_box">
+        <button class="modal_close-btn" id="close-my-modal-btn4">
+        <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h2>COFFEE BAR NOHO</h2>
+        <img src="{% static 'meetme/img/coffeebarnoho.jpeg' %}" alt="restaurant">
+        <p><b>Mo-Th: 8:00 - 16:00</b></p>
+        <p><b>Fr: 8:00 - 14:00</b></p>
+
+    </div>
+</div>
+<!--                </div>-->
+<!--<div class="meeting_detail">-->
+<!--    <div>-->
+<!--        <h1 class="meeting-id2">{{ object.id}}</h1>-->
+<!--    </div>-->
+
+
+<!--    &lt;!&ndash;        DATE AND NAME CONTENT&ndash;&gt;-->
+<!--    <div>-->
+<!--        <p class="first_last_name">{{ user.first_name|upper }} {{ user.last_name|upper }} </p>-->
+<!--        <div>-->
+<!--            {% if object.end_date == object.start_date %}-->
+<!--            <p class="name_main_date"><b>{{ object.start_date}}</b></p>-->
+<!--            {% elif object.end_date %}-->
+<!--            <p class="name_main_date"><b>{{ object.start_date}} - {{object.end_date}}</b></p>-->
+<!--            {% else %}-->
+<!--            <p class="name_main_date"><b>{{ object.start_date}}</b></p>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--        <p class="name_main"><b>{{ object|upper}}</b>-->
+<!--        <p class="name_main_date">{{ object.number_of_quests}} GUEST{{ object.number_of_quests|pluralize|upper }}</p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash;        COFFEE BARS AND RESTAURANTS&ndash;&gt;-->
+<!--    <div>-->
+<!--        <p class="name_main_date">Place where you can eat and drink for free:</p>-->
+<!--        <div>-->
+<!--            <div class="restaurant_box">-->
+<!--                <div class="restaurant_info">-->
+<!--                        {% if object.restaurant %}-->
+<!--                        <p class="yes"><b>RESTAURANT : YES</b></p>-->
+<!--                        <button id="open-modal-btn">-->
+<!--                            <ion-icon name="information-circle-outline"></ion-icon>-->
+<!--                        </button>-->
+<!--                        {% else %}-->
+<!--                        <div>-->
+<!--                             <p class="no"><b>RESTAURANT : NO</b></p>-->
+
+<!--                            <div class="contine_info">-->
+<!--                                <ion-icon name="alert-circle-outline"></ion-icon>-->
+<!--                                <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+
+
+
+
+
+<!--                         {% endif %}-->
+
+<!--                    </div>-->
+<!--                &lt;!&ndash; MODAL WINDOW &ndash;&gt;-->
+<!--                <div class="modal" id="my-modal">-->
+<!--                    <div class="modal_box">-->
+<!--                        <button class="modal_close-btn" id="close-my-modal-btn">-->
+<!--                            <ion-icon name="close-outline"></ion-icon>-->
+<!--                        </button>-->
+<!--                        <h2>RESTAURANT</h2>-->
+<!--                        <img src="{% static 'meetme/img/restaurant.jpeg' %}" alt="restaurant">-->
+
+<!--                        <p>Breakfast: <b>Mo-Fr 8:00 to 10:00</b></p>-->
+<!--                        <p>Lunch: <b>Mo-Fr 11:30 to 14:00</b></p>-->
+
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <div>-->
+<!--                {% if object.coffee_station %}-->
+<!--                <p class="yes"><b>COFFEE STATIONS : YES</b></p>-->
+<!--                {% else %}-->
+<!--                <div>-->
+<!--                    <p class="no"><b>COFFEE STATIONS : NO</b></p>-->
+<!--                    <div class="contine_info">-->
+<!--                        <ion-icon name="alert-circle-outline"></ion-icon>-->
+<!--                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                {% endif %}-->
+<!--            </div>-->
+
+
+<!--            <div>-->
+
+<!--            </div>-->
+<!--                {% if object.coffee_bar %}-->
+<!--                <p class="yes"><b>COFFEE BAR SOHO : YES</b></p>-->
+<!--                <p class="yes"><b>COFFEE BAR NOHO : YES</b></p>-->
+<!--                {% else %}-->
+<!--                <div>-->
+<!--                    <p class="no"><b>COFFEE BAR SOHO : NO</b></p>-->
+<!--                    <div class="contine_info">-->
+<!--                        <ion-icon name="alert-circle-outline"></ion-icon>-->
+<!--                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div>-->
+<!--                    <p class="no"><b>COFFEE BAR NOHO : NO</b></p>-->
+<!--                    <div class="contine_info">-->
+<!--                        <ion-icon name="alert-circle-outline"></ion-icon>-->
+<!--                        <p >In order to eat and drink here, you need to get a guest card at the reception, put money on it. Unfortunately, it is impossible to pay with money or bank cards here</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endif %}-->
+
+<!--            </div>-->
+
+
+<!--    &lt;!&ndash;        INFORMATION&ndash;&gt;-->
+<!--    <div>-->
+<!--        {% if object.description %}-->
+<!--        <p class="name_main_date">Some information about this meeting: </p>-->
+<!--        <div>-->
+<!--            <p class="description">{{object.description}}</p>-->
+<!--        </div>-->
+<!--        {% else %}-->
+<!--        <p class="name_main_date">There no information about this meeting</p>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+<!--</div>-->
 
 {% endblock content %}

@@ -46,25 +46,108 @@ function myPassword2() {
     }
 }
 
+//============================== Restaurant modal window ==============================//
+document.getElementById("open-modal-btn").addEventListener("click", function() {
+    document.getElementById("my-modal").classList.add("open")
+})
 
-document.addEventListener('DOMContentLoaded', function () {
-    var popupBtn = document.getElementById('popup-btn');
-    var closeBtn = document.getElementById('close-btn');
-    var popup = document.getElementById('popup');
-    var overlay = document.getElementById('overlay');
+document.getElementById("close-my-modal-btn").addEventListener("click", function() {
+    document.getElementById("my-modal").classList.remove("open")
+})
 
-    popupBtn.addEventListener('click', function () {
-        popup.style.display = 'block';
-        overlay.style.display = 'block';
-    });
-
-    closeBtn.addEventListener('click', function () {
-        popup.style.display = 'none';
-        overlay.style.display = 'none';
-    });
-
-    overlay.addEventListener('click', function () {
-        popup.style.display = 'none';
-        overlay.style.display = 'none';
-    });
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById("my-modal").classList.remove("open")
+    }
 });
+document.querySelector("#my-modal .modal_box").addEventListener('click', event => {
+    event._isClickWithInModal = true;
+});
+
+document.getElementById("my-modal").addEventListener('click', event => {
+    if (event._isClickWithInModal) return;
+    event.currentTarget.classList.remove('open');
+});
+
+//============================== Coffee Station modal window ==============================//
+document.getElementById("open-modal-btn2").addEventListener("click", function() {
+    document.getElementById("my-modal2").classList.add("open")
+})
+
+document.getElementById("close-my-modal-btn2").addEventListener("click", function() {
+    document.getElementById("my-modal2").classList.remove("open")
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById("my-modal2").classList.remove("open")
+    }
+});
+document.querySelector("#my-modal2 .modal_box").addEventListener('click', event => {
+    event._isClickWithInModal = true;
+});
+
+document.getElementById("my-modal2").addEventListener('click', event => {
+    if (event._isClickWithInModal) return;
+    event.currentTarget.classList.remove('open');
+});
+
+//============================== CoffeeBar Soho modal window ==============================//
+document.getElementById("open-modal-btn3").addEventListener("click", function() {
+    document.getElementById("my-modal3").classList.add("open")
+})
+
+document.getElementById("close-my-modal-btn3").addEventListener("click", function() {
+    document.getElementById("my-modal3").classList.remove("open")
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById("my-modal3").classList.remove("open")
+    }
+});
+document.querySelector("#my-modal3 .modal_box").addEventListener('click', event => {
+    event._isClickWithInModal = true;
+});
+
+document.getElementById("my-modal3").addEventListener('click', event => {
+    if (event._isClickWithInModal) return;
+    event.currentTarget.classList.remove('open');
+});
+
+//============================== CoffeeBar Noho modal window ==============================//
+document.getElementById("open-modal-btn4").addEventListener("click", function() {
+    document.getElementById("my-modal4").classList.add("open")
+})
+
+document.getElementById("close-my-modal-btn4").addEventListener("click", function() {
+    document.getElementById("my-modal4").classList.remove("open")
+})
+
+window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+        document.getElementById("my-modal4").classList.remove("open")
+    }
+});
+document.querySelector("#my-modal4 .modal_box").addEventListener('click', event => {
+    event._isClickWithInModal = true;
+});
+
+document.getElementById("my-modal4").addEventListener('click', event => {
+    if (event._isClickWithInModal) return;
+    event.currentTarget.classList.remove('open');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

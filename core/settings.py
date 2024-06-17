@@ -23,14 +23,14 @@ AUTH_USER_MODEL = 'meetme.User'
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d"
-# SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECRET_KEY = "django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # 'django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+# DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")

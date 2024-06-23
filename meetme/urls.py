@@ -40,6 +40,7 @@ urlpatterns = [
     path('create_user/', views.register_page, name="create_user"),
 
 
+
     ]
 
 

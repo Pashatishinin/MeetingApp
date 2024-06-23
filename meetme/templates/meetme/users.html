@@ -1,57 +1,36 @@
 {% extends 'meetme/main.html' %}
 {% load static %}
 {% block content %}
-<div class="users_page">
+<section class="users_page">
     <div onclick="location.href='{% url 'create_user' %}'" style="cursor:pointer;" class="add-meeting">
         <ion-icon name="add-circle-outline"></ion-icon>
         <p class="add_meeting_title">ADD A NEW USER</p>
     </div>
-    <table>
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">TYPE</th>
-            <th scope="col">USERNAME</th>
-            <th scope="col">FULL NAME</th>
-            <th scope="col">EMAIL</th>
-            <th scope="col">DATE</th>
-            <th scope="col">DELETE</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-
     {% for user in users %}
-        <tr class="users_list_box">
-            <td>{{user.id}}</td>
-            <td>{{user.user_type}}</td>
-            <td>{{user}}</td>
-            <td>{{user.first_name|upper}} {{user.last_name|upper}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.date_joined}}</td>
-
-
-            <td>
+        <div class="users_box">
+            <div class="users_box_info">
+                <p>ID: <b>{{user.id}}</b></p>
+                <p>Acount type: <b>{{user.acount_type}}</b></p>
+                <p>Nickname: <b class="users_nickname">{{user}}</b></p>
+                <p>Full name: <b>{{user.first_name}} {{user.last_name}}</b></p>
+                <p>Email: <b>{{user.email}}</b></p>
+                <p>Date: <b>{{user.date_joined}}</b></p>
+            </div>
+            <div class="users_box_icons">
+                <a href="#"><ion-icon name="create-outline"></ion-icon></a>
                 <a href="{% url 'delete' user.id%}"><ion-icon name="trash-outline"></ion-icon></a>
-                <a href="{% url 'user-update' user.id%}"><ion-icon name="create-outline"></ion-icon></a>
-            </td>
-        </tr>
+            </div>
 
+
+
+
+        </div>
     {% empty %}
-        <h3>NO USERS</h3>
-        <style>
-            .users_page th {
-                display: none;
-            }
-
-        </style>
     {% endfor %}
 
-    </table>
 
 
-</div>
+</section>
 
 
 

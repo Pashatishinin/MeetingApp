@@ -1,0 +1,38 @@
+{% extends 'meetme/main.html' %}
+
+{% block content %}
+
+
+<section class="update-user">
+    <div class="update_user_box">
+        <div>
+            <h1><b>Hello, {{request.user}}</b></h1>
+        </div>
+        <div class="input-group">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    <p>First name</p>
+                    {{form.first_name}}
+                </div>
+                <div class="input-field">
+                    <p>Last name</p>
+                    {{form.last_name}}
+                </div>
+                <div class="input-field">
+                    <p>Email</p>
+                    {{form.email}}
+                </div>
+
+                <div class="input-field">
+                    <button class="btn" type="submit">Update</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock content %}

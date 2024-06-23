@@ -4,125 +4,91 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MEETME</title>
+    <title>MeetMeApp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Rock+Salt&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'meetme/css/style.css' %}">
     <link rel="icon" href="{% static 'meetme/img/Logo_2.png' %}" type="image/x-icon">
 
     <script src="https://kit.fontawesome.com/c8dc484f72.js" crossorigin="anonymous"></script>
 
-
     <style>
 
-        .main_body {
+        body {
             background-image: url('{% static "meetme/img/background_1.png" %}');
             background-repeat: no-repeat;
             background-position: top;
             background-size: 1920px 1080px;
             background-attachment: fixed;
         }
-        @media screen and (max-width: 768px) {
 
-            .main_body {
-                background-image: url('{% static "meetme/img/background_2.png" %}') !important;
-                background-size: 1000px 1350px ;
-                background-attachment: fixed;
-            }
         }
 
 
     </style>
+
+
+
 </head>
-<body class="main_body">
-
-    <!--    HEADER NAVIGATION-->
-
+<body>
     <header>
-
-        <div class="header_box header">
-            <!-- Menu will change for mobile screen            -->
-            <div class="mobile_menu">
-                <input type="checkbox" id="menu-toggle" class="menu-toggle">
-                <label for="menu-toggle" class="menu-button"><ion-icon name="menu-outline"></ion-icon>
-                    </label>
-                <div class="menu">
-                    <ul>
-                        {% if request.user.is_authenticated %}
-                        <li class="mobile_menu_user"><ion-icon name="person-circle-outline"></ion-icon>
-                            <p class="user_name"><b>{{request.user}}</b></p></li>
-                        <hr>
-                        {% endif %}
-                        <li><a class="btn4" href="{% url 'home' %}"><B>HOME</B></a></li>
-                        <li><a class="btn4" href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
-                        <li><a class="btn4" href="{% url 'update_user' %}"><B>PROFILE</B></a></li>
-                        {% if request.user.is_superuser %}
-                            <li><a class="btn4" href="{% url 'users' %}"><B>USERS</B></a></li>
-                        {% endif %}
-                        {% if request.user.is_authenticated %}
-                        <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
-                        {% else %}
-                        <li><a class="btn" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
-                        {% endif %}
-                    </ul>
-
-
-                </div>
-            </div>
-
-
-            <!--            -->
-
-            <img class="logo" src="{% static "meetme/img/Logo.png" %}" alt="LOGO">
-
-            <div>
-                <ul class="header-left">
-                    <li><a href="{% url 'home' %}"><B>HOME</B></a></li>
-                    <li><a href="{% url 'meetings' %}"><B>MEETINGS</B></a></li>
-                    <li><a href="{% url 'update_user' %}"><B>PROFILE</B></a></li>
-                    {% if request.user.is_superuser %}
-                        <li><a class="btn4" href="{% url 'users' %}"><B>USERS</B></a></li>
-                    {% endif %}
-                </ul>
-            </div>
-
-            <div>
-                <ul class="header-right">
-
-                    {% if request.user.is_authenticated %}
-                    <li><ion-icon name="person-circle-outline"></ion-icon></li>
-                    <li><p class="user_name"><b>{{request.user}}</b></p></li>
-                    <li><a class="btn" href="{% url 'logout' %}"><b>LOGOUT</b></a></li>
-                    {% else %}
-                    <li><a class="btn" href="{% url 'login' %}"><b>SIGN UP</b></a></li>
-                    {% endif %}
-                </ul>
-            </div>
+        <div class="left-header">
+            <a href="{% url 'home' %}"><img class="logo" src="{% static "meetme/img/Logo.png" %}" alt="LOGO"></a>
+            <p>meetme.</p>
         </div>
+
+
+        <div class="right-header">
+
+
+            {% if request.user.is_authenticated %}
+            <div class="menu-icon">
+                <div class="bar"></div>
+            </div>
+            {% else %}
+            <a class="btn" href="{% url 'login' %}"><b>Sign Up </b><ion-icon name="log-in-outline"></ion-icon></a>
+            {% endif %}
+        </div>
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <div class="profile-box">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <div class="semi-profile-box">
+                        <p class="user_name">{{request.user}}</p>
+                        <a href="{% url 'update_user' %}" class="navbar-link"><ion-icon name="create-outline"></ion-icon> Edit</a>
+                    </div>
+                </div>
+                <li><a href="{% url 'home' %}" class="navbar-link">Home</a></li>
+                <li><a href="{% url 'meetings' %}" class="navbar-link">Meetings </a></li>
+                {% if request.user.is_superuser %}
+                <li><a href="{% url 'users' %}" class="navbar-link">Users</a></li>
+                {% endif %}
+
+            </ul>
+            <div class="navbar-list-button">
+                <a class="btn" href="{% url 'logout' %}"><b>Log Out </b><ion-icon name="log-out-outline"></ion-icon></a>
+            </div>
+
+        </nav>
     </header>
 
-    <div class="body_content">
+    {% block content %}
 
-        {% block content %}
+    {% endblock content %}
 
-        {% endblock content %}
-
-    </div>
-
-
-
-    <!--    FOOTER NAVIGATION-->
     <footer>
         <div class="footer-content">
 
             <div class="footer-box">
-                <h3><b>ABOUT US</b></h3>
+                <h5><b>ABOUT US</b></h5>
                 <p>This is MeetMeApp. Our mission to help you with organization your meeting and help your guests to
                     spend your time during meeting more comfortable</p>
             </div>
             <div class="footer-box">
-                <h3><b>CONTACT US</b></h3>
+                <h5><b>CONTACT US</b></h5>
                 <div class="contacts">
                     <div class="contacts-links">
                         <ion-icon name="logo-whatsapp"></ion-icon>
@@ -139,7 +105,7 @@
                 </div>
             </div>
             <div class="footer-box">
-                <h3><b>FOLLOW US</b></h3>
+                <h5><b>FOLLOW US</b></h5>
                 <div class="contacts-links">
                     <ion-icon name="logo-twitter"></ion-icon>
                     <p>Follow us in Twitter</p>
@@ -148,13 +114,17 @@
                     <ion-icon name="logo-instagram"></ion-icon>
                     <p>Follow us in Instagram</p>
                 </div>
+                <p>Copyright 2024 by Pavlo Tishynin</p>
             </div>
 
         </div>
+
+    </footer>
+
+
+
+</body>
     <script src="{% static 'meetme/script.js' %}"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-</footer>
-</body>
 </html>

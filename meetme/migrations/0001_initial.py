@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
                 ('old_value', models.TextField(blank=True)),
                 ('new_value', models.TextField(blank=True)),
-                ('meeting', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='history', to='meetme.meeting')),
+                ('meeting', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='history', to='meetme2.meeting')),
             ],
         ),
     ]

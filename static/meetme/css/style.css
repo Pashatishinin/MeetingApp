@@ -1,348 +1,104 @@
 @import url('main.css');
 
 /*!****************************************** [ MOBILE VERSION ]************************************!*/
-@media screen and (max-width: 1024px) {
-    .meeting-content {
-        flex-wrap: wrap;
-    }
-
-     .meeting-content-main {
-    position: relative;
-    }
-
-
-
+@media screen and (max-width: 1200px) {
 }
 
 @media screen and (max-width: 992px) {
-
-    .logo {
-    width: 80px;
-    }
-
-    ul li{
-    list-style: none;
-    margin: 0 10px;
-    color: #f4e7d7;
-    }
-
-
-
-
 }
 
 @media screen and (max-width: 768px) {
+}
 
-
-    /********* [ HEADER PAGE ] *********/
-    .header .header-left {
-        display: none;
+@media screen and (max-width: 480px) {
+    .home {
+        width: 80%;
     }
 
-    .header .header-right {
-        display: none;
+    .hero-info h1 {
+        font-size: 3.5rem;
     }
 
-    .logo {
-        width: 120px;
-        position: static;
-        margin: 0 auto;
-    }
-
-    /********* [ MOBILE MENU ] *********/
-    .menu-toggle {
-        display: none;
-    }
-
-    .mobile_menu {
-        display: initial;
-    }
-
-    .mobile_menu ion-icon {
-        height: 60px;
-        width: 60px;
-    }
-
-    /* ����� ��� ������ ���� */
-    .menu-button {
-        cursor: pointer;
-        color: #fff;
-        border-radius: 5px;
-    }
-
-    .mobile_menu_user {
-        display: flex;
-        align-items: center;
-    }
-
-    /* ����� ��� ������������ ���� */
-    .menu {
-        position: absolute;
-        top: 130px;
-        left: -100%; /* �������� ���� �� ��������� ��������� */
-        width: 100%;
-        height: 100%;
-        background-color: rgba(34, 40, 49, 0.8);
-        transition: left 0.3s ease; /* �������� �������� ���� */
-        z-index: 2;
-    }
-
-    /* ����� ��� ��������� ���� */
-    .menu ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .menu li {
-        padding: 30px;
-        font-size: 16px;
-        text-align: left;
-    }
-
+    /* HEADER */
     .btn {
-        font-size: 16px;
+        font-size: 14px;
     }
 
-    /* �������� ��� ��������� (�������) �������� */
-    .menu-toggle:checked + .menu-button + .menu {
-        left: 0;
-        position: absolute; /* ���������� ���� ��� ��������� �������� */
+    header .left-header {
+
+        display: inline-block;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 
-    /************************************************************************************
-    /********* [ HOME PAGE ] *********/
-
-
-    .content-home h1 p{
-    font-size: 56px;
-    color:#00ADB5;
-}
-
-    .content-home h3 {
-        font-size: 16px;
+    header .logo {
+        width: 3rem;
     }
 
-    /********* [ DELETE PAGE ] *********/
-
-
-
-
-    .text_confirm {
-        font-size: 24px;
-        color: #F4E7D7;
+    /* LOGIN/REGISTER */
+    .link_to_register {
+        margin: 0 10px;
     }
 
-    .delete_confirm_box b {
-        color: #00ADB5;
-    }
-
-    .btn3 {
-        text-align: center;
-        width: 100px;
-        font-size: 16px;
-        background: #00ADB5;
-        color: #F4E7D7;
-        font-weight: bolder;
-        margin: 30px 50px;
-        border: none;
-        cursor: pointer;
-        letter-spacing: 0.05em;
-        transition: 0.5s;
-        max-height: 48px;
-        text-decoration: none;
-        padding: 10px 30px;
-    }
-
-    .btn3:hover {
-        letter-spacing: 0.5em;
-        width: 120px;
-    }
-
-    /********* [ MEETING EDIT ] *********/
-    .date_field {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /********* [ MEETING LIST ] *********/
-    .week_buttons button {
-        font-size: 12px;
-    }
-
-}
-
-
-
-
-
-
-
-@media screen and (max-width: 580px) {
-
-    .content-home h1 {
-        font-size: 32px;
-    }
-
-
-    /**************************************************************************/
-    /********* [ DELETE PAGE ] *********/
-    .delete_confirm_box {
-        margin: 100px 30px;
-    }
-
-    .text_confirm {
-        font-size: 20px;
-    }
-
-    /********* [ MEETING LIST ] *********/
-    .meeting-content {
-        padding: 30px 30px;
-    }
-
-    .meeting-page-title {
-        font-size: 48px;
-    }
-
-    .meeting-counter {
-        font-size: 20px;
+    /* MEETING LIST */
+    .meeting-box, .meeting-box2 {
+        width: 270px;
+        padding: 5px 15px;
     }
 
     .meeting-content-box {
         margin-left: 0;
     }
 
-    .meeting-box, .meeting-box2 {
-        width: 300px;
-        margin: 10px 0px;
+
+    .search-input input[type=text] {
+        margin-right: 5px;
+    }
+
+    .week_buttons button {
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+
+    }
+
+    .meeting_box_week_day {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .meeting-id {
+        font-size: 64px;
+    }
+
+    .meeting_info {
+        max-width: 270px;
     }
 
     .meeting-title, .meeting-title2 {
-        font-size: 24px;
         height: 30px;
+        font-size: 24px;
+        max-width: 270px;
     }
 
-    .meeting-date {
+
+    .meeting-date, .meeting-date2 {
         font-size: 12px;
     }
 
     .user_box {
-        max-width: 300px;
-    }
-
-
-    .meeting-box2 ion-icon, .meeting-box ion-icon {
-        width: 20px;
-        height: 25px;
-    }
-
-
-    .week_buttons button {
-        font-size: 10px;
-    }
-
-    .add-meeting {
-        width: 250px;
-        height: 70px;
-        padding: 0 30px;
-    }
-
-    .add_meeting_title {
-        font-size: 12px;
-    }
-
-    .add-meeting ion-icon {
-        font-size: 30px;
-    }
-
-    /********* [ HOME PAGE ] *********/
-    .content-home h1 p {
-        font-size: 48px;
-        color: #00ADB5;
-    }
-
-}
-@media screen and (max-width: 400px) {
-    /********************************************* [ LOGIN/REGISTER ] *********************************************/
-    .top-header h3{
-        font-size: 20px;
-
-    }
-
-    .box-login small, .input-box, .input-field label, .link_to_register a {
-        font-size: 12px;
-    }
-
-    .link_to_register a {
-        font-size: 14px
-    }
-    .error_login li,.error_login p{
-        font-size: 10px;
-    }
-
-    /*************************************** [ UPDATE USER PAGE ] **********************************************************/
-    .content-home {
-        padding: 30px 30px;
-    }
-
-
-
-    /**************************************************************************************/
-
-
-/* ====================================================================================================== */
-/* =========================================== MEETING DETAIL =========================================== */
-/* ====================================================================================================== */
-    .meeting_detail {
-        padding: 30px;
-
-    }
-
-    .canteen-box {
-        padding: 15px;
-    }
-
-
-    .yes, .no {
+        height: 40px;
+        max-width: 260px;
         font-size: 14px;
-    }
 
-    .canteen-box button {
-        font-size: 22px;
-        top: 16px;
-        right: 16px;
-    }
-
-
-    .meeting_detail .info p {
-        font-size: 12px;
-    }
-    /********* [ MEETING LIST ] *********/
-
-    .meeting-box, .meeting-box2 {
-        width: 270px;
-    }
-
-    .search-input input[type=text] {
-        width: 250px;
-        margin-right: 10px;
-    }
-
-    .meeting-title, .meeting-title2 {
-        font-size: 20px;
-        height: 25px;
-    }
-
-
-
-    .content-home h3{
-        width: 250px;
-    }
-    .content-home input,.search-input input[type=text] {
-        width: 250px;
     }
 
 
 }
 
-/******************************************************************************************/
+@media screen and (max-width: 320px) {
+}
 

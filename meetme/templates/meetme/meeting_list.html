@@ -1,24 +1,31 @@
 {% extends 'meetme/main.html' %}
+{% load custom_filters %}
 {% load static %}
+
+
 {% block content %}
 
 {% if request.user.is_superuser %}
-        <style>
-            .meeting-id {
-                top: 30%;
-            }
-            .meeting-title, .meeting-title2 {
-                margin-top: 5px;
+<style>
+    .meeting-id {
+        top: 30%;
+    }
 
-            }
-        </style>
+    .meeting-title, .meeting-title2 {
+        margin-top: 5px;
+
+    }
+</style>
 {% endif %}
 
-<div class="meeting-content">
+<section class="meeting-content">
 
     <!--        NAME AND COUNTER OF MEETINGS      -->
     <div class="meeting-content-main">
-        <h1 class="meeting-page-title">{{ request.user.first_name|upper }} {{ request.user.last_name|upper }}</h1>
+        <div class="title-box">
+            <h3 class="meeting-page-title">{{ request.user.first_name|upper }}</h3>
+            <h3 class="meeting-page-title2">{{ request.user.last_name|upper }}</h3>
+        </div>
         <p class="meeting-counter">You have {{ count }} Meeting{{ count|pluralize }} </p>
         <div onclick="location.href='{% url 'meeting-create' %}'" style="cursor:pointer;" class="add-meeting">
             <ion-icon name="add-circle-outline"></ion-icon>
@@ -26,65 +33,38 @@
         </div>
         <!--        SEARCHING BLOCK FOR MEETING      -->
         <div class="search-input">
-                <form method="GET">
-                    <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
-                    <input class="btn" type="submit" value="SEARCH">
-                </form>
-            </div>
+            <form method="GET">
+                <input class="search-area" type="text" name="search-area" placeholder="&#x270e">
+                <input class="btn" type="submit" value="SEARCH">
+            </form>
+        </div>
     </div>
 
 
-    <div  class="meeting-content-box">
+    <div class="meeting-content-box">
 
         <div class="week_buttons">
             <button class="active">THIS WEEK</button>
             <button>NEXT WEEK</button>
             <button>COMMING SOON</button>
             <button>MEETINGS ARE GONE</button>
+
         </div>
         <div class="content-btn">
             <div class="content">
                 <div class="meeting_page_content">
 
 
-
-
-                <!--        MEETING LIST      -->
-                {% for meeting in sorted_meetings  %}
-                {% if start_this_week|date:"Y-m-d" >= meeting.start_date|date:"Y-m-d" and meeting.end_date|date:"Y-m-d" >= start_this_week|date:"Y-m-d" %}
+                    <!--        MEETING LIST      -->
+                    {% for meeting in this_week_events %}
                     {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
                     {% include 'meetme/base.html'%}
                     {% else %}
-                <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
+                    <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
                     {% include 'meetme/base2.html'%}
 
 
                     {% endif %}
-                    {% endif %}
-                {% empty %}
-
-                {% endfor %}
-            </div>
-            </div>
-            <div class="content">
-                <div class="meeting_page_content">
-
-
-
-
-                    <!--        MEETING LIST      -->
-                    {% for meeting in sorted_meetings  %}
-                    {% if start_next_week|date:"Y-m-d" >= meeting.start_date|date:"Y-m-d" and meeting.end_date|date:"Y-m-d" >= start_next_week|date:"Y-m-d" %}
-                      {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
-
-                    {% include 'meetme/base.html'%}
-                    {% else %}
-                <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
-                    {% include 'meetme/base2.html'%}
-
-
-                        {% endif %}
-                        {% endif %}
                     {% empty %}
 
                     {% endfor %}
@@ -94,21 +74,39 @@
                 <div class="meeting_page_content">
 
 
+                    <!--        MEETING LIST      -->
+                    {% for meeting in next_week_events %}
+                    {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
+
+                    {% include 'meetme/base.html'%}
+                    {% else %}
+                    <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
+                    {% include 'meetme/base2.html'%}
+
+
+                    {% endif %}
+                    {% empty %}
+
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="content">
+                <div class="meeting_page_content">
 
 
                     <!--        MEETING LIST      -->
-                    {% for meeting in sorted_meetings  %}
+                    {% for meeting in sorted_meetings %}
                     {% if meeting.end_date|date:"Y-m-d" > end_next_week|date:"Y-m-d" %}
 
                     {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
                     {% include 'meetme/base.html'%}
                     {% else %}
-                <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
+                    <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
                     {% include 'meetme/base2.html'%}
 
 
-                        {% endif %}
-                        {% endif %}
+                    {% endif %}
+                    {% endif %}
                     {% empty %}
 
                     {% endfor %}
@@ -118,30 +116,27 @@
                 <div class="meeting_page_content">
 
 
-
                     <!--        MEETING LIST      -->
-                    {% for meeting in sorted_meetings  %}
+                    {% for meeting in sorted_meetings %}
 
-                    {% if start_this_week|date:"Y-m-d" > meeting.end_date|date:"Y-m-d" %}
-                        {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
+                    {% if this_week|weekday_filter:0|date:"Y-m-d" > meeting.end_date|date:"Y-m-d" %}
+                    {% if meeting.end_date|date:"Y-m-d" >= timenow|date:"Y-m-d" %}
 
                     {% include 'meetme/base.html'%}
                     {% else %}
-                <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
+                    <!--        IF DATE OF MEETING IS NOT AVAILABLE     -->
                     {% include 'meetme/base2.html'%}
 
 
-                        {% endif %}
+                    {% endif %}
                     {% endif %}
                     {% empty %}
 
                     {% endfor %}
                 </div>
             </div>
-
         </div>
 
-    </div>
-</div>
+</section>
 
 {% endblock content %}

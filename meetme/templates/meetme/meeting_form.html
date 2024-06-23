@@ -2,90 +2,88 @@
 
 {% block content %}
 
-<div class="content-home">
-       <div>
-           <div class="update_user_box">
-               <div>
-                   <h1><b>Meeting edit</b></h1>
-               </div>
-               <div class="input-group-meeting">
-                   <form method="POST">
-                   {% csrf_token %}
-                       <div class="input-field">
-                           <p>Title</p>
-                           {{form.title}}
-                       </div>
-                       <div class="date_fields">
-                           <div class="input-field">
-                               <p>Start date</p>
-                               <div class="date_box">
-                                   {{form.start_date}}
-                               </div>
+<section class="content-home">
+    <div class="update_user_box">
+        <div>
+            <h1><b>Meeting edit</b></h1>
+        </div>
+        <div class="input-group-meeting">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    <p>Title</p>
+                    {{form.title}}
+                </div>
+                <div class="date_fields">
+                    <div class="input-field">
+                        <p>Start date</p>
+                        <div class="date_box">
+                            {{form.start_date}}
+                        </div>
 
-                           </div>
-                           <div class="input-field">
-                               <p>End date</p>
-                               <div class="date_box">
-                                   {{form.end_date}}
-                               </div>
+                    </div>
+                    <div class="input-field">
+                        <p>End date</p>
+                        <div class="date_box">
+                            {{form.end_date}}
+                        </div>
 
-                           </div>
-                       </div>
-                       {% if form.errors%}
-                            <style>
-                                select {
-                                    border: 3px solid #ff4747;
-                                    margin-bottom: 5px;
-                                }
-
-
-                            </style>
-                            <div class="error_info">
-                                <ion-icon name="close-circle-outline"></ion-icon>
-                                {% for error in form.non_field_errors %}
-                                <span>{{error}}</span>
-                                {% endfor %}
-                            </div>
-                       {% endif %}
-
-                       <div class="input-field">
-                           <p>Kst number</p>
-                           {{form.kst_number}}
-                       </div>
-                       <div class="input-field">
-                           <p>Number of guests</p>
-                           {{form.number_of_quests}}
-                       </div>
-                       <p class="semi_title">Please mark the place where guests can eat and drink for free :</p class="semi_title">
-                       <div class="input-field">
-                           <p>Restaurant</p>
-                           {{form.restaurant}}
-                       </div>
-                       <div class="input-field">
-                           <p>Coffee station</p>
-                           {{form.coffee_station}}
-                       </div>
-                       <div class="input-field">
-                           <p>Coffee bars (Soho/Noho)</p>
-                           {{form.coffee_bar}}
-                       </div>
-                        <div class="description_area">
-                           <p>Leave some information about meeting</p>
-                           {{form.description}}
-                       </div>
+                    </div>
+                </div>
+                {% if form.errors%}
+                <style>
+                    select {
+                        border: 3px solid #ff4747;
+                        margin-bottom: 5px;
+                    }
 
 
-                       <div class="input-field">
-                            <button type="submit">Save</button>
-                       </div>
-                   </form>
+                </style>
+                <div class="error_info">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                    {% for error in form.non_field_errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
 
-               </div>
+                <div class="input-field">
+                    <p>Kst number</p>
+                    {{form.kst_number}}
+                </div>
+                <div class="input-field">
+                    <p>Number of guests</p>
+                    {{form.number_of_quests}}
+                </div>
+                <p class="semi_title">Please mark the place where guests can eat and drink for free
+                    :</p class="semi_title">
+                <div class="input-field">
+                    <p>Restaurant</p>
+                    {{form.restaurant}}
+                </div>
+                <div class="input-field">
+                    <p>Coffee station</p>
+                    {{form.coffee_station}}
+                </div>
+                <div class="input-field">
+                    <p>Coffee bars (Soho/Noho)</p>
+                    {{form.coffee_bar}}
+                </div>
+                <div class="description_area">
+                    <p>Leave some information about meeting</p>
+                    {{form.description}}
+                </div>
 
-           </div>
 
-       </div>
+                <div class="input-field">
+                    <button class="btn" type="submit"><b>Save</b></button>
+                </div>
+            </form>
 
-</div>
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock content %}

@@ -1,3 +1,18 @@
+// active hamburger menu
+
+let menuIcon = document.querySelector(".menu-icon");
+let navbar = document.querySelector(".navbar")
+menuIcon.addEventListener("click",()=>{
+    menuIcon.classList.toggle("active");
+    navbar.classList.toggle("active");
+    document.body.classList.toggle("open");
+});
+
+
+
+
+
+
 // switch beetwen weeks
 
 const buttons = document.querySelectorAll('.week_buttons button');
@@ -139,6 +154,7 @@ document.getElementById("my-modal4").addEventListener('click', event => {
 });
 
 
+//============================== USERS  modal window ==============================//
 
 
 

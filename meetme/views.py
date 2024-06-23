@@ -10,7 +10,7 @@ from django import forms
 
 from django.core.exceptions import ObjectDoesNotExist
 
-from django.contrib.auth.models import User
+from .models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError, transaction
 
@@ -39,6 +39,7 @@ HOME PAGE
 
 
 def home(request):
+    print(User.objects.all(), request.user.is_superuser)
     dele = Meeting.objects.filter(end_date=timezone.now() - datetime.timedelta(days=31)).filter(recorded=True)
     dele.delete()
     form = SearchForm(request.GET)
@@ -63,7 +64,8 @@ def home(request):
 """""""""""""""""""""""""""""""""
 LOGIN PAGE
 """""""""""""""""""""""""""""""""
-
+def weekdays():
+    events = Meeting.objects.filter(start_date__lte=end_of_week, end_date__gte=start_of_week)
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -127,7 +129,7 @@ def update_user(request):
             logger.debug('Form is valid')
             form.save()
             logger.debug('Form saved')
-            return redirect('meetings') # Перенаправление на страницу профиля после обновления
+            return redirect('meetings')
         else:
             logger.debug('Form is not valid')
             logger.debug(form.errors)
@@ -136,7 +138,7 @@ def update_user(request):
         logger.debug('Received GET request')
         form = UpdateUserForm(instance=user)
 
-    return render(request, 'meetme/create_user.html', {'form': form})
+    return render(request, 'meetme/update_user.html', {'form': form})
 
 
 """""""""""""""""""""""""""""""""
@@ -149,14 +151,22 @@ class Meetings(LoginRequiredMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         if self.request.user.is_superuser:
             context = super().get_context_data(**kwargs)
-            monday = datetime.date.today() - datetime.timedelta(days = datetime.date.today().weekday())
+
+            monday = datetime.date.today() - datetime.timedelta(days=datetime.date.today().weekday())
             this_week = [monday + datetime.timedelta(days=day) for day in range(7)]
             next_monday = datetime.date.today() + datetime.timedelta(days=7 - datetime.date.today().weekday())
             next_week = [next_monday + datetime.timedelta(days=day) for day in range(7)]
+            event = Meeting.objects.filter(start_date__lte=this_week[6], end_date__gte=this_week[0])
+
+            context['this_week_events'] = Meeting.objects.filter(start_date__lte=this_week[6], end_date__gte=this_week[0])
+            context['next_week_events'] = Meeting.objects.filter(start_date__lte=next_week[6], end_date__gte=next_week[0])
+            print(event)
             context['meetings'] = context['meetings'].order_by('start_date')
             sorted_dates = sorted(context['meetings'], key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
             context['start_this_week'] = this_week[0]
+            context['this_week'] = this_week
+            context['next_week'] = next_week
             context['end_this_week'] = this_week[6]
             context['start_next_week'] = next_week[0]
             context['end_next_week'] = next_week[6]
@@ -179,6 +189,8 @@ class Meetings(LoginRequiredMixin, ListView):
             sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
             context['start_this_week'] = this_week[0]
+            context['this_week'] = this_week
+            context['next_week'] = next_week
             context['end_this_week'] = this_week[6]
             context['start_next_week'] = next_week[0]
             context['end_next_week'] = next_week[6]
@@ -291,19 +303,22 @@ def info_view(request):
 
 
 def users_view(request):
-
     if request.user.is_superuser:
         users = User.objects.all().order_by('-date_joined')
         return render(request, "meetme/users.html", {"users": users})
 
     else:
-        return redirect("error")
+        return redirect("meeting")
 
 
 def delete_view(request, id):
     dele = User.objects.get(id=id)
     dele.delete()
     return redirect('users')
+
+
+
+
 
 
 

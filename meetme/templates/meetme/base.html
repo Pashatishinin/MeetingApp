@@ -1,37 +1,45 @@
+
+
 <div class="meeting-box">
 
-                    <div class="meeting-box-content">
-                        <h1 class="meeting-id">{{meeting.id}}</h1>
-                        {% if request.user.is_superuser %}
-                            <div class="user_box">
-                                <div>
-                                    <p class="user_names usernames_nickname"><b>{{meeting.user.username}}</b></p>
-                                </div>
-                                <div class="user_names_box">
-                                    <p class="user_names"><b>{{meeting.user.first_name|upper}}</b></p>
-                                    <p class="user_names"><b>{{meeting.user.last_name|upper}}</b></p>
-                                </div>
+    <div class="meeting-box-content">
+        <h1 class="meeting-id">{{meeting.id}}</h1>
+        {% if request.user.is_superuser %}
+        <div class="user_box">
+            <div>
+                <p class="user_names usernames_nickname"><b>{{meeting.user.username}}</b></p>
+            </div>
+            <div class="user_names_box">
+                <p class="user_names"><b>{{meeting.user.first_name|upper}}</b></p>
+                <p class="user_names"><b>{{meeting.user.last_name|upper}}</b></p>
+            </div>
 
 
-                            </div>
+        </div>
 
-                        {% endif %}
+        {% endif %}
 
-                        <h1 class="meeting-title">{{meeting.title|upper}}</h1>
+        <h1 class="meeting-title">{{meeting.title|upper}}</h1>
 
-                        {% if meeting.end_date == meeting.start_date %}
-                            <p class="meeting-date">{{ meeting.start_date}}</p>
-                        {% elif meeting.end_date %}
-                            <p class="meeting-date">{{ meeting.start_date}} - {{meeting.end_date}}</p>
-                        {% else %}
-                            <p class="meeting-date">{{ meeting.start_date}}</p>
-                        {% endif %}
-                    </div>
+        {% if meeting.end_date == meeting.start_date %}
+        <p class="meeting-date">{{ meeting.start_date}}</p>
+        {% elif meeting.end_date %}
+        <p class="meeting-date">{{ meeting.start_date}} - {{meeting.end_date}}</p>
+        {% else %}
+        <p class="meeting-date">{{ meeting.start_date}}</p>
+        {% endif %}
+    </div>
 
-                    <div class="icons_button">
-                        <!--        MEETING LINKS FOR SETTINGS      -->
-                        <a href="{% url 'meeting' meeting.id%}"><ion-icon name="eye-outline"></ion-icon></a>
-                        <a href="{% url 'meeting-update' meeting.id%}"><ion-icon name="create-outline"></ion-icon></a>
-                        <a href="{% url 'meeting-delete' meeting.id%}"><ion-icon name="trash-outline"></ion-icon></a>
-                    </div>
-                </div>
+    <div class="icons_button">
+        <!--        MEETING LINKS FOR SETTINGS      -->
+        <a href="{% url 'meeting' meeting.id%}">
+            <ion-icon name="eye-outline"></ion-icon>
+        </a>
+        <a href="{% url 'meeting-update' meeting.id%}">
+            <ion-icon name="create-outline"></ion-icon>
+        </a>
+        <a href="{% url 'meeting-delete' meeting.id%}">
+            <ion-icon name="trash-outline"></ion-icon>
+        </a>
+    </div>
+</div>

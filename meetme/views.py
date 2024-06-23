@@ -158,7 +158,8 @@ class Meetings(LoginRequiredMixin, ListView):
 
             context['this_week_events'] = Meeting.objects.filter(start_date__lte=this_week[6], end_date__gte=this_week[0])
             context['next_week_events'] = Meeting.objects.filter(start_date__lte=next_week[6], end_date__gte=next_week[0])
-
+            context['this_week_events'] = context['this_week_events'].order_by('start_date')
+            context['next_week_events'] = context['next_week_events'].order_by('start_date')
             context['meetings'] = context['meetings'].order_by('start_date')
             sorted_dates = sorted(context['meetings'], key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
@@ -187,8 +188,8 @@ class Meetings(LoginRequiredMixin, ListView):
                                                                  end_date__gte=this_week[0])
             context['next_week_events'] = Meeting.objects.filter(start_date__lte=next_week[6],
                                                                  end_date__gte=next_week[0])
-            context['this_week_events'] = context['this_week_events'].filter(user=self.request.user)
-            context['next_week_events'] = context['next_week_events'].filter(user=self.request.user)
+            context['this_week_events'] = context['this_week_events'].filter(user=self.request.user).order_by('start_date')
+            context['next_week_events'] = context['next_week_events'].filter(user=self.request.user).order_by('start_date')
             context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
             sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)

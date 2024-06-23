@@ -64,8 +64,6 @@ def home(request):
 """""""""""""""""""""""""""""""""
 LOGIN PAGE
 """""""""""""""""""""""""""""""""
-def weekdays():
-    events = Meeting.objects.filter(start_date__lte=end_of_week, end_date__gte=start_of_week)
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -160,7 +158,7 @@ class Meetings(LoginRequiredMixin, ListView):
 
             context['this_week_events'] = Meeting.objects.filter(start_date__lte=this_week[6], end_date__gte=this_week[0])
             context['next_week_events'] = Meeting.objects.filter(start_date__lte=next_week[6], end_date__gte=next_week[0])
-            print(event)
+
             context['meetings'] = context['meetings'].order_by('start_date')
             sorted_dates = sorted(context['meetings'], key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)
@@ -185,6 +183,10 @@ class Meetings(LoginRequiredMixin, ListView):
             this_week = [monday + datetime.timedelta(days=day) for day in range(7)]
             next_monday = datetime.date.today() + datetime.timedelta(days=7 - datetime.date.today().weekday())
             next_week = [next_monday + datetime.timedelta(days=day) for day in range(7)]
+            context['this_week_events'] = Meeting.objects.filter(start_date__lte=this_week[6],
+                                                                 end_date__gte=this_week[0])
+            context['next_week_events'] = Meeting.objects.filter(start_date__lte=next_week[6],
+                                                                 end_date__gte=next_week[0])
             context['meetings'] = context['meetings'].filter(user=self.request.user).order_by('start_date')
             sorted_dates = sorted(context['meetings'].filter(user=self.request.user), key=lambda
                 obj: obj.end_date if obj.end_date > datetime.date.today() else datetime.date.max)

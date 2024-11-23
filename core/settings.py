@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d"
 # SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# 'django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d'
+# ' django-insecure-#(*kymr-t*o(p)=fn(f7&-_nr_y)-@h0w-&!*3vijtqox5jx1d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
